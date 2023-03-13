@@ -26,5 +26,9 @@ namespace Pet_Shop.Controllers
 
             return View();
         }
+        public ActionResult IndexTemp()
+        {
+            return View();
+        }
     }
 }
