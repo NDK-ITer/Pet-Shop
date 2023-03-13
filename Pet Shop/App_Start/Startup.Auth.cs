@@ -54,9 +54,9 @@ namespace Pet_Shop
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "601931275086154",
+               appSecret: "1f5d9dcab6622fb7d62dffa50a5c1d55");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
