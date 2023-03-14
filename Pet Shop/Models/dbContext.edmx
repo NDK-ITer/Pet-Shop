@@ -23,14 +23,6 @@
           <Property Name="MaDT" Type="varchar" MaxLength="128" Nullable="false" />
           <Property Name="GhiChu" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="DBTaiKhoan">
-          <Key>
-            <PropertyRef Name="IdNguoiDung" />
-          </Key>
-          <Property Name="IdNguoiDung" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="TenKH" Type="nvarchar" MaxLength="50" />
-          <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
-        </EntityType>
         <EntityType Name="DichVu">
           <Key>
             <PropertyRef Name="MaDV" />
@@ -115,10 +107,10 @@
           </Key>
           <Property Name="SoPD" Type="nvarchar" MaxLength="128" Nullable="false" />
           <Property Name="NgayLap" Type="datetime" />
-          <Property Name="MaTK" Type="int" Nullable="false" />
           <Property Name="SoTienCoc" Type="money" />
           <Property Name="HinhThucCoc" Type="nvarchar" MaxLength="50" />
           <Property Name="NgayHen" Type="nchar" MaxLength="10" />
+          <Property Name="IdNguoiDung" Type="nvarchar" MaxLength="128" Nullable="false" />
         </EntityType>
         <EntityType Name="ThuCung">
           <Key>
@@ -239,18 +231,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_HoaDon_DBTaiKhoan1">
-          <End Role="DBTaiKhoan" Type="Self.DBTaiKhoan" Multiplicity="1" />
-          <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DBTaiKhoan">
-              <PropertyRef Name="IdNguoiDung" />
-            </Principal>
-            <Dependent Role="HoaDon">
-              <PropertyRef Name="IdNguoiDung" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_HoaDon_NhanSU">
           <End Role="NhanSU" Type="Self.NhanSU" Multiplicity="0..1" />
           <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
@@ -290,7 +270,6 @@
         <EntityContainer Name="QuanLyThuCungModelStoreContainer">
           <EntitySet Name="CT_HoaDon" EntityType="Self.CT_HoaDon" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CT_PhieuDat" EntityType="Self.CT_PhieuDat" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="DBTaiKhoan" EntityType="Self.DBTaiKhoan" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DichVu" EntityType="Self.DichVu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DoDungTC" EntityType="Self.DoDungTC" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DoiTuongKD" EntityType="Self.DoiTuongKD" Schema="dbo" store:Type="Tables" />
@@ -337,10 +316,6 @@
             <End Role="DoiTuongKD" EntitySet="DoiTuongKD" />
             <End Role="HinhAnhDTKD" EntitySet="HinhAnhDTKD" />
           </AssociationSet>
-          <AssociationSet Name="FK_HoaDon_DBTaiKhoan1" Association="Self.FK_HoaDon_DBTaiKhoan1">
-            <End Role="DBTaiKhoan" EntitySet="DBTaiKhoan" />
-            <End Role="HoaDon" EntitySet="HoaDon" />
-          </AssociationSet>
           <AssociationSet Name="FK_HoaDon_NhanSU" Association="Self.FK_HoaDon_NhanSU">
             <End Role="NhanSU" EntitySet="NhanSU" />
             <End Role="HoaDon" EntitySet="HoaDon" />
@@ -380,15 +355,6 @@
           <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="PhieuDat" Relationship="Self.FK_CT_PhieuDat_PhieuDat1" FromRole="CT_PhieuDat" ToRole="PhieuDat" />
           <NavigationProperty Name="DoiTuongKD" Relationship="Self.FK_CT_PhieuDat_SPKD" FromRole="CT_PhieuDat" ToRole="DoiTuongKD" />
-        </EntityType>
-        <EntityType Name="DBTaiKhoan">
-          <Key>
-            <PropertyRef Name="IdNguoiDung" />
-          </Key>
-          <Property Name="IdNguoiDung" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="TenKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="HoaDons" Relationship="Self.FK_HoaDon_DBTaiKhoan1" FromRole="DBTaiKhoan" ToRole="HoaDon" />
         </EntityType>
         <EntityType Name="DichVu">
           <Key>
@@ -460,7 +426,6 @@
           <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="IdNguoiDung" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="CT_HoaDon" Relationship="Self.FK_CT_HoaDon_HoaDon" FromRole="HoaDon" ToRole="CT_HoaDon" />
-          <NavigationProperty Name="DBTaiKhoan" Relationship="Self.FK_HoaDon_DBTaiKhoan1" FromRole="HoaDon" ToRole="DBTaiKhoan" />
           <NavigationProperty Name="NhanSU" Relationship="Self.FK_HoaDon_NhanSU" FromRole="HoaDon" ToRole="NhanSU" />
         </EntityType>
         <EntityType Name="LoaiThuCung">
@@ -492,10 +457,10 @@
           </Key>
           <Property Name="SoPD" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="NgayLap" Type="DateTime" Precision="3" />
-          <Property Name="MaTK" Type="Int32" Nullable="false" />
           <Property Name="SoTienCoc" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="HinhThucCoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="NgayHen" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="IdNguoiDung" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="CT_PhieuDat" Relationship="Self.FK_CT_PhieuDat_PhieuDat1" FromRole="PhieuDat" ToRole="CT_PhieuDat" />
         </EntityType>
         <EntityType Name="ThuCung">
@@ -556,18 +521,6 @@
             </Principal>
             <Dependent Role="CT_PhieuDat">
               <PropertyRef Name="MaDT" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_HoaDon_DBTaiKhoan1">
-          <End Role="DBTaiKhoan" Type="Self.DBTaiKhoan" Multiplicity="1" />
-          <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DBTaiKhoan">
-              <PropertyRef Name="IdNguoiDung" />
-            </Principal>
-            <Dependent Role="HoaDon">
-              <PropertyRef Name="IdNguoiDung" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -670,7 +623,6 @@
         <EntityContainer Name="QuanLyThuCungEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CT_HoaDon" EntityType="Self.CT_HoaDon" />
           <EntitySet Name="CT_PhieuDat" EntityType="Self.CT_PhieuDat" />
-          <EntitySet Name="DBTaiKhoans" EntityType="Self.DBTaiKhoan" />
           <EntitySet Name="DichVus" EntityType="Self.DichVu" />
           <EntitySet Name="DoDungTCs" EntityType="Self.DoDungTC" />
           <EntitySet Name="DoiTuongKDs" EntityType="Self.DoiTuongKD" />
@@ -696,10 +648,6 @@
           <AssociationSet Name="FK_CT_PhieuDat_SPKD" Association="Self.FK_CT_PhieuDat_SPKD">
             <End Role="DoiTuongKD" EntitySet="DoiTuongKDs" />
             <End Role="CT_PhieuDat" EntitySet="CT_PhieuDat" />
-          </AssociationSet>
-          <AssociationSet Name="FK_HoaDon_DBTaiKhoan1" Association="Self.FK_HoaDon_DBTaiKhoan1">
-            <End Role="DBTaiKhoan" EntitySet="DBTaiKhoans" />
-            <End Role="HoaDon" EntitySet="HoaDons" />
           </AssociationSet>
           <AssociationSet Name="FK_DichVu_SPKD" Association="Self.FK_DichVu_SPKD">
             <End Role="DoiTuongKD" EntitySet="DoiTuongKDs" />
@@ -755,15 +703,6 @@
                 <ScalarProperty Name="SoPD" ColumnName="SoPD" />
                 <ScalarProperty Name="MaDT" ColumnName="MaDT" />
                 <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="DBTaiKhoans">
-            <EntityTypeMapping TypeName="QuanLyThuCungModel.DBTaiKhoan">
-              <MappingFragment StoreEntitySet="DBTaiKhoan">
-                <ScalarProperty Name="IdNguoiDung" ColumnName="IdNguoiDung" />
-                <ScalarProperty Name="TenKH" ColumnName="TenKH" />
-                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -858,10 +797,10 @@
               <MappingFragment StoreEntitySet="PhieuDat">
                 <ScalarProperty Name="SoPD" ColumnName="SoPD" />
                 <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
-                <ScalarProperty Name="MaTK" ColumnName="MaTK" />
                 <ScalarProperty Name="SoTienCoc" ColumnName="SoTienCoc" />
                 <ScalarProperty Name="HinhThucCoc" ColumnName="HinhThucCoc" />
                 <ScalarProperty Name="NgayHen" ColumnName="NgayHen" />
+                <ScalarProperty Name="IdNguoiDung" ColumnName="IdNguoiDung" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

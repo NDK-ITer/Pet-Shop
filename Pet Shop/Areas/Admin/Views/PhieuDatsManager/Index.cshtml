@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Pet_Shop.Models.PhieuDat>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin_PetShop.cshtml";
+}
+
+<h2>Phiếu đặt</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayLap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoTienCoc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HinhThucCoc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayHen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdNguoiDung)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayLap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoTienCoc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HinhThucCoc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayHen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdNguoiDung)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SoPD }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SoPD }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SoPD })
+        </td>
+    </tr>
+}
+
+</table>

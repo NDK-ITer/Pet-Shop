@@ -5,7 +5,8 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin_PetShop.cshtml";
 }
 
-<h2>Edit</h2>
+<h2>Loại thú cưng</h2>
+
 
 @using (Html.BeginForm())
 {
@@ -36,3 +37,7 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

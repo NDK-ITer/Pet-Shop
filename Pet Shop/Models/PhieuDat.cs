@@ -22,10 +22,10 @@ namespace Pet_Shop.Models
     
         public string SoPD { get; set; }
         public Nullable<System.DateTime> NgayLap { get; set; }
-        public int MaTK { get; set; }
         public Nullable<decimal> SoTienCoc { get; set; }
         public string HinhThucCoc { get; set; }
         public string NgayHen { get; set; }
+        public string IdNguoiDung { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_PhieuDat> CT_PhieuDat { get; set; }

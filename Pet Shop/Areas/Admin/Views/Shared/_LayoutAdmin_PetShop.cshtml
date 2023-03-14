@@ -7,10 +7,28 @@
 </head>
 <body>
     @Html.ActionLink("Trang chủ quản lý", "Index", "HomeAdmin")
-    @Html.ActionLink("Loại thú cưng", "Index", "LoaiThuCungs")
-    @Html.ActionLink("Sản phẩm và dịch vụ", "Index", "DoiTuongKDs")
+    @Html.ActionLink("Loại thú cưng", "Index", "LoaiThuCungsManager")
+    @Html.ActionLink("Sản phẩm và dịch vụ", "Index", "DoiTuongKDsManager")
+    @Html.ActionLink("Hóa đơn", "Index", "HoaDonsManager")
+    @Html.ActionLink("Phiếu đặt", "Index", "PhieuDatsManager")
     <div>
         @RenderBody()
     </div>
 </body>
+@*<script>
+
+    fileImage.onchange = evt => {
+
+        const [file] = fileImage.files
+
+        if (file) {
+
+            preview.src = URL.createObjectURL(file);
+
+            $("#preview").removeClass("hidden");
+
+        }
+
+    }
+</script>*@
 </html>

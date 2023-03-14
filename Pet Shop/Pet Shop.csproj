@@ -171,9 +171,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\DoiTuongKDsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DoiTuongKDsManagerController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HoaDonsManagerController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
-    <Compile Include="Areas\Admin\Controllers\LoaiThuCungsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LoaiThuCungsManagerController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PhieuDatsManagerController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ThuCungsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -201,9 +204,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dbContext.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DBTaiKhoan.cs">
-      <DependentUpon>dbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DichVu.cs">
       <DependentUpon>dbContext.tt</DependentUpon>
@@ -279,6 +279,21 @@
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\HomeAdmin\Admin.cshtml" />
     <Content Include="Areas\Admin\Views\HomeAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\DoiTuongKDsManager\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\DoiTuongKDsManager\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\DoiTuongKDsManager\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\DoiTuongKDsManager\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\DoiTuongKDsManager\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiThuCungsManager\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiThuCungsManager\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiThuCungsManager\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiThuCungsManager\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiThuCungsManager\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ThuCungs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ThuCungs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ThuCungs\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ThuCungs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ThuCungs\Index.cshtml" />
     <EntityDeploy Include="Models\dbContext.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>dbContext.Designer.cs</LastGenOutput>
@@ -286,16 +301,16 @@
     <Content Include="Models\dbContext.edmx.diagram">
       <DependentUpon>dbContext.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\Admin\Views\LoaiThuCungs\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\LoaiThuCungs\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\LoaiThuCungs\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\LoaiThuCungs\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\LoaiThuCungs\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\DoiTuongKDs\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\DoiTuongKDs\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\DoiTuongKDs\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\DoiTuongKDs\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\DoiTuongKDs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\HoaDonsManager\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\HoaDonsManager\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\HoaDonsManager\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\HoaDonsManager\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\HoaDonsManager\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\PhieuDatsManager\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\PhieuDatsManager\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\PhieuDatsManager\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\PhieuDatsManager\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\PhieuDatsManager\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Pet_Shop.Models.HoaDon>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin_PetShop.cshtml";
+}
+
+<h2>Hóa đơn</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayLap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TongThanhTien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiaChi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdNguoiDung)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NhanSU.TenNS)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayLap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TongThanhTien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenKH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdNguoiDung)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NhanSU.TenNS)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SoHD }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SoHD }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SoHD })
+        </td>
+    </tr>
+}
+
+</table>
