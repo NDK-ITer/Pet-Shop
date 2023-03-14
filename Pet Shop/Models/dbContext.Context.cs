@@ -27,6 +27,7 @@ namespace Pet_Shop.Models
     
         public virtual DbSet<CT_HoaDon> CT_HoaDon { get; set; }
         public virtual DbSet<CT_PhieuDat> CT_PhieuDat { get; set; }
+        public virtual DbSet<DBTaiKhoan> DBTaiKhoans { get; set; }
         public virtual DbSet<DichVu> DichVus { get; set; }
         public virtual DbSet<DoDungTC> DoDungTCs { get; set; }
         public virtual DbSet<DoiTuongKD> DoiTuongKDs { get; set; }

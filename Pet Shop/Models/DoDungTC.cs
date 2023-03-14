@@ -16,7 +16,7 @@ namespace Pet_Shop.Models
     {
         public string MaDD { get; set; }
         public string TenDD { get; set; }
-        public Nullable<int> MaLoaiTC { get; set; }
+        public string MaLoaiTC { get; set; }
         public string MaNSX { get; set; }
     
         public virtual HangSX HangSX { get; set; }

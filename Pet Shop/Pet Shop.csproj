@@ -202,6 +202,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dbContext.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\DBTaiKhoan.cs">
+      <DependentUpon>dbContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\DichVu.cs">
       <DependentUpon>dbContext.tt</DependentUpon>
     </Compile>
@@ -274,6 +277,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\HomeAdmin\Admin.cshtml" />
     <Content Include="Areas\Admin\Views\HomeAdmin\Index.cshtml" />
     <EntityDeploy Include="Models\dbContext.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -287,7 +291,6 @@
     <Content Include="Areas\Admin\Views\LoaiThuCungs\Details.cshtml" />
     <Content Include="Areas\Admin\Views\LoaiThuCungs\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\LoaiThuCungs\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin_PetShop.cshtml" />
     <Content Include="Areas\Admin\Views\DoiTuongKDs\Create.cshtml" />
     <Content Include="Areas\Admin\Views\DoiTuongKDs\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\DoiTuongKDs\Details.cshtml" />
@@ -364,7 +367,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -398,11 +400,13 @@
     <Content Include="Theme\js\bootstrap.bundle.min.js.map" />
     <Content Include="Theme\js\bootstrap.js.map" />
     <Content Include="Theme\js\bootstrap.min.js.map" />
-    <Content Include="Views\Home\IndexTemp.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin_PetShop.cshtml" />
+    <Content Include="Views\Home\Shop.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Data\ImagesProduct\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

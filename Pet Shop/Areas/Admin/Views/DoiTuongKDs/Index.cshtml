@@ -10,7 +10,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<form class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.DonGia)
@@ -22,13 +22,13 @@
             @Html.DisplayNameFor(model => model.GiamGia)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.HinhAnhDaiDien)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.MoTa)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ChiTiet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnhDaiDien)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.DichVu.TenDV)
@@ -54,13 +54,13 @@
             @Html.DisplayFor(modelItem => item.GiamGia)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.HinhAnhDaiDien)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.MoTa)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ChiTiet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnhDaiDien)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DichVu.TenDV)
@@ -79,4 +79,4 @@
     </tr>
 }
 
-</table>
+</form>

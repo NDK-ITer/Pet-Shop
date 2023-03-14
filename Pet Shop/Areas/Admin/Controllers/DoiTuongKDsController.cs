@@ -8,6 +8,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Pet_Shop.Models;
+using System.IO;
 
 namespace Pet_Shop.Areas.Admin.Controllers
 {
@@ -51,12 +52,22 @@ namespace Pet_Shop.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "MaDT,DonGia,TrangThai,GiamGia,HinhAnhDaiDien,MoTa,ChiTiet")] DoiTuongKD doiTuongKD)
+        public async Task<ActionResult> Create([Bind(Include = "MaDT,DonGia,TrangThai,GiamGia,MoTa,ChiTiet,AnhDaiDien")] DoiTuongKD doiTuongKD/*, HttpPostedFileBase anhDaiDien*/)
         {
             if (ModelState.IsValid)
             {
                 db.DoiTuongKDs.Add(doiTuongKD);
                 await db.SaveChangesAsync();
+                //if (anhDaiDien != null && anhDaiDien.ContentLength > 0)
+                //{
+                //    string fileName = "";
+                //    fileName = doiTuongKD.MaDT + "avatar";
+                //    string path = Path.Combine(Server.MapPath("~/ImagesProduct"));
+                //    anhDaiDien.SaveAs(path);
+                //    DoiTuongKD dtkd = db.DoiTuongKDs.FirstOrDefault(m=>m.MaDT == doiTuongKD.MaDT);
+                //    dtkd.AnhDaiDien = fileName;
+                //    await db.SaveChangesAsync();
+                //}
                 return RedirectToAction("Index");
             }
 
@@ -89,7 +100,7 @@ namespace Pet_Shop.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "MaDT,DonGia,TrangThai,GiamGia,HinhAnhDaiDien,MoTa,ChiTiet")] DoiTuongKD doiTuongKD)
+        public async Task<ActionResult> Edit([Bind(Include = "MaDT,DonGia,TrangThai,GiamGia,MoTa,ChiTiet,AnhDaiDien")] DoiTuongKD doiTuongKD)
         {
             if (ModelState.IsValid)
             {

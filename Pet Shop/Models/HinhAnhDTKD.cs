@@ -15,8 +15,9 @@ namespace Pet_Shop.Models
     public partial class HinhAnhDTKD
     {
         public string MaHA { get; set; }
-        public byte[] HinhAnh { get; set; }
         public string MaDT { get; set; }
+        public string TenHA { get; set; }
+        public string DuongDan { get; set; }
     
         public virtual DoiTuongKD DoiTuongKD { get; set; }
     }

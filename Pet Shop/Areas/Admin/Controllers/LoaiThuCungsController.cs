@@ -22,7 +22,7 @@ namespace Pet_Shop.Areas.Admin.Controllers
         }
 
         // GET: Admin/LoaiThuCungs/Details/5
-        public async Task<ActionResult> Details(int? id)
+        public async Task<ActionResult> Details(string id)
         {
             if (id == null)
             {
@@ -60,7 +60,7 @@ namespace Pet_Shop.Areas.Admin.Controllers
         }
 
         // GET: Admin/LoaiThuCungs/Edit/5
-        public async Task<ActionResult> Edit(int? id)
+        public async Task<ActionResult> Edit(string id)
         {
             if (id == null)
             {
@@ -91,7 +91,7 @@ namespace Pet_Shop.Areas.Admin.Controllers
         }
 
         // GET: Admin/LoaiThuCungs/Delete/5
-        public async Task<ActionResult> Delete(int? id)
+        public async Task<ActionResult> Delete(string id)
         {
             if (id == null)
             {
@@ -108,7 +108,7 @@ namespace Pet_Shop.Areas.Admin.Controllers
         // POST: Admin/LoaiThuCungs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(int id)
+        public async Task<ActionResult> DeleteConfirmed(string id)
         {
             LoaiThuCung loaiThuCung = await db.LoaiThuCungs.FindAsync(id);
             db.LoaiThuCungs.Remove(loaiThuCung);

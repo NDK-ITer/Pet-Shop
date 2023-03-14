@@ -21,7 +21,7 @@ namespace Pet_Shop.Models
             this.ThuCungs = new HashSet<ThuCung>();
         }
     
-        public int MaLoaiTC { get; set; }
+        public string MaLoaiTC { get; set; }
         public string TenLoai { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

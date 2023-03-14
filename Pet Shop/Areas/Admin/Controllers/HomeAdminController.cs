@@ -14,5 +14,9 @@ namespace Pet_Shop.Areas.Admin.Controllers
         {
             return View();
         }
+        public ActionResult Admin()
+        {
+            return View();
+        }
     }
 }
