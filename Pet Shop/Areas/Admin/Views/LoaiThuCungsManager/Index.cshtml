@@ -1,34 +1,38 @@
 ﻿@model IEnumerable<Pet_Shop.Models.LoaiThuCung>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Loại Thú Cưng";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin_PetShop.cshtml";
 }
 
-<h2>Index</h2>
+<div >
+    <h2>Loại Thú Cưng</h2><br /><br />
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TenLoai)
-        </th>
-        <th></th>
-    </tr>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TenLoai)
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TenLoai)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaLoaiTC }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaLoaiTC }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaLoaiTC })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenLoai)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.MaLoaiTC }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.MaLoaiTC }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.MaLoaiTC })
+                </td>
+            </tr>
+        }
 
-</table>
+    </table>
+</div>
+

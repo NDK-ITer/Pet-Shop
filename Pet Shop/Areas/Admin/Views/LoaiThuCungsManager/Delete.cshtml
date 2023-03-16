@@ -1,33 +1,37 @@
 ﻿@model Pet_Shop.Models.LoaiThuCung
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Loại Thú Cưng";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin_PetShop.cshtml";
 }
 
-<h2>Delete</h2>
+<div >
+    <h2>Delete</h2><br /><br />
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>LoaiThuCung</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TenLoai)
-        </dt>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Loại Thú Cưng</h4><br /><br />
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.TenLoai)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.TenLoai)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.TenLoai)
+            </dd>
 
-    </dl>
+        </dl>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
 </div>
+

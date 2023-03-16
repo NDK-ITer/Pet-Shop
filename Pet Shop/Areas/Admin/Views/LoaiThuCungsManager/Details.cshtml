@@ -1,27 +1,30 @@
 ﻿@model Pet_Shop.Models.LoaiThuCung
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Loại Thú Cưng";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin_PetShop.cshtml";
 }
 
-<h2>Details</h2>
+<div >
+    <h2>Details</h2><br /><br />
 
-<div>
-    <h4>LoaiThuCung</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TenLoai)
-        </dt>
+    <div>
+        <h4>Loại Thú Cưng</h4><br /><br />
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.TenLoai)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.TenLoai)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.TenLoai)
+            </dd>
 
-    </dl>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.MaLoaiTC }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MaLoaiTC }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

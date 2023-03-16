@@ -1,0 +1,43 @@
+﻿@model Pet_Shop.Models.HangSX
+
+@{
+    ViewBag.Title = "Hãng Sản Xuất";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin_PetShop.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Hãng Sản Xuất</h4><br /><br />
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenNSX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenNSX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiaChi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SuatXu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SuatXu)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaNSX }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

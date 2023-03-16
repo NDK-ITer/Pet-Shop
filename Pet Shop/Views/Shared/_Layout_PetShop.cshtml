@@ -1,136 +1,184 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- basic -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- mobile metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <!-- site metas -->
-    <title>Fiu</title>
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!-- bootstrap css -->
-    <link href="~/Theme/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- style css -->
-    <link href="~/Theme/css/style.css" rel="stylesheet" />
-    <!-- Responsive-->
-    <link href="~/Theme/css/responsive.css" rel="stylesheet" />
-    <!-- fevicon -->
-    <link rel="icon" href="images/fevicon.png" type="image/gif" />
-    <!-- Scrollbar Custom CSS -->
-    <link href="~/Theme/css/jquery.mCustomScrollbar.min.css" rel="stylesheet" />
-    <!-- Tweaks for older IEs-->
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-    <!-- owl stylesheets -->
-    <link href="~/Theme/css/owl.carousel.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-</head>
-<body>
-    <!-- header section start -->
-    <div class="header_section">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-                <a class="logo" href="index.html"><img src="~/Theme/images/logo.png" /></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            @Html.ActionLink("Trang Chủ", "Index", "Home", new { @class = "nav-link" })
-                        </li>
-                        <li class="nav-item">
-                            @Html.ActionLink("về Chúng Tôi", "About", "Home", new { @class = "nav-link" })
-                        </li>
-                        <li class="nav-item">
-                            @Html.ActionLink("Sản Phẩm", "Shop", "Home", new { @class = "nav-link" })
-                        </li>
-                        <li class="nav-item">
-                            @Html.ActionLink("Liên Hệ", "Contact", "Home", new { @class = "nav-link" })
-                        </li>
-                    </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                        <div class="search_icon">
-                            <ul>
-                                <li><a href="#"><img src="~/Theme/images/search-icon.png" /></a></li>
-                                <li>@Html.Partial("_LoginPartial")</li>
-                            </ul>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </nav>
-    </div>
 
-    <!-- header section end -->
-    @RenderBody();
-    <!-- footer section start -->
-    <div class="footer_section">
-        <div class="container">
-            <div class="footer_location_text">
-                <ul>
-                    <li><img src="~/Theme/images/map-icon.png" /><span class="padding_left_10"><a href="#">Loram Ipusm hosting web</a></span></li>
-                    <li><img src="~/Theme/images/call-icon.png"><span class="padding_left_10"><a href="#">Call : +7586656566</a></span></li>
-                    <li><img src="~/Theme/images/mail-icon.png"><span class="padding_left_10"><a href="#">demo@gmail.com</a></span></li>
-                </ul>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-sm-6">
-                    <h2 class="useful_text">Useful link </h2>
-                    <div class="footer_menu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Thú Cưng</title>
+    <link href="~/Theme/css/StyleSheet.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+</head>
+
+<body>
+    <!------------------------------- <header> ------------------------------->
+    <div class="header">
+        <div class="logo">
+            <a href="#"><img src="~/Theme/images/logo.png" alt=""></a>
+        </div>
+        <div class="menu">
+            <li><a href="">Trang chủ</a></li>
+            <li>
+                <a href="">Sản phẩm</a>
+                <ul class="sub-menu columm">
+                    <li class="menu-category">
+                        <a href="">VỆ SINH & CHĂM SÓC</a>
                         <ul>
-                            <li>@Html.ActionLink("Trang Chủ", "Index", "Home", new { @class = "nav-link" })</li>
-                            <li>@Html.ActionLink("về Chúng Tôi", "About", "Home", new { @class = "nav-link" })</li>
-                            <li>@Html.ActionLink("Sản Phẩm", "Shop", "Home", new { @class = "nav-link" })</li>
-                            <li>@Html.ActionLink("Liên Hệ", "Contact", "Home", new { @class = "nav-link" })</li>
+                            <li><a href="">Khay & Nhà vệ sinh</a></li>
+                            <li><a href="">Cát vệ sinh cho mèo</a></li>
+                            <li><a href="">Sữa tắm & Xịt dưỡng</a></li>
+                            <li><a href="">Lược chải lông & Kềm cắt móng</a></li>
                         </ul>
-                    </div>
+                    </li>
+                    <li class="menu-category">
+                        <a href="">THỨC ĂN CHO CHÓ</a>
+                        <ul>
+                            <li><a href="">Thức ăn hạt khô</a></li>
+                            <li><a href="">Pate & Nước sốt</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-category">
+                        <a href="">ĐỒ DÙNG & PHỤ KIỆN</a>
+                        <ul>
+                            <li><a href="">Quần áo & Trang sức</a></li>
+                            <li><a href="">Vòng cổ & Dây dắt</a></li>
+                            <li><a href="">Túi xách & Balo đựng mèo</a></li>
+                            <li><a href="">Lồng vận chuyển mèo</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-category">
+                        <a href="">THỨC ĂN CHO MÈO</a>
+                        <ul>
+                            <li><a href="">Thức ăn hạt khô</a></li>
+                            <li><a href="">Pate & Nước sốt</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-category">
+                        <a href="">NHÀ, CHUỒNG & NỆM</a>
+                        <ul>
+                            <li><a href="">Nhà cho mèo</a></li>
+                            <li><a href="">Trụ cột & bàn cào móng</a></li>
+                            <li><a href="">Chuồng mèo</a></li>
+                            <li><a href="">Ổ nệm & Thảm đệm</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-category">
+                        <a href="">THUỐC THÚ Y</a>
+                        <ul>
+                            <li><a href="">Tẩy xổ giun sán</a></li>
+                            <li><a href="">Trị ve rạn & Bọ chét</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="">Dịch vụ</a>
+                <ul class="sub-menu-2">
+                    <li><a href="">TẮM CHO BOSS</a></li>
+                    <li><a href="">CẮT TỈA LÔNG CHO BOSS</a></li>
+                    <li><a href="">KHÁNH SẠN THÚ CƯNG CHO BOSS</a></li>
+                </ul>
+            </li>
+            <li><a href="">Giới thiệu</a></li>
+            <li><a href="">Liên hệ</a></li>
+        </div>
+        <div class="others">
+            <li><a href=""></a><i class="fas fa-user"></i></li>
+            <li><a href=""></a><i class="fas fa-shopping-cart"></i></li>
+        </div>
+    </div>
+    <!------------------------------- <slider> ------------------------------->
+    <div>
+        @RenderBody()
+    </div>
+    
+    <!------------------------------- <footer> ------------------------------->
+    <div class="footer">
+        <div class="footer-top row">
+            <div class="footer-left row">
+                <div class="footer-left-img">
+                    <img src="~/Theme/images/logo.png" alt="">
                 </div>
-                <div class="col-lg-3 col-sm-6">
-                    <h2 class="useful_text">Repair</h2>
-                    <p class="lorem_text">Lorem ipsum dolor sit amet, consectetur  adipiscinaliqua  Loreadipiscing </p>
+                <div class="footer-left-item">
+                    <h1>Shop thú cưng Kata</h1>
+                    <p>Email: petworldkata@gmail.com.</p>
+                    <p>
+                        Liên hệ: 096857463.
+                        <a href="" class="fab fa-facebook-square"></a>
+                        <a href="" class="fab fa-instagram"></a>
+                    </p>
+
                 </div>
-                <div class="col-lg-3 col-sm-6">
-                    <h2 class="useful_text">Social Media</h2>
-                    <div id="social">
-                        <a class="facebookBtn smGlobalBtn active" href="#"></a>
-                        <a class="twitterBtn smGlobalBtn" href="#"></a>
-                        <a class="googleplusBtn smGlobalBtn" href="#"></a>
-                        <a class="linkedinBtn smGlobalBtn" href="#"></a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <h1 class="useful_text">Our Repair center</h1>
-                    <p class="footer_text">Lorem ipsum dolor sit amet, consectetur adipiscinaliquaLoreadipiscing </p>
+            </div>
+            <div class="footer-right">
+                <div class="footer-right-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125409.77948296019!2d106.53850631640626!3d10.807053000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d93fb381e671%3A0x85509c9a1ac479c1!2sKATA%20SHOP!5e0!3m2!1svi!2s!4v1678948125059!5m2!1svi!2s" frameborder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- footer section end -->
-    <!-- copyright section start -->
-    <div class="copyright_section">
-        <div class="container">
-            <p class="copyright_text">2020 All Rights Reserved. Design by <a href="https://html.design">Free html  Templates</a></p>
+        <div class="footer-bottom">
+            <hr>
+            ©Bản quyền thuộc về shop thú cưng kata
         </div>
     </div>
-    <!-- copyright section end -->
-    <!-- Javascript files-->
-    <script src="~/Theme/js/jquery.min.js"></script>
-    <script src="~/Theme/js/popper.min.js"></script>
-    <script src="~/Theme/js/bootstrap.bundle.min.js"></script>
-    <script src="~/Theme/js/jquery-3.0.0.min.js"></script>
-    <script src="~/Theme/js/plugin.js"></script>
-    <!-- sidebar -->
-    <script src="~/Theme/js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="js/custom.js"></script>
-    <!-- javascript -->
-    @*<script src="js/owl.carousel.js"></script>*@
-    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
 </body>
+<script>
+    const left = document.querySelector(".left img")
+    const right = document.querySelector(".right img")
+    if (left) {
+        left.addEventListener("click", function () {
+            document.querySelector(".body-page-service-bottom-left-m-ct1").style.display = "block"
+            document.querySelector(".body-page-service-bottom-left-m-ct2").style.display = "none"
+            document.querySelector(".body-page-service-bottom-right-ct1").style.display = "block"
+            document.querySelector(".body-page-service-bottom-right-ct2").style.display = "none"
+        })
+    }
+    if (right) {
+        right.addEventListener("click", function () {
+            document.querySelector(".body-page-service-bottom-left-m-ct1").style.display = "none"
+            document.querySelector(".body-page-service-bottom-left-m-ct2").style.display = "block"
+            document.querySelector(".body-page-service-bottom-right-ct1").style.display = "none"
+            document.querySelector(".body-page-service-bottom-right-ct2").style.display = "block"
+        })
+    }
+    const header = document.querySelector(".header")
+    window.addEventListener("scroll", function () {
+        x = window.pageYOffset;
+        if (x > 0) {
+            header.classList.add("sticky")
+        }
+        else {
+            header.classList.remove("sticky")
+        }
+    })
+    const imgPosition = document.querySelectorAll(".aspect-ratio-169 img")
+    const imgContainer = document.querySelector('.aspect-ratio-169')
+    const dotItem = document.querySelectorAll(".dot")
+    let index = 0
+    let imgNuber = imgPosition.length
+    //console.log(imgPosition);
+    imgPosition.forEach(function (image, index) {
+        image.style.left = index * 100 + "%"
+        dotItem[index].addEventListener("click", function () {
+            slider(index)
+        })
+    })
+    function imgSlide() {
+        index++;
+        console.log(index)
+        if (index >= imgNuber) { index = 0 }
+        slider(index)
+    }
+    function slider(index) {
+        imgContainer.style.left = "-" + index * 100 + "%"
+        const dotActive = document.querySelector('.active')
+        dotActive.classList.remove("active")
+        dotItem[index].classList.add("active")
+    }
+    setInterval(imgSlide, 5000)
+</script>
 </html>

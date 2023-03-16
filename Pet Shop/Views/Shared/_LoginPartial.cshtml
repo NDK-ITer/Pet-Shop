@@ -7,7 +7,7 @@
         <ul class="nav navbar-nav navbar-right">
             @if (User.IsInRole("Admin"))
             {
-                <li>@Html.ActionLink("Quan ly ", "Index", "HomeAdmin", new { area = "Admin" , title = "Manage", @class ="nav-link"}, null)</li>
+                <li>@Html.ActionLink("Quản lý", "Index", "HomeAdmin", new { area = "Admin" , title = "Manage", @class ="nav-link"}, null)</li>
                 <li>
                     @Html.ActionLink(User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link" })
                 </li>

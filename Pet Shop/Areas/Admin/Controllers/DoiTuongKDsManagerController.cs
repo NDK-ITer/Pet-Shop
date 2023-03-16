@@ -8,6 +8,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Pet_Shop.Models;
+using System.IO;
+using Pet_Shop.ClassData;
 
 namespace Pet_Shop.Areas.Admin.Controllers
 {
@@ -51,13 +53,23 @@ namespace Pet_Shop.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "MaDT,DonGia,TrangThai,GiamGia,MoTa,ChiTiet,AnhDaiDien")] DoiTuongKD doiTuongKD)
+        public async Task<ActionResult> Create([Bind(Include = "MaDT,DonGia,TrangThai,GiamGia,MoTa,ChiTiet,AnhDaiDien")] DoiTuongKD doiTuongKD, HttpPostedFileBase anhDaiDien)
         {
             if (ModelState.IsValid)
             {
                 doiTuongKD.MaDT = Guid.NewGuid().ToString();
                 db.DoiTuongKDs.Add(doiTuongKD);
                 await db.SaveChangesAsync();
+                if (anhDaiDien != null && anhDaiDien.ContentLength > 0)
+                {
+                    string fileName = "";
+                    fileName = doiTuongKD.MaDT + "avatar";
+                    string path = Path.Combine(Server.MapPath("~/Areas/Admin/ImagesProduct"));
+                    anhDaiDien.SaveAs(path);
+                    DoiTuongKD dtkd = db.DoiTuongKDs.FirstOrDefault(m => m.MaDT == doiTuongKD.MaDT);
+                    dtkd.AnhDaiDien = fileName;
+                    await db.SaveChangesAsync();
+                }
                 return RedirectToAction("Index");
             }
 
@@ -65,6 +77,43 @@ namespace Pet_Shop.Areas.Admin.Controllers
             ViewBag.MaDT = new SelectList(db.DoDungTCs, "MaDD", "TenDD", doiTuongKD.MaDT);
             ViewBag.MaDT = new SelectList(db.ThuCungs, "MaTC", "TenTC", doiTuongKD.MaDT);
             return View(doiTuongKD);
+        }
+
+        public ActionResult CreateThuCung()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> CreateThuCung([Bind(Include = "MaDT,DonGia,TrangThai,GiamGia,MoTa,ChiTiet,AnhDaiDien,MaTC,TenTC,MaLoaiTC,GioiTinh,KichCo,TiemPhong")] DoiTuongKDAdmin doiTuongKDThuCung, HttpPostedFileBase anhDaiDien)
+        {
+            if (ModelState.IsValid)
+            {
+                DoiTuongKD doiTuongKD = new DoiTuongKD();
+                doiTuongKD.MaDT = Guid.NewGuid().ToString();
+
+                doiTuongKD.DonGia = doiTuongKDThuCung.DonGia;
+                doiTuongKD.TrangThai = doiTuongKDThuCung.TrangThai;
+                doiTuongKD.GiamGia = doiTuongKDThuCung.GiamGia;
+                doiTuongKD.MoTa = doiTuongKDThuCung.MoTa;
+                doiTuongKD.ChiTiet = doiTuongKDThuCung.ChiTiet;
+
+                db.DoiTuongKDs.Add(doiTuongKD);
+                await db.SaveChangesAsync();
+                if (anhDaiDien != null && anhDaiDien.ContentLength > 0)
+                {
+                    string fileName = "";
+                    fileName = doiTuongKD.MaDT + "avatar";
+                    string path = Path.Combine(Server.MapPath("~/Areas/Admin/ImagesProduct"));
+                    anhDaiDien.SaveAs(path);
+                    DoiTuongKD dtkd = db.DoiTuongKDs.FirstOrDefault(m => m.MaDT == doiTuongKD.MaDT);
+                    dtkd.AnhDaiDien = fileName;
+                    await db.SaveChangesAsync();
+                }
+                return RedirectToAction("Index");
+            }
+            return View(doiTuongKDThuCung);
         }
 
         // GET: Admin/DoiTuongKDsManager/Edit/5
