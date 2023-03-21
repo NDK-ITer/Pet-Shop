@@ -171,13 +171,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\DoiTuongKDsManagerController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DoDungTCsAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DoiTuongKDsController.cs" />
     <Compile Include="Areas\Admin\Controllers\HangSXesAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\HoaDonsManagerController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoaiThuCungsManagerController.cs" />
     <Compile Include="Areas\Admin\Controllers\PhieuDatsManagerController.cs" />
-    <Compile Include="Areas\Admin\Controllers\ThuCungsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ThuCungsAdminController.cs" />
     <Compile Include="ClassData\DichVuAdmin.cs" />
     <Compile Include="ClassData\DoDungTCAdmin.cs" />
     <Compile Include="ClassData\DoiTuongKDAdmin.cs" />
@@ -284,28 +285,11 @@
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\HomeAdmin\Admin.cshtml" />
     <Content Include="Areas\Admin\Views\HomeAdmin\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\DoiTuongKDsManager\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\DoiTuongKDsManager\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\DoiTuongKDsManager\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\DoiTuongKDsManager\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\DoiTuongKDsManager\Index.cshtml" />
     <Content Include="Areas\Admin\Views\LoaiThuCungsManager\Create.cshtml" />
     <Content Include="Areas\Admin\Views\LoaiThuCungsManager\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\LoaiThuCungsManager\Details.cshtml" />
     <Content Include="Areas\Admin\Views\LoaiThuCungsManager\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\LoaiThuCungsManager\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\ThuCungs\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\ThuCungs\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\ThuCungs\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\ThuCungs\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\ThuCungs\Index.cshtml" />
-    <EntityDeploy Include="Models\dbContext.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>dbContext.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\dbContext.edmx.diagram">
-      <DependentUpon>dbContext.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\Admin\Views\HoaDonsManager\Create.cshtml" />
     <Content Include="Areas\Admin\Views\HoaDonsManager\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\HoaDonsManager\Details.cshtml" />
@@ -321,7 +305,28 @@
     <Content Include="Areas\Admin\Views\HangSXesAdmin\Details.cshtml" />
     <Content Include="Areas\Admin\Views\HangSXesAdmin\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\HangSXesAdmin\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\DoiTuongKDsManager\CreateThuCung.cshtml" />
+    <EntityDeploy Include="Models\dbContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>dbContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\dbContext.edmx.diagram">
+      <DependentUpon>dbContext.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\Admin\Views\DoiTuongKDs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\DoiTuongKDs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\DoiTuongKDs\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\DoiTuongKDs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\DoiTuongKDs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ThuCungsAdmin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ThuCungsAdmin\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ThuCungsAdmin\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ThuCungsAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ThuCungsAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\DoDungTCsAdmin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\DoDungTCsAdmin\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\DoDungTCsAdmin\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\DoDungTCsAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\DoDungTCsAdmin\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -340,19 +345,33 @@
     <Content Include="Theme\images\fast2.png" />
     <Content Include="Theme\images\fast3.jpg" />
     <Content Include="Theme\images\fast4.jpg" />
+    <Content Include="Theme\images\food.png" />
     <Content Include="Theme\images\gau2.png" />
     <Content Include="Theme\images\gâu.png" />
     <Content Include="Theme\images\logo.png" />
     <Content Include="Theme\images\map.jpg" />
     <Content Include="Theme\images\Meo.png" />
     <Content Include="Theme\images\Meo2.png" />
+    <Content Include="Theme\images\nextcate.png" />
     <Content Include="Theme\images\nextl.png" />
     <Content Include="Theme\images\nextr.png" />
     <Content Include="Theme\images\slider1.jpg" />
     <Content Include="Theme\images\slider2.jpg" />
     <Content Include="Theme\images\slider3.jpg" />
     <Content Include="Theme\images\slider4.jpg" />
+    <Content Include="Theme\images\sp1.jpg" />
+    <Content Include="Theme\images\sp10.jpg" />
+    <Content Include="Theme\images\sp2.jpg" />
+    <Content Include="Theme\images\sp3.jpg" />
+    <Content Include="Theme\images\sp4.jpg" />
+    <Content Include="Theme\images\sp5.jpg" />
+    <Content Include="Theme\images\sp6.jpg" />
+    <Content Include="Theme\images\sp7.jpg" />
+    <Content Include="Theme\images\sp8.jpg" />
+    <Content Include="Theme\images\sp9.jpg" />
+    <Content Include="Theme\images\success.png" />
     <Content Include="Theme\images\tialong.jpg" />
+    <Content Include="Theme\images\toy.jpg" />
     <Content Include="Theme\images\user.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -365,8 +384,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -389,8 +406,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin_PetShop.cshtml" />
-    <Content Include="Views\Home\Shop.cshtml" />
-    <Content Include="Views\Shared\_Layout_PetShop.cshtml" />
+    <Content Include="Views\Home\Products.cshtml" />
+    <Content Include="Views\Home\DetailProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -13,17 +13,12 @@ namespace Pet_Shop.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Products()
         {
             return View();
         }
 
-        public ActionResult Contact()
-        {
-            return View();
-        }
-
-        public ActionResult Shop()
+        public ActionResult DetailProduct()
         {
             return View();
         }

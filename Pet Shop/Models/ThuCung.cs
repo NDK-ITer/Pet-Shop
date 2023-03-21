@@ -17,9 +17,9 @@ namespace Pet_Shop.Models
         public string MaTC { get; set; }
         public string TenTC { get; set; }
         public string MaLoaiTC { get; set; }
-        public Nullable<int> GioiTinh { get; set; }
+        public Nullable<bool> GioiTinh { get; set; }
         public string KichCo { get; set; }
-        public Nullable<int> TiemPhong { get; set; }
+        public Nullable<bool> TiemPhong { get; set; }
     
         public virtual DoiTuongKD DoiTuongKD { get; set; }
         public virtual LoaiThuCung LoaiThuCung { get; set; }
