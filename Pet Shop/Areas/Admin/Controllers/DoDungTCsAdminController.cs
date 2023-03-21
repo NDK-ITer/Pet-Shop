@@ -8,6 +8,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Pet_Shop.Models;
+using Pet_Shop.ClassData;
 
 namespace Pet_Shop.Areas.Admin.Controllers
 {
@@ -51,10 +52,25 @@ namespace Pet_Shop.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "MaDD,TenDD,MaLoaiTC,MaNSX")] DoDungTC doDungTC)
+        public async Task<ActionResult> Create([Bind(Include = "MaDT,DonGia,TrangThai,GiamGia,MoTa,ChiTiet,TenDD,MaLoaiTC,MaNSX")] DoDungTCAdmin doDungTCAdmin)
         {
+            DoDungTC doDungTC = new DoDungTC();
+            DoiTuongKD doiTuongKD = new DoiTuongKD();
             if (ModelState.IsValid)
             {
+                doiTuongKD.MaDT = Guid.NewGuid().ToString();
+                doiTuongKD.DonGia = doDungTCAdmin.DonGia;
+                doiTuongKD.TrangThai = doDungTCAdmin.TrangThai;
+                doiTuongKD.GiamGia = doDungTCAdmin.GiamGia;
+                doiTuongKD.MoTa = doDungTCAdmin.MoTa;
+                doiTuongKD.ChiTiet = doDungTCAdmin.ChiTiet;
+                db.DoiTuongKDs.Add(doiTuongKD);
+                await db.SaveChangesAsync();
+
+                doDungTC.MaDD = doiTuongKD.MaDT;
+                doDungTC.TenDD = doDungTCAdmin.TenDD;
+                doDungTC.MaNSX = doDungTCAdmin.MaNSX;
+                doDungTC.MaLoaiTC = doDungTCAdmin.MaLoaiTC;
                 db.DoDungTCs.Add(doDungTC);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");

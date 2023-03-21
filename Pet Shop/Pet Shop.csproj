@@ -171,6 +171,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\DichVusAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\DoDungTCsAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\DoiTuongKDsController.cs" />
     <Compile Include="Areas\Admin\Controllers\HangSXesAdminController.cs" />
@@ -327,6 +328,11 @@
     <Content Include="Areas\Admin\Views\DoDungTCsAdmin\Details.cshtml" />
     <Content Include="Areas\Admin\Views\DoDungTCsAdmin\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\DoDungTCsAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\DichVusAdmin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\DichVusAdmin\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\DichVusAdmin\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\DichVusAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\DichVusAdmin\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
