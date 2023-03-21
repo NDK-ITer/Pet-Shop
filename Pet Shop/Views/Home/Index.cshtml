@@ -1,33 +1,132 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿
+@{
+    ViewBag.Title = "IndexTemp";
+    Layout = "/Views/Shared/_Layout.cshtml";
 }
 
-<main>
-    <section class="row" aria-labelledby="aspnetTitle">
-        <h1 id="title">ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
+<div>
+    <section id="Slider">
+        <div class="aspect-ratio-169">
+            <img src="/Theme/images/slider1.jpg">
+            <img src="/Theme/images/slider2.jpg">
+            <img src="/Theme/images/slider3.jpg">
+            <img src="/Theme/images/slider4.jpg">
+        </div>
+        <div class="dot-container">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
     </section>
+    <!------------------------------- <body-page> ------------------------------->
+    <div class="body-page">
+        <div class="body-page-fast">
+            <div class="body-page-fast-top">
+                <li><input style="font-size: 20px;" placeholder="  Bạn đang tìm gì ?" type="text"><i class="fas fa-search"></i></li>
+            </div>
+            <div class="body-page-fast-bottom columm">
+                <a href=""><img src="/Theme/images/fast1.png"><p>Thức ăn</p></a>
+                <a href=""><img src="/Theme/images/fast3.jpg"><p>Chó</p></a>
+                <a href=""><img src="/Theme/images/fast4.jpg"><p>Mèo</p></a>
+                <a href=""><img src="/Theme/images/fast2.png"><p>Dịch vụ</p></a>
+            </div>
+        </div>
+        <div class="body-page-ads">
+            <div class="body-page-ads-top">
+                <div class="body-page-ads-top-title">
+                    <h1>MEOW NỔI BẬT</h1>
+                </div>
+                <div class="body-page-ads-top-content">
+                    <div class="body-page-ads-top-content-left">
+                        <div class="body-page-ads-content">
+                            <h2>MEO ...</h2> <br>
+                            <p>Nội dung gì đó để tạm thôi :v</p>
+                        </div>
+                        <div class="body-page-ads-top-content-left-img">
+                            <img src="/Theme/images/Meo2.png" />
+                        </div>
+                    </div>
+                    <div class="body-page-ads-top-content-right">
+                        <div class="body-page-ads-content">
+                            <h2>MEO ...</h2> <br>
+                            <p>Nội dung gì đó để tạm thôi :v</p>
+                        </div>
+                        <div class="body-page-ads-top-content-right-img">
+                            <img src="/Theme/images/Meo2.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="body-page-ads-bottom">
+                <div class="body-page-ads-bottom-title">
+                    <h1>GÂU NỔI BẬT</h1>
+                </div>
+                <div class="body-page-ads-bottom-content">
+                    <div class="body-page-ads-bottom-content-left">
+                        <div class="body-page-ads-content">
+                            <h2>CHÓ ...</h2> <br>
+                            <p>Nội dung gì đó để tạm thôi :v</p>
+                        </div>
+                        <div class="body-page-ads-bottom-content-left-img">
+                            <img src="/Theme/images/gau2.png">
+                        </div>
+                    </div>
+                    <div class="body-page-ads-bottom-content-right">
+                        <div class="body-page-ads-content">
+                            <h2>CHÓ ...</h2> <br>
+                            <p>Nội dung gì đó để tạm thôi :v</p>
+                        </div>
+                        <div class="body-page-ads-bottom-content-right-img">
+                            <img src="/Theme/images/gau2.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="body-page-service">
+            <div class="body-page-service-top">
+                <h1>CÁC DỊCH VỤ</h1>
+            </div>
+            <div class="body-page-service-bottom row">
+                <div class="body-page-service-bottom-left row">
+                    <div class="body-page-service-bottom-left-l left">
+                        <img src="/Theme/images/nextl.png">
+                    </div>
+                    <div class="body-page-service-bottom-left-m">
+                        <div class="body-page-service-bottom-left-m-ct1">
+                            <img src="/Theme/images/bodydv.png">
+                        </div>
+                        <div class="body-page-service-bottom-left-m-ct2">
+                            <img src="/Theme/images/tialong.jpg">
+                        </div>
 
-    <div class="row">
-        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-            <h2 id="gettingStartedTitle">Getting started</h2>
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="librariesTitle">
-            <h2 id="librariesTitle">Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="hostingTitle">
-            <h2 id="hostingTitle">Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-        </section>
+                    </div>
+                    <div class="body-page-service-bottom-left-r right">
+                        <img src="/Theme/images/nextr.png" />
+                    </div>
+
+                </div>
+                <div class="body-page-service-bottom-right">
+                    <div class="body-page-service-bottom-right-ct1">
+                        <h2>Tắm boss</h2>
+                        <div class="body-page-service-bottom-right-content">
+                            <p>Không chỉ là bệnh viện chăm sóc nhưng đây cũng là địa chỉ tắm cho chó mèo uy tín hàng đầu hiện nay tại Hồ Chí Minh. Giúp thú cưng không chỉ khỏe mạnh mà còn sạch sẽ, không bị stress, rụng lông và đem lại vẻ ngoài hoàn hảo.<br>Bỏ mèo vào lồng giặt, giặt với omo matic, sau đó đó treo lên giá treo đồ phơi dưới cái nắng của Sài Gòn và thế là bạn có 1 bé Boss sạch sẻ thơm tho!</p>
+                        </div>
+                    </div>
+                    <div class="body-page-service-bottom-right-ct2">
+                        <h2>Cắt tỉa lông cho boss</h2>
+                        <div class="body-page-service-bottom-right-content">
+                            <p>Cắt lông cho chó mèo là một vấn đề rất quan trọng. Việc đó đảm bảo cho sự phát triển về sức khỏe, thể chất và tinh thần cho thú cưng của bạn. Những thú cưng không được chăm sóc, cắt tỉa và làm đẹp thường có nguy cơ gặp phải bọ chét, ve rận, ký sinh trùng và các vấn đề về viêm da khác. Việc sử dụng dịch vụ cắt tỉa lông chó mèo tại Pet Mart định kỳ và thường xuyên sẽ đem lại nhiều lợi ích thiết thực cho vật nuôi của bạn. Hãy lập kế hoạch đưa thú cưng của bạn đến với chúng tôi mỗi tuần.</p>
+                        </div>
+                    </div>
+
+                    <div class="body-page-service-bottom-right-button">
+                        <a href=""><button name="book"><p style="font-weight: bold;">Book lịch ngay</p></button></a>
+                        <a href=""><button name="ct"><p style="font-weight: bold;">Chi tiết</p></button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</main>
+</div>

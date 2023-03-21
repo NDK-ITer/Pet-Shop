@@ -1,0 +1,62 @@
+﻿@model Pet_Shop.Models.PhieuDat
+
+@{
+    ViewBag.Title = "Phiếu Đặt";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin_PetShop.cshtml";
+}
+
+<div >
+    <h2>Details</h2><br /><br />
+
+    <div>
+        <h4>Phiếu Đặt</h4><br /><br />
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.NgayLap)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NgayLap)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SoTienCoc)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SoTienCoc)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.HinhThucCoc)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.HinhThucCoc)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NgayHen)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NgayHen)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IdNguoiDung)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IdNguoiDung)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.SoPD }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>
+

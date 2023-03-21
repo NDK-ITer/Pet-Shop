@@ -13,17 +13,13 @@ namespace Pet_Shop.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Products()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult DetailProduct()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }

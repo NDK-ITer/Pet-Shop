@@ -50,6 +50,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -168,6 +170,20 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\DichVusAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DoDungTCsAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DoiTuongKDsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HangSXesAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HoaDonsManagerController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LoaiThuCungsManagerController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PhieuDatsManagerController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ThuCungsAdminController.cs" />
+    <Compile Include="ClassData\DichVuAdmin.cs" />
+    <Compile Include="ClassData\DoDungTCAdmin.cs" />
+    <Compile Include="ClassData\DoiTuongKDAdmin.cs" />
+    <Compile Include="ClassData\ThuCungAdmin.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -175,8 +191,59 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CT_HoaDon.cs">
+      <DependentUpon>dbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CT_PhieuDat.cs">
+      <DependentUpon>dbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\dbContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\dbContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\dbContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DichVu.cs">
+      <DependentUpon>dbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DoDungTC.cs">
+      <DependentUpon>dbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DoiTuongKD.cs">
+      <DependentUpon>dbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HangSX.cs">
+      <DependentUpon>dbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HinhAnhDTKD.cs">
+      <DependentUpon>dbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HoaDon.cs">
+      <DependentUpon>dbContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\LoaiThuCung.cs">
+      <DependentUpon>dbContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\NhanSU.cs">
+      <DependentUpon>dbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhieuDat.cs">
+      <DependentUpon>dbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ThuCung.cs">
+      <DependentUpon>dbContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -200,12 +267,72 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\dbContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dbContext.edmx</DependentUpon>
+      <LastGenOutput>dbContext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\dbContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dbContext.edmx</DependentUpon>
+      <LastGenOutput>dbContext.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\HomeAdmin\Admin.cshtml" />
+    <Content Include="Areas\Admin\Views\HomeAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiThuCungsManager\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiThuCungsManager\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiThuCungsManager\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiThuCungsManager\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiThuCungsManager\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\HoaDonsManager\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\HoaDonsManager\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\HoaDonsManager\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\HoaDonsManager\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\HoaDonsManager\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\PhieuDatsManager\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\PhieuDatsManager\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\PhieuDatsManager\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\PhieuDatsManager\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\PhieuDatsManager\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\HangSXesAdmin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\HangSXesAdmin\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\HangSXesAdmin\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\HangSXesAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\HangSXesAdmin\Index.cshtml" />
+    <EntityDeploy Include="Models\dbContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>dbContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\dbContext.edmx.diagram">
+      <DependentUpon>dbContext.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\Admin\Views\DoiTuongKDs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\DoiTuongKDs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\DoiTuongKDs\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\DoiTuongKDs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\DoiTuongKDs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ThuCungsAdmin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ThuCungsAdmin\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ThuCungsAdmin\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ThuCungsAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ThuCungsAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\DoDungTCsAdmin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\DoDungTCsAdmin\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\DoDungTCsAdmin\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\DoDungTCsAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\DoDungTCsAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\DichVusAdmin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\DichVusAdmin\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\DichVusAdmin\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\DichVusAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\DichVusAdmin\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -217,6 +344,41 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Theme\css\StyleSheet.css" />
+    <Content Include="Theme\images\bodydv.png" />
+    <Content Include="Theme\images\cart.png" />
+    <Content Include="Theme\images\fast1.png" />
+    <Content Include="Theme\images\fast2.png" />
+    <Content Include="Theme\images\fast3.jpg" />
+    <Content Include="Theme\images\fast4.jpg" />
+    <Content Include="Theme\images\food.png" />
+    <Content Include="Theme\images\gau2.png" />
+    <Content Include="Theme\images\gâu.png" />
+    <Content Include="Theme\images\logo.png" />
+    <Content Include="Theme\images\map.jpg" />
+    <Content Include="Theme\images\Meo.png" />
+    <Content Include="Theme\images\Meo2.png" />
+    <Content Include="Theme\images\nextcate.png" />
+    <Content Include="Theme\images\nextl.png" />
+    <Content Include="Theme\images\nextr.png" />
+    <Content Include="Theme\images\slider1.jpg" />
+    <Content Include="Theme\images\slider2.jpg" />
+    <Content Include="Theme\images\slider3.jpg" />
+    <Content Include="Theme\images\slider4.jpg" />
+    <Content Include="Theme\images\sp1.jpg" />
+    <Content Include="Theme\images\sp10.jpg" />
+    <Content Include="Theme\images\sp2.jpg" />
+    <Content Include="Theme\images\sp3.jpg" />
+    <Content Include="Theme\images\sp4.jpg" />
+    <Content Include="Theme\images\sp5.jpg" />
+    <Content Include="Theme\images\sp6.jpg" />
+    <Content Include="Theme\images\sp7.jpg" />
+    <Content Include="Theme\images\sp8.jpg" />
+    <Content Include="Theme\images\sp9.jpg" />
+    <Content Include="Theme\images\success.png" />
+    <Content Include="Theme\images\tialong.jpg" />
+    <Content Include="Theme\images\toy.jpg" />
+    <Content Include="Theme\images\user.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -228,9 +390,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -251,9 +410,15 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin_PetShop.cshtml" />
+    <Content Include="Views\Home\Products.cshtml" />
+    <Content Include="Views\Home\DetailProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Data\ImagesProduct\" />
+    <Folder Include="Areas\Admin\ImagesProduct\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -281,6 +446,9 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

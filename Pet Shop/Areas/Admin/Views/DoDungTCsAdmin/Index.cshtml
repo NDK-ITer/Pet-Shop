@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Pet_Shop.Models.DoDungTC>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin_PetShop.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenDD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HangSX.TenNSX)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoaiThuCung.TenLoai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DoiTuongKD.MoTa)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenDD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HangSX.TenNSX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoaiThuCung.TenLoai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DoiTuongKD.MoTa)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaDD }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaDD }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaDD })
+        </td>
+    </tr>
+}
+
+</table>

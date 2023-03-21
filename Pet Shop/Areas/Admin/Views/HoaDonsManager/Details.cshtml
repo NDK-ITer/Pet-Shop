@@ -1,0 +1,70 @@
+﻿@model Pet_Shop.Models.HoaDon
+
+@{
+    ViewBag.Title = "Hóa Đơn";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin_PetShop.cshtml";
+}
+
+<div >
+    <h2>Details</h2><br /><br />
+
+    <div>
+        <h4>Hóa Đơn</h4><br /><br />
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.NgayLap)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NgayLap)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TongThanhTien)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TongThanhTien)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TenKH)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TenKH)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DiaChi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DiaChi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IdNguoiDung)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IdNguoiDung)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NhanSU.TenNS)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NhanSU.TenNS)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.SoHD }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>
+

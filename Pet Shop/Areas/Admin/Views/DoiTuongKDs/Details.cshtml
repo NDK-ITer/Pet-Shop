@@ -1,0 +1,91 @@
+﻿@model Pet_Shop.Models.DoiTuongKD
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin_PetShop.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DoiTuongKD</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DonGia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonGia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrangThai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrangThai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GiamGia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GiamGia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChiTiet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChiTiet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnhDaiDien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnhDaiDien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DichVu.TenDV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DichVu.TenDV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DoDungTC.TenDD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DoDungTC.TenDD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThuCung.TenTC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThuCung.TenTC)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaDT }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
