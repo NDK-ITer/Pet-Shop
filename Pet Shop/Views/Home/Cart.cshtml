@@ -1,0 +1,98 @@
+﻿
+@{
+    ViewBag.Title = "Cart";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="cart">
+    <div class="container">
+        <div class="cart-top-wrap">
+            <div class="cart-top">
+                <div class="cart-top-cart cart-top-item">
+                    <a href="cart.html" class="fas fa-shopping-cart"></a>
+                </div>
+                <div class="cart-top-payment cart-top-item">
+                    <a href="payment.html" class="fas fa-money-check-alt"></a>
+                </div>
+                <div class="cart-top-done cart-top-item">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="cart-content row">
+            <div class="cart-content-left">
+                <table>
+                    <tr>
+                        <th>Sản phẩm</th>
+                        <th>Tên sản phẩm</th>
+                        <th>size</th>
+                        <th>SL</th>
+                        <th>Thành tiền</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td><img src="~/Theme/images/sp8.jpg" alt=""></td>
+                        <td><p>Thịt ức gà nướng sốt cá ngừ cho mèo CIAO Tuna</p></td>
+                        <td><p>Lon lam lun</p></td>
+                        <td>
+                            <div id="buy-amount">
+                                <button class="minus-btn" onclick="handleMinus()">
+                                    <p>-</p>
+                                </button>
+                                <input type="text" name="amount" id="amount" value="1">
+                                <button class="plus-btn" onclick="handlePlus()">
+                                    <p>+</p>
+                                </button>
+                            </div>
+                        </td>
+                        <td><p>25.000 <sup>đ</sup></p></td>
+                        <td><span>X</span></td>
+                    </tr>
+                    <tr>
+                        <td><img src="~/Theme/images/sp9.jpg" alt=""></td>
+                        <td><p>Nước sốt pate cho mèo CIAO vị cá ngừ & cá bào nhật</p></td>
+                        <td><p>nho</p></td>
+                        <td>
+                            <div id="buy-amount">
+                                <button class="minus-btn" onclick="handleMinus()">
+                                    <p>-</p>
+                                </button>
+                                <input type="text" name="amount" id="amount" value="1">
+                                <button class="plus-btn" onclick="handlePlus()">
+                                    <p>+</p>
+                                </button>
+                            </div>
+                        </td>
+                        <td><p>35.000 <sup>đ</sup></p></td>
+                        <td><span>X</span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="cart-content-right">
+                <table>
+                    <tr>
+                        <th colspan="2">TỔNG TIỀN GIỎ HÀNG</th>
+                    </tr>
+                    <tr>
+                        <td>TỔNG SẢN PHẨM</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>TỔNG TIỀN HÀNG</td>
+                        <td><p>1.000.000 <sup>đ</sup></p></td>
+                    </tr>
+                    <tr>
+                        <td>TẠM TÍNH</td>
+                        <td><p style="color:black;font-weight: bold;">1.000.000 <sup>đ</sup></p></td>
+                    </tr>
+                </table>
+                <div class="cart-content-right-button">
+                    <button onclick="tieptucmuasam()">TIẾP TỤC MUA SẮM</button>
+                    <a href="payment.html"> <button>THANH TOÁN</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
