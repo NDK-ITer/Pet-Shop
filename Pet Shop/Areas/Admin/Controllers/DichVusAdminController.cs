@@ -100,8 +100,10 @@ namespace Pet_Shop.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit([Bind(Include = "MaDT,DonGia,TrangThai,GiamGia,MoTa,ChiTiet,TenDV")] DichVuAdmin dichVuAdmin)
         {
+            DichVu dichVu = db.DichVus.FirstOrDefault(x => x.DoiTuongKD.MaDT == dichVuAdmin.MaDT);
             if (ModelState.IsValid)
             {
+                
                 db.Entry(dichVu).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");

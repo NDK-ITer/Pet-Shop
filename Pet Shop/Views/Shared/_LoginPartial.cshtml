@@ -24,8 +24,8 @@
 else
 {
     <ul class="navbar-nav navbar-right">
-        <li><a class="fas fa-user"  href="@Url.Action("Login", "Account", new { id = "loginLink", @class = "nav-link" })"></a></li>
-        @*<li>@Html.ActionLink("Đăng Nhập", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "nav-link" })</li>*@
-        @*<li>@Html.ActionLink("Đăng Ký", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "nav-link" })</li>*@
+        <li><a class="fas fa-user" href="@Url.Action("Login", "Account", new { id = "loginLink", @class = "nav-link" })"></a></li>
+        <li>@Html.ActionLink("Đăng Nhập", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "nav-link" })</li>
+        <li>@Html.ActionLink("Đăng Ký", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "nav-link" })</li>
     </ul>
 }

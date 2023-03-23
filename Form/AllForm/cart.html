@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Thú Cưng</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+</head>
+
+<body>
+    <!------------------------------- <header> ------------------------------->
+    <div class="header">
+        <div class="logo">
+            <a href="home.html"><img src="images/logo.png" alt=""></a>
+        </div>
+        <div class="menu">
+            <li><a href="home.html">Trang chủ</a></li>
+            <li><a href="">Sản phẩm</a>
+                <ul class="sub-menu columm">
+                    <li  class="menu-category"><a href="">VỆ SINH & CHĂM SÓC</a>
+                        <ul>
+                            <li><a href="">Khay & Nhà vệ sinh</a></li>
+                            <li><a href="">Cát vệ sinh cho mèo</a></li>
+                            <li><a href="">Sữa tắm & Xịt dưỡng</a></li>
+                            <li><a href="">Lược chải lông & Kềm cắt móng</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-category"><a href="">THỨC ĂN CHO CHÓ</a>
+                        <ul>
+                            <li><a href="">Thức ăn hạt khô</a></li>
+                            <li><a href="">Pate & Nước sốt</a></li>
+                        </ul>
+                    </li>
+                    <li  class="menu-category"><a href="">ĐỒ DÙNG & PHỤ KIỆN</a>
+                        <ul>
+                            <li><a href="">Quần áo & Trang sức</a></li>
+                            <li><a href="">Vòng cổ & Dây dắt</a></li>
+                            <li><a href="">Túi xách & Balo đựng mèo</a></li>
+                            <li><a href="">Lồng vận chuyển mèo</a></li>
+                        </ul>
+                    </li>
+                    <li  class="menu-category"><a href="">THỨC ĂN CHO MÈO</a>
+                        <ul>
+                            <li><a href="">Thức ăn hạt khô</a></li>
+                            <li><a href="">Pate & Nước sốt</a></li>
+                        </ul>
+                    </li>                  
+                    <li class="menu-category"><a href="">NHÀ, CHUỒNG & NỆM</a>
+                        <ul>
+                            <li><a href="">Nhà cho mèo</a></li>
+                            <li><a href="">Trụ cột & bàn cào móng</a></li>
+                            <li><a href="">Chuồng mèo</a></li>
+                            <li><a href="">Ổ nệm & Thảm đệm</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-category"><a href="">THUỐC THÚ Y</a>
+                        <ul>
+                            <li><a href="">Tẩy xổ giun sán</a></li>
+                            <li><a href="">Trị ve rạn & Bọ chét</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="">Dịch vụ</a>
+            </li>
+            <li><a href="">Giới thiệu</a></li>
+            <li><a href="">Liên hệ</a></li>
+        </div>
+        <div class="others">
+            <li><a class="fas fa-user" href="#"></a></li>
+            <li><a class="fas fa-shopping-cart" href="#"></a></li>
+        </div>
+    </div>
+    <!------------------------------- <cart> ------------------------------->
+        <div class="cart">
+            <div class="container">
+                <div class="cart-top-wrap">
+                    <div class="cart-top">
+                        <div class="cart-top-cart cart-top-item">
+                            <a href="cart.html" class="fas fa-shopping-cart"></a>
+                        </div>
+                        <div class="cart-top-payment cart-top-item">
+                            <a href="payment.html" class="fas fa-money-check-alt"></a>
+                        </div>
+                        <div class="cart-top-done cart-top-item">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="cart-content row">
+                    <div class="cart-content-left">
+                        <table>
+                            <tr>
+                                <th>Sản phẩm</th>
+                                <th>Tên sản phẩm</th>
+                                <th>size</th>
+                                <th>SL</th>
+                                <th>Thành tiền</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <td><img src="images/sp8.jpg" alt=""></td>
+                                <td><p>Thịt ức gà nướng sốt cá ngừ cho mèo CIAO Tuna</p></td>
+                                <td><p>Lon lam lun</p></td>
+                                <td> <div id="buy-amount">
+                                    <button class="minus-btn" onclick="handleMinus()">
+                                        <p>-</p>
+                                    </button>
+                                    <input type="text" name="amount" id="amount" value="1">
+                                    <button class="plus-btn" onclick="handlePlus()">
+                                        <p>+</p>
+                                    </button>
+                                </div></td>
+                                <td><p>25.000 <sup>đ</sup></p></td>
+                                <td><span>X</span></td>
+                            </tr>
+                            <tr>
+                                <td><img src="images/sp9.jpg" alt=""></td>
+                                <td><p>Nước sốt pate cho mèo CIAO vị cá ngừ & cá bào nhật</p></td>
+                                <td><p>nho</p></td>
+                                <td> <div id="buy-amount">
+                                    <button class="minus-btn" onclick="handleMinus()">
+                                        <p>-</p>
+                                    </button>
+                                    <input type="text" name="amount" id="amount" value="1">
+                                    <button class="plus-btn" onclick="handlePlus()">
+                                        <p>+</p>
+                                    </button>
+                                </div></td>
+                                <td><p>35.000 <sup>đ</sup></p></td>
+                                <td><span>X</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="cart-content-right">
+                        <table>
+                            <tr>
+                                <th colspan="2">TỔNG TIỀN GIỎ HÀNG</th>
+                            </tr>
+                            <tr>
+                                <td>TỔNG SẢN PHẨM</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>TỔNG TIỀN HÀNG</td>
+                                <td><p>1.000.000 <sup>đ</sup></p></td>
+                            </tr>
+                            <tr>
+                                <td>TẠM TÍNH</td>
+                                <td><p style="color:black;font-weight: bold;">1.000.000 <sup>đ</sup></p></td>
+                            </tr>
+                        </table>
+                        <div class="cart-content-right-button">
+                            <button onclick="tieptucmuasam()">TIẾP TỤC MUA SẮM</button> 
+                            <a href="payment.html"> <button>THANH TOÁN</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!------------------------------- <contact-button> ------------------------------->
+    <div class="contact-button">
+        <a href="https://zalo.me/0963450084" target="_blank"><button id="myZalo">Zalo</button></a>
+        <a href="tel://0963450084" target="_blank"><button id="myCall"><i class="fas fa-phone"></i></button></a>
+    </div>
+    <!------------------------------- <footer> ------------------------------->
+    <div class="footer">
+        <div class="footer-top row">
+            <div class="footer-left row">
+                <div class="footer-left-img">
+                    <img src="images/logo.png" alt="">
+                </div>
+                <div class="footer-left-item">
+                    <h1>Shop thú cưng Kata</h1>
+                    <p>Email: petworldkata@gmail.com.</p>
+                    <p>Liên hệ: 096857463.
+                        <a href="https://www.facebook.com/"  target="_blank" class="fab fa-facebook-square"></a>
+                        <a href="https://www.instagram.com/"  target="_blank" class="fab fa-instagram"></a>
+                    </p>
+                    
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="footer-right-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125409.77948296019!2d106.53850631640626!3d10.807053000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d93fb381e671%3A0x85509c9a1ac479c1!2sKATA%20SHOP!5e0!3m2!1svi!2s!4v1678948125059!5m2!1svi!2s" frameborder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <hr>
+            ©Bản quyền thuộc về shop thú cưng kata
+        </div>
+    </div>
+</body>
+<script>
+    const header = document.querySelector(".header")
+    window.addEventListener("scroll",function(){
+        x = window.pageYOffset;
+        if(x>0){
+            header.classList.add("sticky")
+        }
+        else {
+            header.classList.remove("sticky")
+        }
+    })
+    const imgPosition = document.querySelectorAll(".aspect-ratio-169 img")
+    const imgContainer = document.querySelector('.aspect-ratio-169')
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+            document.getElementById("myZalo").style.display = "block";
+            document.getElementById("myCall").style.display = "block";
+    }
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    let amountElement = document.getElementById('amount')
+    let amount = amountElement.value
+    let render = (amount) => {
+        amountElement.value = amount
+    }
+    let handlePlus = () => {
+        if (amount < 20)
+            amount++
+        render(amount);
+    }
+    let handleMinus = () => {
+        if (amount > 1)
+            amount--
+        render(amount);
+    }
+    amountElement.addEventListener('input', () => {
+        amount = amountElement.value;
+        amount = parseInt(amount);
+        amount = (isNaN(amount) || amount < 1 || amount > 20) ? 1 : amount;
+        render(amount)
+    });
+    function tieptucmuasam(){
+        history.back();
+    }
+</script>
+</html>
