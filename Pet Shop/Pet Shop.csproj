@@ -345,6 +345,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Theme\css\StyleSheet.css" />
+    <Content Include="Theme\css\StyleSheetLogin.css" />
     <Content Include="Theme\images\bodydv.png" />
     <Content Include="Theme\images\cart.png" />
     <Content Include="Theme\images\fast1.png" />
@@ -414,6 +415,7 @@
     <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin_PetShop.cshtml" />
     <Content Include="Views\Home\Products.cshtml" />
     <Content Include="Views\Home\DetailProduct.cshtml" />
+    <Content Include="Views\Shared\_LoginSign.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
