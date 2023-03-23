@@ -80,13 +80,19 @@
                 font-weight: 400;
                 white-space: nowrap;
             }
-
-        .sidebar .nav-links .log_out {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }
-
+                }
+                .sidebar .nav-links .log_out {
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;    
+                }
+.sidebar .nav-links li:hover .sub-menu-2 {
+    display:block;
+}
+.sub-menu-2 {
+    display: none;
+    background: #174070;
+}
 .home-section {
     position: relative;
     background: #f5f5f5;

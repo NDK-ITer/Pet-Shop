@@ -8,6 +8,7 @@
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 <body>
     <div class="sidebar">
@@ -17,47 +18,69 @@
         </div>
         <ul class="nav-links">
             @*<li>@Html.ActionLink("Trang chủ quản lý", "Index", "HomeAdmin")</li>
-            <li>@Html.ActionLink("Loại thú cưng", "Index", "LoaiThuCungsManager")</li>
-            <li>@Html.ActionLink("Sản phẩm và dịch vụ", "Index", "DoiTuongKDsManager")</li>
-            <li>@Html.ActionLink("Hóa đơn", "Index", "HoaDonsManager")</li>
-            <li>@Html.ActionLink("Phiếu đặt", "Index", "PhieuDatsManager")</li>*@
+        <li>@Html.ActionLink("Loại thú cưng", "Index", "LoaiThuCungsManager")</li>
+        <li>@Html.ActionLink("Sản phẩm và dịch vụ", "Index", "DoiTuongKDsManager")</li>
+        <li>@Html.ActionLink("Hóa đơn", "Index", "HoaDonsManager")</li>
+        <li>@Html.ActionLink("Phiếu đặt", "Index", "PhieuDatsManager")</li>*@
 
             <li>
-                    <a href="~/Admin/HomeAdmin/Index" class="active">
-                        <i class='bx bx-grid-alt'></i>
-                        <span class="links_name">Trang chủ quản lý</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="~/Admin/LoaiThuCungsManager/Index">
-                        <i class='bx bx-box'></i>
-                        <span class="links_name">Loại thú cưng</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="~/Admin/DoiTuongKDsManager/Index">
-                        <i class='bx bx-list-ul'></i>
-                        <span class="links_name">Sản phẩm và dịch vụ</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="~/Admin/HoaDonsManager/Index">
-                        <i class='bx bx-pie-chart-alt-2'></i>
-                        <span class="links_name">Hóa đơn</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="~/Admin/PhieuDatsManager/Index">
-                        <i class='bx bx-coin-stack'></i>
-                        <span class="links_name">Phiếu đặt</span>
-                    </a>
-                </li>
-                <li class="log_out">
-                    <a href="#">
-                        <i class='bx bx-log-out'></i>
-                        <span class="links_name">Log out</span>
-                    </a>
-                </li>
+                <a href="~/Admin/HomeAdmin/Index" class="active">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">Trang chủ quản lý</span>
+                </a>
+            </li>
+            <li>
+                <a href="~/Admin/LoaiThuCungsManager/Index">
+                    <i class='bx bx-box'></i>
+                    <span class="links_name">Loại thú cưng</span>
+                </a>
+            </li>
+            <li>
+                <a href="~/Admin/DoiTuongKDsManager/Index">
+                    <i class='bx bx-list-ul'></i>
+                    <span class="links_name">Sản phẩm và dịch vụ</span>
+                    <ul class="sub-menu-2"">
+                        <li>
+                            <a href="~/Admin/DoiTuongKDsManager/Index">
+                                <i class='bx bx-list-ul'></i>
+                                <span class="links_name">Thú cưng</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="~/Admin/DoiTuongKDsManager/Index">
+                                <i class='bx bx-list-ul'></i>
+                                <span class="links_name">Đồ dùng thú cưng</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="~/Admin/DoiTuongKDsManager/Index">
+                                <i class='bx bx-list-ul'></i>
+                                <span class="links_name">Dịch vụ</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                </a>
+            </li>
+           
+            <li>
+                <a href="~/Admin/HoaDonsManager/Index">
+                    <i class='bx bx-pie-chart-alt-2'></i>
+                    <span class="links_name">Hóa đơn</span>
+                </a>
+            </li>
+            <li>
+                <a href="~/Admin/PhieuDatsManager/Index">
+                    <i class='bx bx-coin-stack'></i>
+                    <span class="links_name">Phiếu đặt</span>
+                </a>
+            </li>
+            <li class="log_out">
+                <a href="#">
+                    <i class='bx bx-log-out'></i>
+                    <span class="links_name">Log out</span>
+                </a>
+            </li>
         </ul>
     </div>
     <section class="home-section">

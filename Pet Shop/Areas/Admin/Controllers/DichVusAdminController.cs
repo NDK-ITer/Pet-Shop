@@ -50,7 +50,7 @@ namespace Pet_Shop.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "MaDV,TenDV")] DichVuAdmin dichVuAdmin)
+        public async Task<ActionResult> Create([Bind(Include = "MaDT,DonGia,TrangThai,GiamGia,MoTa,ChiTiet,TenDV")] DichVuAdmin dichVuAdmin)
         {
             DichVu dichVu = new DichVu();
             DoiTuongKD doiTuongKD = new DoiTuongKD();
@@ -84,6 +84,7 @@ namespace Pet_Shop.Areas.Admin.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             DichVu dichVu = await db.DichVus.FindAsync(id);
+            //DichVu dichVu = db.DichVus.FirstOrDefault(s => s.DoiTuongKD.MaDT == id);
             if (dichVu == null)
             {
                 return HttpNotFound();
@@ -97,7 +98,7 @@ namespace Pet_Shop.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "MaDV,TenDV")] DichVu dichVu)
+        public async Task<ActionResult> Edit([Bind(Include = "MaDT,DonGia,TrangThai,GiamGia,MoTa,ChiTiet,TenDV")] DichVuAdmin dichVuAdmin)
         {
             if (ModelState.IsValid)
             {
