@@ -29,8 +29,11 @@
                 </div>
                 <span>hoặc sử dụng email để đăng ký</span>
                 <input type="text" placeholder="Name" />
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
+                @*<input type="email" placeholder="Email" />*@ @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                @*<input type="password" placeholder="Password" />*@
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                 <button>Đăng ký</button>
             </form>
         </div>
