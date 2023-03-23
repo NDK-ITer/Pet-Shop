@@ -322,7 +322,6 @@
     <Content Include="Areas\Admin\Views\ThuCungsAdmin\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\ThuCungsAdmin\Details.cshtml" />
     <Content Include="Areas\Admin\Views\ThuCungsAdmin\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\ThuCungsAdmin\Index.cshtml" />
     <Content Include="Areas\Admin\Views\DoDungTCsAdmin\Create.cshtml" />
     <Content Include="Areas\Admin\Views\DoDungTCsAdmin\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\DoDungTCsAdmin\Details.cshtml" />
@@ -333,6 +332,7 @@
     <Content Include="Areas\Admin\Views\DichVusAdmin\Details.cshtml" />
     <Content Include="Areas\Admin\Views\DichVusAdmin\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\DichVusAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ThuCungsAdmin\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
