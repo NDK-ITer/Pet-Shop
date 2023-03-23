@@ -10,19 +10,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <div class="sidebar">
-        <div class="logo-details">
-            <i class='bx bxl-c-plus-plus'></i>
-            <span class="logo_name">Pet Shop Manager</span>
-        </div>
-        <ul class="nav-links">
-            @*<li>@Html.ActionLink("Trang chủ quản lý", "Index", "HomeAdmin")</li>
-            <li>@Html.ActionLink("Loại thú cưng", "Index", "LoaiThuCungsManager")</li>
-            <li>@Html.ActionLink("Sản phẩm và dịch vụ", "Index", "DoiTuongKDsManager")</li>
-            <li>@Html.ActionLink("Hóa đơn", "Index", "HoaDonsManager")</li>
-            <li>@Html.ActionLink("Phiếu đặt", "Index", "PhieuDatsManager")</li>*@
+    <div class="BodyAdmin row">
+        <div class="sidebar ">
+            <div class="logo-details">
+                <i class='bx bxl-c-plus-plus'></i>
+                <span class="logo_name">Pet Shop Manager</span>
+            </div>
+            <ul class="nav-links">
+                @*<li>@Html.ActionLink("Trang chủ quản lý", "Index", "HomeAdmin")</li>
+                <li>@Html.ActionLink("Loại thú cưng", "Index", "LoaiThuCungsManager")</li>
+                <li>@Html.ActionLink("Sản phẩm và dịch vụ", "Index", "DoiTuongKDsManager")</li>
+                <li>@Html.ActionLink("Hóa đơn", "Index", "HoaDonsManager")</li>
+                <li>@Html.ActionLink("Phiếu đặt", "Index", "PhieuDatsManager")</li>*@
 
-            <li>
+                <li>
                     <a href="~/Admin/HomeAdmin/Index" class="active">
                         <i class='bx bx-grid-alt'></i>
                         <span class="links_name">Trang chủ quản lý</span>
@@ -38,6 +39,11 @@
                     <a href="~/Admin/DoiTuongKDsManager/Index">
                         <i class='bx bx-list-ul'></i>
                         <span class="links_name">Sản phẩm và dịch vụ</span>
+                        <ul class="sub-menu-2">
+                            <a href="~/Admin/ThuCungsAdmin/Index">Thú cưng</a>
+                            <a href="~/Admin/DoDungTCsAdmin/Index">Đồ dùng thú cưng</a>
+                            <a href="~/Admin/DichVusAdmin/Index">Dịch vụ</a>
+                        </ul>
                     </a>
                 </li>
                 <li>
@@ -58,38 +64,40 @@
                         <span class="links_name">Log out</span>
                     </a>
                 </li>
-        </ul>
-    </div>
-    <section class="home-section">
-        <nav>
-            <div class="sidebar-button">
-                <i class='bx bx-menu sidebarBtn'></i>
-                <span class="dashboard">Dashboard</span>
-            </div>
-            <div class="profile-details">
-                <span class="admin_name">Prem Shahi</span>
-                <i class='bx bx-chevron-down'></i>
-            </div>
-        </nav>
-        <div class="home-content">
-            <div class="overview-boxes">
-                @RenderBody()
-            </div>
+            </ul>
         </div>
+        <section class="home-section">
+            <nav>
+                <div class="sidebar-button">
+                    <i class='bx bx-menu sidebarBtn'></i>
+                    <span class="dashboard">Dashboard</span>
+                </div>
+                <div class="profile-details">
+                    <span class="admin_name">Prem Shahi</span>
+                    <i class='bx bx-chevron-down'></i>
+                </div>
+            </nav>
+            <div class="home-content">
+                <div class="overview-boxes">
+                    @RenderBody()
+                </div>
+            </div>
 
-    </section>
+        </section>
 
-    <script>
-        let sidebar = document.querySelector(".sidebar");
-        let sidebarBtn = document.querySelector(".sidebarBtn");
-        sidebarBtn.onclick = function () {
-            sidebar.classList.toggle("active");
-            if (sidebar.classList.contains("active")) {
-                sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
-            } else
-                sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
-        }
-    </script>
+        <script>
+            let sidebar = document.querySelector(".sidebar");
+            let sidebarBtn = document.querySelector(".sidebarBtn");
+            sidebarBtn.onclick = function () {
+                sidebar.classList.toggle("active");
+                if (sidebar.classList.contains("active")) {
+                    sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+                } else
+                    sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+            }
+        </script>
+    </div>
+    
 </body>
 <script>
 
