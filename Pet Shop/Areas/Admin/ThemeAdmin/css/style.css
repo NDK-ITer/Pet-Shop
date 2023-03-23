@@ -237,7 +237,7 @@ table, th, tr {
     border-radius: 5px;
 }
 .home-content .overview-boxes {
-    display: flex;
+    
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
