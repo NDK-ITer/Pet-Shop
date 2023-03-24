@@ -11,7 +11,7 @@ using Pet_Shop.Models;
 
 namespace Pet_Shop.Areas.Admin.Controllers
 {
-    public class DoiTuongKDsController : Controller
+    public class DoiTuongKDsManagerController : Controller
     {
         private QuanLyThuCungEntities db = new QuanLyThuCungEntities();
 
