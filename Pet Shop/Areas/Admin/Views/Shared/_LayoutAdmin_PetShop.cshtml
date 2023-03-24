@@ -8,116 +8,108 @@
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 </head>
 <body>
-    <div class="sidebar">
-        <div class="logo-details">
-            <i class='bx bxl-c-plus-plus'></i>
-            <span class="logo_name">Pet Shop Manager</span>
+    <div class="BodyAdmin row">
+        <div class="sidebar ">
+            <div class="logo-details">
+                <i class='bx bxl-c-plus-plus'></i>
+                <span class="logo_name">Pet Shop Manager</span>
+            </div>
+            <ul class="nav-links">
+                @*<li>@Html.ActionLink("Trang chủ quản lý", "Index", "HomeAdmin")</li>
+                    <li>@Html.ActionLink("Loại thú cưng", "Index", "LoaiThuCungsManager")</li>
+                    <li>@Html.ActionLink("Sản phẩm và dịch vụ", "Index", "DoiTuongKDsManager")</li>
+                    <li>@Html.ActionLink("Hóa đơn", "Index", "HoaDonsManager")</li>
+                    <li>@Html.ActionLink("Phiếu đặt", "Index", "PhieuDatsManager")</li>*@
+
+                <li>
+                    <a href="~/Admin/HomeAdmin/Index" class="active">
+                        <i class='bx bx-grid-alt'></i>
+                        <span class="links_name">Trang chủ quản lý</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="~/Admin/LoaiThuCungsManager/Index">
+                        <i class='bx bx-box'></i>
+                        <span class="links_name">Loại thú cưng</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="~/Admin/DoiTuongKDs/Index">
+                        <i class='bx bx-list-ul'></i>
+                        <span class="links_name">Sản phẩm và dịch vụ</span>
+                        <ul class="sub-menu-2">
+                            <a href="~/Admin/ThuCungsAdmin/Index">Thú cưng</a>
+                            <a href="~/Admin/DoDungTCsAdmin/Index">Đồ dùng thú cưng</a>
+                            <a href="~/Admin/DichVusAdmin/Index">Dịch vụ</a>
+                        </ul>
+                    </a>
+                </li>
+                <li>
+                    <a href="~/Admin/HoaDonsManager/Index">
+                        <i class='bx bx-pie-chart-alt-2'></i>
+                        <span class="links_name">Hóa đơn</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="~/Admin/PhieuDatsManager/Index">
+                        <i class='bx bx-coin-stack'></i>
+                        <span class="links_name">Phiếu đặt</span>
+                    </a>
+                </li>
+                <li class="log_out">
+                    <a href="#">
+                        <i class='bx bx-log-out'></i>
+                        <span class="links_name">Log out</span>
+                    </a>
+                </li>
+            </ul>
         </div>
-        <ul class="nav-links">
-            @*<li>@Html.ActionLink("Trang chủ quản lý", "Index", "HomeAdmin")</li>
-              <li>@Html.ActionLink("Loại thú cưng", "Index", "LoaiThuCungsManager")</li>
-              <li>@Html.ActionLink("Sản phẩm và dịch vụ", "Index", "DoiTuongKDsManager")</li>
-              <li>@Html.ActionLink("Hóa đơn", "Index", "HoaDonsManager")</li>
-              <li>@Html.ActionLink("Phiếu đặt", "Index", "PhieuDatsManager")</li>*@
+        <section class="home-section">
+            <nav>
+                <div class="sidebar-button">
+                    <i class='bx bx-menu sidebarBtn'></i>
+                    <span class="dashboard">Dashboard</span>
+                </div>
+                
+            </nav>
+            <div class="home-content">
+                <div class="overview-boxes">
+                    @RenderBody()
+                </div>
+            </div>
 
-            <li>
-                <a href="Admin/HomeAdmin/Index" class="active">
-                    <i class='bx bx-grid-alt'></i>
-                    <span class="links_name">Trang chủ quản lý</span>
-                </a>
-            </li>
-            <li>
-                <a href="~/Admin/LoaiThuCungsManager/Index">
-                    <i class='bx bx-box'></i>
-                    <span class="links_name">Loại thú cưng</span>
-                </a>
-            </li>
-            <li>
-                <a href="~/Admin/DoiTuongKDsManager/Index">
-                    <i class='bx bx-list-ul'></i>
-                    <span class="links_name">Sản phẩm và dịch vụ</span>
-                    <ul class="sub-menu-2"">
-                        <li>
-                            <a href="~/Admin/DoiTuongKDsManager/Index">
-                                <i class='bx bx-list-ul'></i>
-                                <span class="links_name">Thú cưng</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="~/Admin/DoiTuongKDsManager/Index">
-                                <i class='bx bx-list-ul'></i>
-                                <span class="links_name">Đồ dùng thú cưng</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="~/Admin/DoiTuongKDsManager/Index">
-                                <i class='bx bx-list-ul'></i>
-                                <span class="links_name">Dịch vụ</span>
-                            </a>
-                        </li>
-                    </ul>
+        </section>
 
-                </a>
-            </li>
-           
-            <li>
-                <a href="~/Admin/HoaDonsManager/Index">
-                    <i class='bx bx-pie-chart-alt-2'></i>
-                    <span class="links_name">Hóa đơn</span>
-                </a>
-            </li>
-            <li>
-                <a href="~/Admin/PhieuDatsManager/Index">
-                    <i class='bx bx-coin-stack'></i>
-                    <span class="links_name">Phiếu đặt</span>
-                </a>
-            </li>
-        </ul>
+        <script>
+            let sidebar = document.querySelector(".sidebar");
+            let sidebarBtn = document.querySelector(".sidebarBtn");
+            sidebarBtn.onclick = function () {
+                sidebar.classList.toggle("active");
+                if (sidebar.classList.contains("active")) {
+                    sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+                } else
+                    sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+            }
+        </script>
     </div>
-    <section class="home-section">
-        <nav>
-            <div class="sidebar-button">
-                <i class='bx bx-menu sidebarBtn'></i>
-                <span class="dashboard">Dashboard</span>
-            </div>
-        </nav>
-        <div class="home-content">
-            <div class="overview-boxes">
-                @RenderBody()
-            </div>
-        </div>
 
-    </section>
-
-    <script>
-        let sidebar = document.querySelector(".sidebar");
-        let sidebarBtn = document.querySelector(".sidebarBtn");
-        sidebarBtn.onclick = function () {
-            sidebar.classList.toggle("active");
-            if (sidebar.classList.contains("active")) {
-                sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
-            } else
-                sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
-        }
-    </script>
 </body>
 <script>
 
-        fileImage.onchange = evt => {
+    fileImage.onchange = evt => {
 
-            const [file] = fileImage.files
+        const [file] = fileImage.files
 
-            if (file) {
+        if (file) {
 
-                preview.src = URL.createObjectURL(file);
+            preview.src = URL.createObjectURL(file);
 
-                $("#preview").removeClass("hidden");
-
-            }
+            $("#preview").removeClass("hidden");
 
         }
-    </script>
+
+    }
+</script>
 </html>
