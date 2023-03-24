@@ -173,7 +173,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DichVusAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\DoDungTCsAdminController.cs" />
-    <Compile Include="Areas\Admin\Controllers\DoiTuongKDsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DoiTuongKDsManagerController.cs" />
     <Compile Include="Areas\Admin\Controllers\HangSXesAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\HoaDonsManagerController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
@@ -313,11 +313,11 @@
     <Content Include="Models\dbContext.edmx.diagram">
       <DependentUpon>dbContext.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\Admin\Views\DoiTuongKDs\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\DoiTuongKDs\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\DoiTuongKDs\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\DoiTuongKDs\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\DoiTuongKDs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\DoiTuongKDsManager\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\DoiTuongKDsManager\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\DoiTuongKDsManager\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\DoiTuongKDsManager\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\DoiTuongKDsManager\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ThuCungsAdmin\Create.cshtml" />
     <Content Include="Areas\Admin\Views\ThuCungsAdmin\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\ThuCungsAdmin\Details.cshtml" />
