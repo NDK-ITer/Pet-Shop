@@ -88,7 +88,7 @@ form {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 0 50px;
+    padding: 18px 50px 0 50px;
     text-align: center;
 }
 input {
@@ -259,3 +259,21 @@ footer {
         color: #3c97bf;
         text-decoration: none;
     }
+.fbli {
+    text-align:center;
+    align-items: center;
+}
+.fbli p{
+    margin:0;
+}
+    .fbli form {
+        padding-top: 4px!important;
+    }
+.menu-u-drop {
+    position: absolute;
+    transition: 0.3s;
+    z-index: 1;
+    min-width: 132px;
+    min-height: 44px;
+    background: #FEA8A7;
+}

@@ -29,8 +29,8 @@
     width: 307px;
     border: 1px solid #CCC;
     visibility: hidden;
-    left: 300px;
-    top: 0;
+    left: 295px;
+    top: 10px;
     transition: 0.3s;
     z-index: 1;
     background: linear-gradient(90deg, #FEA8A7 0%, #FCD2BA 100%);
@@ -109,7 +109,7 @@
 
         .sidebar .nav-links li:hover .sub-menu-2 {
             visibility: visible;
-            left: 307px;
+            top:0;
         }
 
         .sidebar .nav-links li i {
@@ -552,3 +552,35 @@ table, th, tr {
         width: calc(100% - 60px);
     }
 }
+h4 {
+    font-size: 20px;
+    padding: 10px 0;
+}
+.form-group {
+    padding: 10px 0px 5px 0;
+}
+.col-md-10 {
+    padding-top: 5px;
+}
+.home-section .home-content {
+    position: relative;
+    background: whitesmoke;
+}
+.form-group-flex {
+    display: flex;
+}
+    .form-group-flex .col-md-10 {
+        padding-top: 0 !important;
+        padding-left: 5px
+    }
+input.btn.btn-default {
+    font-size: 16px;
+    padding: 2px;
+    background: #fea8a76e;
+    border: 1px solid #ddd;
+    border-radius:5px;
+}
+    input.btn.btn-default:hover {
+        background: #FEA8A7;
+        border: 1px solid #000;
+    }
