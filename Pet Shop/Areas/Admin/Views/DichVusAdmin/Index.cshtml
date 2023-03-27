@@ -4,8 +4,9 @@
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin_PetShop.cshtml";
 }
+<h2>Dịch vụ</h2>
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Tạo mới", "Create")
 </p>
 <table class="table">
     <tr>
@@ -27,9 +28,9 @@
             @Html.DisplayFor(modelItem => item.DoiTuongKD.MoTa)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaDV }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaDV }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaDV })
+            @Html.ActionLink("Sửa", "Edit", new { id=item.MaDV }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.MaDV }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.MaDV })
         </td>
     </tr>
 }

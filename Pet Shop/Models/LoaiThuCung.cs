@@ -21,7 +21,7 @@ namespace Pet_Shop.Models
             this.DoDungTCs = new HashSet<DoDungTC>();
             this.ThuCungs = new HashSet<ThuCung>();
         }
-    
+        [Display(Name = "Mã loại thú cưng")]
         public string MaLoaiTC { get; set; }
         [Display(Name = "Tên loại thú cưng")]
         public string TenLoai { get; set; }

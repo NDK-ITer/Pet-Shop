@@ -242,11 +242,6 @@ nav .profile-details i {
     position: relative;
 }
 
-table, th, tr {
-    border: 1px solid #000;
-    border-radius: 5px;
-}
-
 .home-content .overview-boxes {
     align-items: center;
     justify-content: space-between;
@@ -604,4 +599,20 @@ input.btn.btn-default {
 }
 .group-right {
     width: 40%;
+}
+table, th, td {
+    border-collapse: collapse;
+    border: 1px solid;
+    
+    padding:5px;
+}   
+tr:first-child {
+    background:linear-gradient(90deg, #FEA8A7 0%, #FCD2BA 100%);
+
+}
+tr:hover {
+    background-color: #fea8a77a;
+}
+a {
+    color: #000;
 }

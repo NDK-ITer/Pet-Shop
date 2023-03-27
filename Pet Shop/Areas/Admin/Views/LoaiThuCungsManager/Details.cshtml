@@ -6,25 +6,17 @@
 }
 
 <div >
-    <h2>Details</h2><br /><br />
-
     <div>
-        <h4>Loại Thú Cưng</h4><br /><br />
+        <h4>Thông tin thú cưng</h4>
         <hr />
         <dl class="dl-horizontal">
             <dt>
-                @Html.DisplayNameFor(model => model.TenLoai)
+                @Html.DisplayNameFor(model => model.TenLoai) :  @Html.DisplayFor(model => model.TenLoai)
             </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.TenLoai)
-            </dd>
-
         </dl>
     </div>
     <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.MaLoaiTC }) |
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Trở lại danh sách", "Index")
     </p>
 
 </div>

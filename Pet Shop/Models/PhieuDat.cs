@@ -20,7 +20,7 @@ namespace Pet_Shop.Models
         {
             this.CT_PhieuDat = new HashSet<CT_PhieuDat>();
         }
-    
+        [Display(Name = "Mã phiếu đặt")]
         public string SoPD { get; set; }
         [Display(Name = "Ngày lập")]
         public Nullable<System.DateTime> NgayLap { get; set; }

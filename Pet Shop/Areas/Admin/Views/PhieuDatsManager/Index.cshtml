@@ -9,7 +9,7 @@
     <h2>Phiếu đặt</h2>
 
     <p>
-        @Html.ActionLink("Create New", "Create")
+        @Html.ActionLink("Thêm mới", "Create")
     </p>
     <table class="table">
         <tr>
@@ -50,9 +50,9 @@
                     @Html.DisplayFor(modelItem => item.IdNguoiDung)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.SoPD }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.SoPD }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.SoPD })
+                    @Html.ActionLink("Sửa", "Edit", new { id = item.SoPD }) |
+                    @Html.ActionLink("Chi tiết", "Details", new { id = item.SoPD }) |
+                    @Html.ActionLink("Xóa", "Delete", new { id = item.SoPD })
                 </td>
             </tr>
         }

@@ -6,21 +6,13 @@
 }
 
 <div >
-    <h2>Delete</h2><br /><br />
-
-    <h3>Are you sure you want to delete this?</h3>
     <div>
-        <h4>Loại Thú Cưng</h4><br /><br />
+        <h4>Xóa thú cưng này ?</h4>
         <hr />
-        <dl class="dl-horizontal">
+        <dl class="dl-horizontal" style="padding-bottom:5px">
             <dt>
-                @Html.DisplayNameFor(model => model.TenLoai)
+                @Html.DisplayNameFor(model => model.TenLoai) :  @Html.DisplayFor(model => model.TenLoai)
             </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.TenLoai)
-            </dd>
-
         </dl>
 
         @using (Html.BeginForm())
@@ -28,8 +20,8 @@
             @Html.AntiForgeryToken()
 
             <div class="form-actions no-color">
-                <input type="submit" value="Delete" class="btn btn-default" /> |
-                @Html.ActionLink("Back to List", "Index")
+                <input type="submit" value="Xóa nó" class="btn btn-default" /> |
+                @Html.ActionLink("Trở lại danh sách", "Index")
             </div>
         }
     </div>

@@ -4,11 +4,8 @@
     ViewBag.Title = "Details";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin_PetShop.cshtml";
 }
-
-<h2>Details</h2>
-
 <div>
-    <h4>DoDungTC</h4>
+    <h4>Chi tiết đồ dùng</h4>
     <hr />
     <dl class="dl-horizontal">
 
@@ -95,6 +92,5 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MaDD }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Trở lại danh sách", "Index")
 </p>

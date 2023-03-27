@@ -4,113 +4,50 @@
     ViewBag.Title = "Details";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin_PetShop.cshtml";
 }
-
-<h2>Details</h2>
-
 <div>
-    <h4>ThuCung</h4>
+    <h4>Chi tiết thú cưng</h4>
     <hr />
     <dl class="dl-horizontal">
 
         <dt>
-            @Html.DisplayNameFor(model => model.DoiTuongKD.DonGia)
+            @Html.DisplayNameFor(model => model.DoiTuongKD.DonGia) :@Html.DisplayFor(model => model.DoiTuongKD.DonGia)
         </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DoiTuongKD.DonGia)
-        </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.DoiTuongKD.TrangThai)
+            @Html.DisplayNameFor(model => model.DoiTuongKD.TrangThai) :@Html.DisplayFor(model => model.DoiTuongKD.TrangThai)
         </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DoiTuongKD.TrangThai)
-        </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.DoiTuongKD.GiamGia)
+            @Html.DisplayNameFor(model => model.DoiTuongKD.GiamGia) : @Html.DisplayFor(model => model.DoiTuongKD.GiamGia)
         </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DoiTuongKD.GiamGia)
-        </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.DoiTuongKD.MoTa)
+            @Html.DisplayNameFor(model => model.DoiTuongKD.MoTa) : @Html.DisplayFor(model => model.DoiTuongKD.MoTa)
         </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DoiTuongKD.MoTa)
-        </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.DoiTuongKD.ChiTiet)
+            @Html.DisplayNameFor(model => model.DoiTuongKD.ChiTiet) :@Html.DisplayFor(model => model.DoiTuongKD.ChiTiet)
         </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DoiTuongKD.ChiTiet)
-        </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.DoiTuongKD.AnhDaiDien)
+            @Html.DisplayNameFor(model => model.DoiTuongKD.AnhDaiDien) : @Html.DisplayFor(model => model.DoiTuongKD.AnhDaiDien)
         </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DoiTuongKD.AnhDaiDien)
-        </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.TenTC)
+            @Html.DisplayNameFor(model => model.TenTC): @Html.DisplayFor(model => model.TenTC)
         </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TenTC)
-        </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.GioiTinh)
+            @Html.DisplayNameFor(model => model.GioiTinh) : @Html.DisplayFor(model => model.GioiTinh)
         </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.GioiTinh)
-        </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.KichCo)
+            @Html.DisplayNameFor(model => model.KichCo): @Html.DisplayFor(model => model.KichCo)
         </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.KichCo)
-        </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.TiemPhong)
+            @Html.DisplayNameFor(model => model.TiemPhong) : @Html.DisplayFor(model => model.TiemPhong)
         </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TiemPhong)
-        </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.DoiTuongKD.MoTa)
+            @Html.DisplayNameFor(model => model.DoiTuongKD.MoTa) : @Html.DisplayFor(model => model.DoiTuongKD.MoTa)
         </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DoiTuongKD.MoTa)
-        </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.LoaiThuCung.TenLoai)
+            @Html.DisplayNameFor(model => model.LoaiThuCung.TenLoai) : @Html.DisplayFor(model => model.LoaiThuCung.TenLoai)
         </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LoaiThuCung.TenLoai)
-        </dd>
-
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MaTC }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.MaTC }) |
+    @Html.ActionLink("Trở lại danh sách", "Index")
 </p>
