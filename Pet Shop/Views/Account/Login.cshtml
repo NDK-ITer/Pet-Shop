@@ -31,10 +31,10 @@
                     @Html.ValidationSummary(true, "")
 
                     @*<div class="social-container">
-                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-            </div>*@
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                    </div>*@
                     @Html.TextBoxFor(m => m.Email, new { @placeholder = "Email" })
                     @Html.ValidationMessageFor(m => m.Email, "")
                     @Html.PasswordFor(m => m.Password, new { @placeholder = "Password" })

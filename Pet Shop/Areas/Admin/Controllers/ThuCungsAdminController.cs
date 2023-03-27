@@ -9,6 +9,8 @@ using System.Web;
 using System.Web.Mvc;
 using Pet_Shop.Models;
 using Pet_Shop.ClassData;
+using System.Data;
+using System.IO;
 
 namespace Pet_Shop.Areas.Admin.Controllers
 {
@@ -41,9 +43,10 @@ namespace Pet_Shop.Areas.Admin.Controllers
         // GET: Admin/ThuCungsAdmin/Create
         public ActionResult Create()
         {
+            ThuCungAdmin thuCungAdmin = new ThuCungAdmin();
             ViewBag.MaTC = new SelectList(db.DoiTuongKDs, "MaDT", "MoTa");
             ViewBag.MaLoaiTC = new SelectList(db.LoaiThuCungs, "MaLoaiTC", "TenLoai");
-            return View();
+            return View(thuCungAdmin);
         }
 
         // POST: Admin/ThuCungsAdmin/Create
@@ -51,18 +54,32 @@ namespace Pet_Shop.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "MaDT,DonGia,TrangThai,GiamGia,MoTa,ChiTiet,TenTC,MaLoaiTC,GioiTinh,KichCo,TiemPhong")] ThuCungAdmin thuCungAdmin)
+        public async Task<ActionResult> Create(ThuCungAdmin thuCungAdmin, HttpPostedFileBase Content)
         {
             ThuCung thuCung = new ThuCung();
             DoiTuongKD doiTuongKD = new DoiTuongKD();
             if (ModelState.IsValid)
             {
+
+                if (Content != null && Content.ContentLength > 0)
+                {
+                    //var typeFile = Path.GetExtension(Content.FileName);
+                    //thuCungAdmin.AnhDaiDien = thuCungAdmin.MaDT + typeFile;
+                    //var filePath = Path.Combine(Server.MapPath("~/ImagesProduct/ThuCung/"), thuCungAdmin.AnhDaiDien);
+                    //Content.SaveAs(filePath);
+                    string fileName = Path.GetFileNameWithoutExtension(Content.FileName);
+                    string extention = Path.GetExtension(thuCungAdmin.ImgUpLoad.FileName);
+                    fileName = fileName + extention;
+                    thuCungAdmin.AnhDaiDien = "~/ImagesProduct/ThuCung/" + fileName;
+                    thuCungAdmin.ImgUpLoad.SaveAs(Path.Combine(Server.MapPath("~/ImagesProduct/ThuCung/"), fileName));
+                }
                 doiTuongKD.MaDT = Guid.NewGuid().ToString();
                 doiTuongKD.DonGia = thuCungAdmin.DonGia;
                 doiTuongKD.TrangThai = thuCungAdmin.TrangThai;
                 doiTuongKD.GiamGia = thuCungAdmin.GiamGia;
                 doiTuongKD.MoTa = thuCungAdmin.MoTa;
                 doiTuongKD.ChiTiet = thuCungAdmin.ChiTiet;
+                doiTuongKD.AnhDaiDien = thuCungAdmin.AnhDaiDien;
                 db.DoiTuongKDs.Add(doiTuongKD);
                 await db.SaveChangesAsync();
                 thuCung.MaTC = doiTuongKD.MaDT;
@@ -71,6 +88,7 @@ namespace Pet_Shop.Areas.Admin.Controllers
                 thuCung.GioiTinh = thuCungAdmin.GioiTinh;
                 thuCung.KichCo = thuCungAdmin.KichCo;
                 thuCung.TiemPhong = thuCungAdmin.TiemPhong;
+                
                 db.ThuCungs.Add(thuCung);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
@@ -103,7 +121,7 @@ namespace Pet_Shop.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "MaTC,TenTC,MaLoaiTC,GioiTinh,KichCo,TiemPhong")] ThuCung thuCung)
+        public async Task<ActionResult> Edit(ThuCung thuCung)
         {
             if (ModelState.IsValid)
             {
@@ -136,8 +154,11 @@ namespace Pet_Shop.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(string id)
         {
+            DoiTuongKD thuCungDelete = db.DoiTuongKDs.Find(id);
             ThuCung thuCung = await db.ThuCungs.FindAsync(id);
             db.ThuCungs.Remove(thuCung);
+            await db.SaveChangesAsync();
+            db.DoiTuongKDs.Remove(thuCungDelete);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }

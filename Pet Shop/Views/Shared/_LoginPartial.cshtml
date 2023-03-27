@@ -4,24 +4,23 @@
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
         @Html.AntiForgeryToken()
-<ul class="nav navbar-nav navbar-right">
-    @if (User.IsInRole("Admin"))
-    {
-        
-        <li class="user-drop"> @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link" })
-            <ul class="menu-u-drop">
-                <li>@Html.ActionLink("Quản lý", "Index", "HomeAdmin", new { area = "Admin", title = "Manage", @class = "nav-link" }, null)</li>
-                <li><a class="nav-link" href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-            </ul>
-        </li>
-        
-    }
-    else
-    {
-        <li> @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link" })</li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-    }
-</ul>
+        <ul class="nav navbar-nav navbar-right">
+            @if (User.IsInRole("Admin"))
+            {
+                <li class="user-drop">
+                    @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link" })
+                    <ul class="menu-u-drop">
+                        <li>@Html.ActionLink("Quản lý", "Index", "HomeAdmin", new { area = "Admin", title = "Manage", @class = "nav-link" }, null)</li>
+                        <li><a class="nav-link" href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                    </ul>
+                </li>
+            }
+            else
+            {
+                <li> @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link" })</li>
+                <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+            }
+        </ul>
     }
 }
 else
@@ -33,16 +32,16 @@ else
     </ul>
 }
 @*<ul class="nav navbar-nav navbar-right">
-    @if (User.IsInRole("Admin"))
-    {
+        @if (User.IsInRole("Admin"))
+        {
 
-        <li> @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link" })</li>
-        <li>@Html.ActionLink("Quản lý", "Index", "HomeAdmin", new { area = "Admin", title = "Manage", @class = "nav-link" }, null)</li>
-        <li><a class="nav-link" href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-    }
-    else
-    {
-        <li> @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link" })</li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-    }
-</ul>*@
+            <li> @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link" })</li>
+            <li>@Html.ActionLink("Quản lý", "Index", "HomeAdmin", new { area = "Admin", title = "Manage", @class = "nav-link" }, null)</li>
+            <li><a class="nav-link" href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+        }
+        else
+        {
+            <li> @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link" })</li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+        }
+    </ul>*@
