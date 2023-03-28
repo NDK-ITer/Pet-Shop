@@ -1,4 +1,4 @@
-﻿
+﻿@model Pet_Shop.Models.DoiTuongKD
 @{
     ViewBag.Title = "Design";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -41,6 +41,18 @@
                 </div>
             </div>
             <div class="category-right-content columm ">
+                @*@model IEnumerable<Pet_Shop.Models.DoiTuongKD>
+
+                @foreach (var item in Model)
+                {
+                    <div class="category-right-content-item">
+                        <a href="product.html">
+                            <img src="~/Theme/images/@item.AnhDaiDien" alt="">
+                            <h3>@Html.DisplayFor(modelItem => item.ChiTiet)</h3>
+                            <p>@Html.DisplayFor(modelItem => item.DonGia)<sup>đ</sup></p>
+                        </a>
+                    </div>
+                }*@
                 <div class="category-right-content-item">
                     <a href="product.html">
                         <img src="~/Theme/images/sp1.jpg" alt="">

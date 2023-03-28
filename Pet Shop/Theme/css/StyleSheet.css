@@ -133,6 +133,7 @@ a {
 
 .others {
     display: flex;
+    align-items:center;
 }
 
     .others li {
@@ -140,6 +141,40 @@ a {
         position: relative;
         cursor: pointer;
     }
+.menu-u-drop {
+    position: absolute;
+    transition: 0.3s;
+    z-index: 1;
+    visibility: hidden;
+    min-width: 164px;
+    min-height: 44px;
+    background: #FEA8A7;
+    border-radius: 0px 0px 5px 5px;
+}
+
+    .menu-u-drop li {
+        padding: 3px 5px !important;
+        border-bottom: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+        .menu-u-drop li:hover {
+            background: linear-gradient(90deg, #FEA8A7 0%, #FCD2BA 100%);
+            font-weight: bold;
+            border-bottom: 1px solid #000;
+        }
+
+        .menu-u-drop li a {
+            font-size: 18px;
+        }
+
+.user-drop a {
+    font-size: 20px;
+}
+
+.user-drop:hover .menu-u-drop {
+    visibility: visible;
+}
 /*-------------------------slider---------------------------------------*/
 #Slider {
     border-bottom: 2px solid #000;
