@@ -70,8 +70,6 @@ a {
             top: 20px;
         }
 
-       
-
         .menu li a {
             font-size: 20px;
             font-weight: bold !important;
@@ -80,6 +78,11 @@ a {
             padding-right: 50px;
             line-height: 20px;
         }
+
+            .menu li a:hover {
+                color: #030303;
+                font-size: 22px;
+            }
 
 .sub-menu {
     position: absolute;
@@ -111,36 +114,7 @@ a {
     .sub-menu ul a {
         border: none;
     }
-.menu-u-drop {
-    position: absolute;
-    transition: 0.3s;
-    z-index: 1;
-    visibility: hidden;
-    min-width: 164px;
-    min-height: 44px;
-    background: #FEA8A7;
-    border-radius: 0px 0px 5px 5px;
-}
-    .menu-u-drop li {
-        padding: 3px 5px!important;
-        border-bottom: 1px solid #ddd;
-        border-radius: 5px;
-    }
-        .menu-u-drop li:hover {
-            background: linear-gradient(90deg, #FEA8A7 0%, #FCD2BA 100%);
-            font-weight: bold;
-            border-bottom: 1px solid #000;
-            
-        }
-        .menu-u-drop li a {
-            font-size: 18px;
-        }
-.user-drop a {
-    font-size:20px;
-}
-.user-drop:hover .menu-u-drop {
-    visibility: visible;
-}
+
 .columm {
     display: flex;
     flex-wrap: wrap;
@@ -157,11 +131,8 @@ a {
     border: 1px solid #ddd;
 }
 
-
-
 .others {
     display: flex;
-    align-items: center;
 }
 
     .others li {
@@ -1574,6 +1545,129 @@ a {
     }
 
         .success-content-right-button button:hover {
+            background: linear-gradient(180deg, #F4469D 0%, #F3C363 100%);
+            border: 2px solid #ddd;
+        }
+/*-------------------------service---------------------------------------*/
+.service {
+    width: 1475px;
+    padding: 90px 75px;
+    background: linear-gradient(90deg, #fea8a740 0%, #fcd2ba73 100%);
+}
+
+.service-slides {
+    background: linear-gradient(90deg, #fea8a752 0%, #fcd2ba66 100%);
+    border-radius: 10px;
+    margin: 30px 0;
+}
+
+.service-slides-main {
+    width: 100%;
+}
+
+.service-slides-main-next-left {
+    text-align: center;
+    width: 5%;
+}
+
+    .service-slides-main-next-left img {
+        width: 50%;
+        padding: 5px 5px 5px 6px;
+        margin: 230px 0;
+        border: 1px solid #000;
+        border-radius: 50%;
+        background-color: #FF9D9C;
+        cursor: pointer;
+    }
+
+.service-slides-main-next-right {
+    text-align: center;
+    width: 5%;
+}
+
+    .service-slides-main-next-right img {
+        width: 50%;
+        padding: 5px 5px 5px 6px;
+        margin: 230px 0;
+        border: 1px solid #000;
+        border-radius: 50%;
+        background-color: #FF9D9C;
+        cursor: pointer;
+    }
+
+.service-slides-main-center {
+    width: 90%;
+    padding: 0 22px;
+}
+
+.service-slides-main-center-content {
+    padding: 154px 43px 255px 80px;
+}
+
+    .service-slides-main-center-content h1 {
+        font-size: 35px;
+        padding-bottom: 21px;
+    }
+
+    .service-slides-main-center-content button {
+        padding: 0 17px;
+        margin-left: 10px;
+        height: 35px;
+        color: white;
+        cursor: pointer;
+        background: linear-gradient(90deg, #F4469D 0%, #F3C363 100%);
+        border: 2px solid #FFFEFE;
+        border-radius: 10px;
+    }
+
+        .service-slides-main-center-content button:hover {
+            background: linear-gradient(180deg, #F4469D 0%, #F3C363 100%);
+            border: 2px solid #ddd;
+        }
+
+.service-ads {
+    padding: 40px;
+    margin: 47px 0;
+    background: linear-gradient(90deg, #fea8a752 0%, #fcd2ba66 100%);
+    border-radius: 10px;
+}
+
+.service-ads-img {
+    width: 50%;
+    height: 100%;
+}
+
+    .service-ads-img img {
+        border-radius: 10px;
+    }
+
+.service-ads-content {
+    width: 50%;
+    height: 100%;
+}
+
+    .service-ads-content h1 {
+        font-size: 35px;
+        padding: 0 0 25px 15px;
+    }
+
+    .service-ads-content p {
+        font-size: 20px;
+        padding: 0px 125px 20px 20px;
+    }
+
+    .service-ads-content button {
+        padding: 0 20px;
+        margin-left: 20px;
+        height: 35px;
+        color: white;
+        cursor: pointer;
+        background: linear-gradient(90deg, #F4469D 0%, #F3C363 100%);
+        border: 2px solid #FFFEFE;
+        border-radius: 10px;
+    }
+
+        .service-ads-content button:hover {
             background: linear-gradient(180deg, #F4469D 0%, #F3C363 100%);
             border: 2px solid #ddd;
         }

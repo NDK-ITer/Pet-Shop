@@ -12,7 +12,10 @@ namespace Pet_Shop.Controllers
         {
             return View();
         }
-
+        public ActionResult Service()
+        {
+            return View();
+        }
         public ActionResult Products()
         {
             return View();

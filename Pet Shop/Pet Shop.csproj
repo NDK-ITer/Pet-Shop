@@ -370,6 +370,11 @@
     <Content Include="Theme\images\nextcate.png" />
     <Content Include="Theme\images\nextl.png" />
     <Content Include="Theme\images\nextr.png" />
+    <Content Include="Theme\images\se1.png" />
+    <Content Include="Theme\images\se2.png" />
+    <Content Include="Theme\images\se3.png" />
+    <Content Include="Theme\images\se4.png" />
+    <Content Include="Theme\images\se5.png" />
     <Content Include="Theme\images\slider1.jpg" />
     <Content Include="Theme\images\slider2.jpg" />
     <Content Include="Theme\images\slider3.jpg" />
@@ -424,6 +429,7 @@
     <Content Include="Views\Home\Products.cshtml" />
     <Content Include="Views\Home\DetailProduct.cshtml" />
     <Content Include="Views\Shared\_LoginSign.cshtml" />
+    <Content Include="Views\Home\Service.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

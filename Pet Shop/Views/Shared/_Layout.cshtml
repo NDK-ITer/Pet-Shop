@@ -16,7 +16,8 @@
     <!------------------------------- <header> ------------------------------->
     <div class="header">
         <div class="logo">
-            <a href="#"><img src="/Theme/images/logo.png" /></a>
+            @*@Html.ActionLink("<img src=\"/Theme/images/logo.png\" />", "Index", "Home")*@
+            <a href=""><img src="/Theme/images/logo.png" /></a>
         </div>
         <div class="menu">
             <li>@Html.ActionLink("Trang Chủ", "Index", "Home")</li>
@@ -73,11 +74,9 @@
                     </li>
                 </ul>
             </li>
-            <li>
-                <a href="">Dịch vụ</a>
-            </li>
+            <li>@Html.ActionLink("Dịch vụ", "Service", "Home")</li>
             <li><a href="">Giới thiệu</a></li>
-            <li><a href="">Liên hệ</a></li>
+            <li><a href="https://zalo.me/0963450084" target="_blank">Liên hệ</a></li>
         </div>
         <div class="others">
             <li class="collapse navbar-collapse d-sm-inline-flex justify-content-between"><div class="row">@Html.Partial("_LoginPartial")</div></li>
@@ -88,7 +87,12 @@
     <div>
         @RenderBody()
     </div>
-
+    <!------------------------------- <contact-button> ------------------------------->
+    <div class="contact-button">
+        <button onclick="topFunction()" id="myBtn" title="Go to top">&#94;</button>
+        <a href="https://zalo.me/0963450084" target="_blank"><button id="myZalo">Zalo</button></a>
+        <a href="tel://0963450084" target="_blank"><button id="myCall"><i class="fas fa-phone"></i></button></a>
+    </div>
     <!------------------------------- <footer> ------------------------------->
     <div class="footer">
         <div class="footer-top row">
@@ -175,6 +179,20 @@
             dotItem[index].classList.add("active")
         }
         setInterval(imgSlide, 5000)
+        window.onscroll = function () { scrollFunction() };
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("myBtn").style.display = "block";
+                document.getElementById("myZalo").style.display = "block";
+                document.getElementById("myCall").style.display = "block";
+            } else {
+                document.getElementById("myBtn").style.display = "none";
+            }
+        }
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
     </script>
 </body>
 </html>
