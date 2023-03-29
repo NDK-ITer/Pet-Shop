@@ -183,6 +183,7 @@
     <Compile Include="Areas\Admin\Controllers\HangSXesAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\HoaDonsManagerController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LoaiDDsAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoaiThuCungsManagerController.cs" />
     <Compile Include="Areas\Admin\Controllers\PhieuDatsManagerController.cs" />
     <Compile Include="Areas\Admin\Controllers\ThuCungsAdminController.cs" />
@@ -237,6 +238,9 @@
       <DependentUpon>dbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\LoaiDD.cs">
+      <DependentUpon>dbContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\LoaiThuCung.cs">
       <DependentUpon>dbContext.tt</DependentUpon>
     </Compile>
@@ -340,6 +344,11 @@
     <Content Include="Areas\Admin\Views\DichVusAdmin\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\DichVusAdmin\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ThuCungsAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiDDsAdmin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiDDsAdmin\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiDDsAdmin\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiDDsAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiDDsAdmin\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

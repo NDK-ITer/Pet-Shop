@@ -44,6 +44,7 @@ namespace Pet_Shop.Areas.Admin.Controllers
             ViewBag.MaNSX = new SelectList(db.HangSXes, "MaNSX", "TenNSX");
             ViewBag.MaLoaiTC = new SelectList(db.LoaiThuCungs, "MaLoaiTC", "TenLoai");
             ViewBag.MaDD = new SelectList(db.DoiTuongKDs, "MaDT", "MoTa");
+            ViewBag.MaLoaiDD = new SelectList(db.LoaiDDs, "MaLoaiDD", "TenLoaiDD");
             return View();
         }
 
