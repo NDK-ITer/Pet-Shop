@@ -25,6 +25,7 @@ namespace Pet_Shop.ClassData
         public string KichCo { get; set; }
         [DisplayName("Tiêm Phòng")]
         public Nullable<bool> TiemPhong { get; set; }
+        [DisplayName("Loại thú cưng")]
         public virtual LoaiThuCung LoaiThuCung { get; set; }
         [NotMapped]
         public HttpPostedFileBase ImgUpLoad { get; set; }

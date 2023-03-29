@@ -38,7 +38,8 @@
           <Property Name="TenDD" Type="nvarchar" MaxLength="50" />
           <Property Name="MaLoaiTC" Type="varchar" MaxLength="128" />
           <Property Name="MaNSX" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="MaLoaiDD" Type="varchar" MaxLength="128" />
+          <Property Name="MaLoaiDD" Type="nvarchar" MaxLength="128" />
+          <Property Name="SoLuong" Type="int" />
         </EntityType>
         <EntityType Name="DoiTuongKD">
           <Key>
@@ -86,7 +87,7 @@
           <Key>
             <PropertyRef Name="MaLoaiDD" />
           </Key>
-          <Property Name="MaLoaiDD" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="MaLoaiDD" Type="nvarchar" MaxLength="128" Nullable="false" />
           <Property Name="TenLoaiDD" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="LoaiThuCung">
@@ -399,8 +400,9 @@
           <NavigationProperty Name="HangSX" Relationship="Self.FK_DoDungTC_HangSX" FromRole="DoDungTC" ToRole="HangSX" />
           <NavigationProperty Name="LoaiThuCung" Relationship="Self.FK_DoDungTC_LoaiThuCung" FromRole="DoDungTC" ToRole="LoaiThuCung" />
           <NavigationProperty Name="DoiTuongKD" Relationship="Self.FK_DoDungTC_SPKD" FromRole="DoDungTC" ToRole="DoiTuongKD" />
-          <Property Name="MaLoaiDD" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="MaLoaiDD" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="LoaiDD" Relationship="QuanLyThuCungModel.FK_DoDungTC_LoaiDD" FromRole="DoDungTC" ToRole="LoaiDD" />
+          <Property Name="SoLuong" Type="Int32" />
         </EntityType>
         <EntityType Name="DoiTuongKD">
           <Key>
@@ -717,7 +719,7 @@
           <Key>
             <PropertyRef Name="MaLoaiDD" />
           </Key>
-          <Property Name="MaLoaiDD" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="MaLoaiDD" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
           <Property Name="TenLoaiDD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="DoDungTCs" Relationship="QuanLyThuCungModel.FK_DoDungTC_LoaiDD" FromRole="LoaiDD" ToRole="DoDungTC" />
         </EntityType>
@@ -768,6 +770,7 @@
           <EntitySetMapping Name="DoDungTCs">
             <EntityTypeMapping TypeName="QuanLyThuCungModel.DoDungTC">
               <MappingFragment StoreEntitySet="DoDungTC">
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
                 <ScalarProperty Name="MaLoaiDD" ColumnName="MaLoaiDD" />
                 <ScalarProperty Name="MaDD" ColumnName="MaDD" />
                 <ScalarProperty Name="TenDD" ColumnName="TenDD" />

@@ -53,7 +53,7 @@ namespace Pet_Shop.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "MaDT,DonGia,TrangThai,GiamGia,MoTa,ChiTiet,TenDD,MaLoaiTC,MaNSX")] DoDungTCAdmin doDungTCAdmin)
+        public async Task<ActionResult> Create(DoDungTCAdmin doDungTCAdmin)
         {
             DoDungTC doDungTC = new DoDungTC();
             DoiTuongKD doiTuongKD = new DoiTuongKD();
@@ -72,6 +72,7 @@ namespace Pet_Shop.Areas.Admin.Controllers
                 doDungTC.TenDD = doDungTCAdmin.TenDD;
                 doDungTC.MaNSX = doDungTCAdmin.MaNSX;
                 doDungTC.MaLoaiTC = doDungTCAdmin.MaLoaiTC;
+                doDungTC.SoLuong = doDungTCAdmin.SoLuong;
                 db.DoDungTCs.Add(doDungTC);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
