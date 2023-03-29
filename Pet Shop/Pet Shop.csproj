@@ -363,6 +363,7 @@
     <Content Include="Scripts\Script.js" />
     <Content Include="Theme\css\StyleSheet.css" />
     <Content Include="Theme\css\StyleSheetLogin.css" />
+    <Content Include="Theme\images\Logo.png" />
     <Content Include="Theme\images\bodydv.png" />
     <Content Include="Theme\images\cart.png" />
     <Content Include="Theme\images\fast1.png" />
@@ -372,7 +373,6 @@
     <Content Include="Theme\images\food.png" />
     <Content Include="Theme\images\gau2.png" />
     <Content Include="Theme\images\gâu.png" />
-    <Content Include="Theme\images\logo.png" />
     <Content Include="Theme\images\map.jpg" />
     <Content Include="Theme\images\Meo.png" />
     <Content Include="Theme\images\Meo2.png" />
