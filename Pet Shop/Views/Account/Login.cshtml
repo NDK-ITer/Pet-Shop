@@ -15,11 +15,11 @@
     <div class="container" id="container">
         <div class="form-container sign-up-container">
             <form action="#">
-                <h1>Tạo tài khoản</h1>
+                @*<h1>Tạo tài khoản</h1>
                 <input type="text" placeholder="Name" />
                 <input type="email" placeholder="Email" />
                 <input type="password" placeholder="Password" />
-                <button>Đăng ký</button>
+                <button>Đăng ký</button>*@
             </form>
         </div>
         <div class="form-container sign-in-container">
@@ -31,15 +31,16 @@
                     @Html.ValidationSummary(true, "")
 
                     @*<div class="social-container">
-                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-                    </div>*@
+            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>*@
                     @Html.TextBoxFor(m => m.Email, new { @placeholder = "Email" })
                     @Html.ValidationMessageFor(m => m.Email, "")
                     @Html.PasswordFor(m => m.Password, new { @placeholder = "Password" })
                     @Html.ValidationMessageFor(m => m.Password, "")
-                    <a href="#">Quên mật khẩu?</a>
+                    @Html.ActionLink("Quên mật khẩu?", "ForgotPassword")
+                    @*<a href="#">Quên mật khẩu?</a>*@
                     <button type="submit" value="Log in">Đăng nhập</button>
                 }
                 <div class="fbli">
@@ -62,7 +63,7 @@
                 <div class="overlay-panel overlay-right">
                     <h1>Chào bạn !</h1>
                     <p>Nhập thông tin cá nhân của bạn và bắt đầu hành trình với chúng tôi</p>
-                    <button class="ghost" id="signUp">Đăng ký</button>
+                    <button class="ghost" id="signUp">@Html.ActionLink("Đăng ký", "Register", "Account")</button>
                 </div>
             </div>
         </div>
@@ -70,19 +71,20 @@
 </main>
 
 <script>
-    const signUpButton = document.getElementById('signUp');
-    const signInButton = document.getElementById('signIn');
-    const container = document.getElementById('container');
+    //const signUpButton = document.getElementById('signUp');
+    //const signInButton = document.getElementById('signIn');
+    //const container = document.getElementById('container');
 
-    signUpButton.addEventListener('click', () => {
-        container.classList.add('right-panel-active');
-        document.querySelector(".fbli").style.display = "none"
-    });
+    //signUpButton.addEventListener('click', () => {
+    //    container.classList.add('right-panel-active');
+    //    document.querySelector(".fbli").style.display = "none"
 
-    signInButton.addEventListener('click', () => {
-        container.classList.remove('right-panel-active');
-        document.querySelector(".fbli").style.display = "block"
-    });
+    //});
+
+    //signInButton.addEventListener('click', () => {
+    //    container.classList.remove('right-panel-active');
+    //    document.querySelector(".fbli").style.display = "block"
+    //});
 </script>
 
 

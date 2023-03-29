@@ -59,7 +59,8 @@
             @Html.DisplayFor(modelItem => item.ChiTiet)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.AnhDaiDien)
+            <img src="~/Theme/images/@item.AnhDaiDien" width="50%" height="50%"/>
+            @*@Html.DisplayFor(modelItem => item.AnhDaiDien)*@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DichVu.TenDV)

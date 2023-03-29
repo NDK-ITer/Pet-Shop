@@ -215,7 +215,9 @@ input {
     background: linear-gradient(180deg, #F4439F 0%, #F3C960 100%);
     transform: translateX(0);
 }
-
+.overlay-panel a {
+    color: white;
+}
 .container.right-panel-active .overlay-right {
     transform: translateX(20%);
 }
@@ -277,3 +279,31 @@ footer {
     min-height: 44px;
     background: #FEA8A7;
 }
+.FogotPass {
+    text-align:center;
+    padding-top:100px;
+}
+.FogotPass form{
+    background: linear-gradient(90deg, #FEA8A7 0%, #FCD2BA 100%);
+    text-align: center;
+    border-radius: 12px;
+}
+    .FogotPass form label{
+        font-size: 20px;
+    }
+    .FogotPass form input {
+        padding: 6px;
+        margin: 14px 0px;
+        border-radius: 5px;
+    }
+    .FogotPass .bnt-fgpw {
+        border: 1px solid #ddd;
+        background: #FEA8A7;
+        font-weight: bold;
+        font-size: 16px;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+    .FogotPass .bnt-fgpw:hover {
+        border: 1px solid #000;
+    }

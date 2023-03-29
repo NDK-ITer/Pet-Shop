@@ -439,6 +439,7 @@
     <Content Include="Views\Home\DetailProduct.cshtml" />
     <Content Include="Views\Shared\_LoginSign.cshtml" />
     <Content Include="Views\Home\Service.cshtml" />
+    <Content Include="Views\Home\Introduce.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

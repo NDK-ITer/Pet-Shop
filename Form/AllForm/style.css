@@ -1422,3 +1422,18 @@ a {
     background: linear-gradient(180deg, #F4469D 0%, #F3C363 100%);
     border: 2px solid #ddd;
 }
+/*-------------------------introduce---------------------------------------*/
+.introduce {
+    width: 1475px;
+    padding: 150px 75px;
+    background: linear-gradient(90deg, #fea8a740 0%, #fcd2ba73 100%);
+}
+.introduce h2 {
+    text-align: center;
+    padding-top: 15px;
+    font-size: 25px;
+}
+.introduce p{
+    background: #fea8a717 ;
+    font-size: 20px;
+}
