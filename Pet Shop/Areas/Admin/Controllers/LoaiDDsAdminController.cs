@@ -11,107 +11,107 @@ using Pet_Shop.Models;
 
 namespace Pet_Shop.Areas.Admin.Controllers
 {
-    public class LoaiThuCungsManagerController : Controller
+    public class LoaiDDsAdminController : Controller
     {
         private QuanLyThuCungEntities db = new QuanLyThuCungEntities();
 
-        // GET: Admin/LoaiThuCungsManager
+        // GET: Admin/LoaiDDsAdmin
         public async Task<ActionResult> Index()
         {
-            return View(await db.LoaiThuCungs.ToListAsync());
+            return View(await db.LoaiDDs.ToListAsync());
         }
 
-        // GET: Admin/LoaiThuCungsManager/Details/5
+        // GET: Admin/LoaiDDsAdmin/Details/5
         public async Task<ActionResult> Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            LoaiThuCung loaiThuCung = await db.LoaiThuCungs.FindAsync(id);
-            if (loaiThuCung == null)
+            LoaiDD loaiDD = await db.LoaiDDs.FindAsync(id);
+            if (loaiDD == null)
             {
                 return HttpNotFound();
             }
-            return View(loaiThuCung);
+            return View(loaiDD);
         }
 
-        // GET: Admin/LoaiThuCungsManager/Create
+        // GET: Admin/LoaiDDsAdmin/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Admin/LoaiThuCungsManager/Create
+        // POST: Admin/LoaiDDsAdmin/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "MaLoaiTC,TenLoai")] LoaiThuCung loaiThuCung)
+        public async Task<ActionResult> Create(LoaiDD loaiDD)
         {
             if (ModelState.IsValid)
             {
-                db.LoaiThuCungs.Add(loaiThuCung);
+                db.LoaiDDs.Add(loaiDD);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
-            return View(loaiThuCung);
+            return View(loaiDD);
         }
 
-        // GET: Admin/LoaiThuCungsManager/Edit/5
+        // GET: Admin/LoaiDDsAdmin/Edit/5
         public async Task<ActionResult> Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            LoaiThuCung loaiThuCung = await db.LoaiThuCungs.FindAsync(id);
-            if (loaiThuCung == null)
+            LoaiDD loaiDD = await db.LoaiDDs.FindAsync(id);
+            if (loaiDD == null)
             {
                 return HttpNotFound();
             }
-            return View(loaiThuCung);
+            return View(loaiDD);
         }
 
-        // POST: Admin/LoaiThuCungsManager/Edit/5
+        // POST: Admin/LoaiDDsAdmin/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "MaLoaiTC,TenLoai")] LoaiThuCung loaiThuCung)
+        public async Task<ActionResult> Edit([Bind(Include = "MaLoaiDD,TenLoaiDD")] LoaiDD loaiDD)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(loaiThuCung).State = EntityState.Modified;
+                db.Entry(loaiDD).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            return View(loaiThuCung);
+            return View(loaiDD);
         }
 
-        // GET: Admin/LoaiThuCungsManager/Delete/5
+        // GET: Admin/LoaiDDsAdmin/Delete/5
         public async Task<ActionResult> Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            LoaiThuCung loaiThuCung = await db.LoaiThuCungs.FindAsync(id);
-            if (loaiThuCung == null)
+            LoaiDD loaiDD = await db.LoaiDDs.FindAsync(id);
+            if (loaiDD == null)
             {
                 return HttpNotFound();
             }
-            return View(loaiThuCung);
+            return View(loaiDD);
         }
 
-        // POST: Admin/LoaiThuCungsManager/Delete/5
+        // POST: Admin/LoaiDDsAdmin/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(string id)
         {
-            LoaiThuCung loaiThuCung = await db.LoaiThuCungs.FindAsync(id);
-            db.LoaiThuCungs.Remove(loaiThuCung);
+            LoaiDD loaiDD = await db.LoaiDDs.FindAsync(id);
+            db.LoaiDDs.Remove(loaiDD);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }

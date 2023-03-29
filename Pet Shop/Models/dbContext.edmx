@@ -38,6 +38,7 @@
           <Property Name="TenDD" Type="nvarchar" MaxLength="50" />
           <Property Name="MaLoaiTC" Type="varchar" MaxLength="128" />
           <Property Name="MaNSX" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="MaLoaiDD" Type="varchar" MaxLength="128" />
         </EntityType>
         <EntityType Name="DoiTuongKD">
           <Key>
@@ -80,6 +81,13 @@
           <Property Name="TenKH" Type="nvarchar" MaxLength="50" />
           <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
           <Property Name="IdNguoiDung" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LoaiDD">
+          <Key>
+            <PropertyRef Name="MaLoaiDD" />
+          </Key>
+          <Property Name="MaLoaiDD" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="TenLoaiDD" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="LoaiThuCung">
           <Key>
@@ -195,6 +203,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_DoDungTC_LoaiDD">
+          <End Role="LoaiDD" Type="Self.LoaiDD" Multiplicity="0..1" />
+          <End Role="DoDungTC" Type="Self.DoDungTC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LoaiDD">
+              <PropertyRef Name="MaLoaiDD" />
+            </Principal>
+            <Dependent Role="DoDungTC">
+              <PropertyRef Name="MaLoaiDD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_DoDungTC_LoaiThuCung">
           <End Role="LoaiThuCung" Type="Self.LoaiThuCung" Multiplicity="0..1" />
           <End Role="DoDungTC" Type="Self.DoDungTC" Multiplicity="*" />
@@ -276,6 +296,7 @@
           <EntitySet Name="HangSX" EntityType="Self.HangSX" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HinhAnhDTKD" EntityType="Self.HinhAnhDTKD" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HoaDon" EntityType="Self.HoaDon" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoaiDD" EntityType="Self.LoaiDD" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LoaiThuCung" EntityType="Self.LoaiThuCung" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NhanSU" EntityType="Self.NhanSU" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PhieuDat" EntityType="Self.PhieuDat" Schema="dbo" store:Type="Tables" />
@@ -302,6 +323,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_DoDungTC_HangSX" Association="Self.FK_DoDungTC_HangSX">
             <End Role="HangSX" EntitySet="HangSX" />
+            <End Role="DoDungTC" EntitySet="DoDungTC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DoDungTC_LoaiDD" Association="Self.FK_DoDungTC_LoaiDD">
+            <End Role="LoaiDD" EntitySet="LoaiDD" />
             <End Role="DoDungTC" EntitySet="DoDungTC" />
           </AssociationSet>
           <AssociationSet Name="FK_DoDungTC_LoaiThuCung" Association="Self.FK_DoDungTC_LoaiThuCung">
@@ -374,6 +399,8 @@
           <NavigationProperty Name="HangSX" Relationship="Self.FK_DoDungTC_HangSX" FromRole="DoDungTC" ToRole="HangSX" />
           <NavigationProperty Name="LoaiThuCung" Relationship="Self.FK_DoDungTC_LoaiThuCung" FromRole="DoDungTC" ToRole="LoaiThuCung" />
           <NavigationProperty Name="DoiTuongKD" Relationship="Self.FK_DoDungTC_SPKD" FromRole="DoDungTC" ToRole="DoiTuongKD" />
+          <Property Name="MaLoaiDD" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="LoaiDD" Relationship="QuanLyThuCungModel.FK_DoDungTC_LoaiDD" FromRole="DoDungTC" ToRole="LoaiDD" />
         </EntityType>
         <EntityType Name="DoiTuongKD">
           <Key>
@@ -680,7 +707,32 @@
             <End Role="LoaiThuCung" EntitySet="LoaiThuCungs" />
             <End Role="ThuCung" EntitySet="ThuCungs" />
           </AssociationSet>
+          <EntitySet Name="LoaiDDs" EntityType="QuanLyThuCungModel.LoaiDD" />
+          <AssociationSet Name="FK_DoDungTC_LoaiDD" Association="QuanLyThuCungModel.FK_DoDungTC_LoaiDD">
+            <End Role="LoaiDD" EntitySet="LoaiDDs" />
+            <End Role="DoDungTC" EntitySet="DoDungTCs" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="LoaiDD">
+          <Key>
+            <PropertyRef Name="MaLoaiDD" />
+          </Key>
+          <Property Name="MaLoaiDD" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="TenLoaiDD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DoDungTCs" Relationship="QuanLyThuCungModel.FK_DoDungTC_LoaiDD" FromRole="LoaiDD" ToRole="DoDungTC" />
+        </EntityType>
+        <Association Name="FK_DoDungTC_LoaiDD">
+          <End Type="QuanLyThuCungModel.LoaiDD" Role="LoaiDD" Multiplicity="0..1" />
+          <End Type="QuanLyThuCungModel.DoDungTC" Role="DoDungTC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LoaiDD">
+              <PropertyRef Name="MaLoaiDD" />
+            </Principal>
+            <Dependent Role="DoDungTC">
+              <PropertyRef Name="MaLoaiDD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -716,6 +768,7 @@
           <EntitySetMapping Name="DoDungTCs">
             <EntityTypeMapping TypeName="QuanLyThuCungModel.DoDungTC">
               <MappingFragment StoreEntitySet="DoDungTC">
+                <ScalarProperty Name="MaLoaiDD" ColumnName="MaLoaiDD" />
                 <ScalarProperty Name="MaDD" ColumnName="MaDD" />
                 <ScalarProperty Name="TenDD" ColumnName="TenDD" />
                 <ScalarProperty Name="MaLoaiTC" ColumnName="MaLoaiTC" />
@@ -812,6 +865,14 @@
                 <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
                 <ScalarProperty Name="KichCo" ColumnName="KichCo" />
                 <ScalarProperty Name="TiemPhong" ColumnName="TiemPhong" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoaiDDs">
+            <EntityTypeMapping TypeName="QuanLyThuCungModel.LoaiDD">
+              <MappingFragment StoreEntitySet="LoaiDD">
+                <ScalarProperty Name="TenLoaiDD" ColumnName="TenLoaiDD" />
+                <ScalarProperty Name="MaLoaiDD" ColumnName="MaLoaiDD" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
