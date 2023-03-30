@@ -458,9 +458,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin_PetShop.cshtml" />
     <Content Include="Views\Home\DoDungTC.cshtml" />
-    <Content Include="Views\Home\DetailProduct.cshtml" />
+    <Content Include="Views\Home\ChiTietSP.cshtml" />
     <Content Include="Views\Shared\_LoginSign.cshtml" />
-    <Content Include="Views\Home\Service.cshtml" />
+    <Content Include="Views\Home\DichVu.cshtml" />
     <Content Include="Views\Home\Introduce.cshtml" />
   </ItemGroup>
   <ItemGroup>

@@ -47,7 +47,7 @@
                 @foreach (var item in Model)
                 {
                     <div class="category-right-content-item">
-                        <a href="product.html">
+                        <a href="@Url.Action("ChiTietSP", "Home", new { id = item.MaDD })">
                             <img src="@Url.Content(item.DoiTuongKD.AnhDaiDien)" alt="">
                             @Html.DisplayFor(modelItem => item.TenDD)<br />
                             @Html.DisplayFor(modelItem => item.DoiTuongKD.DonGia)
@@ -55,47 +55,47 @@
                     </div>
                 }
                 @*<div class="category-right-content-item">
-                    <a href="product.html">
-                        <img src="~/Theme/images/sp1.jpg" alt="">
-                        <h3>Pate cho mèo vị nước sốt cá ngừ WHISKAS Tuna Flavour Sauce</h3>
-                        <p>25.000<sup>đ</sup></p>
-                    </a>
-                </div>
-                <div class="category-right-content-item">
-                    <a href="product.html">
-                        <img src="~/Theme/images/sp2.jpg" alt="">
-                        <h3>Pate cho mèo vị cua CAT SEA FISH Tuna With Surimi</h3>
-                        <p>30.000<sup>đ</sup></p>
-                    </a>
-                </div>
-                <div class="category-right-content-item">
-                    <a href="product.html">
-                        <img src="~/Theme/images/sp1.jpg" alt="">
-                        <h3>Pate cho mèo vị nước sốt cá ngừ WHISKAS Tuna Flavour Sauce</h3>
-                        <p>25.000<sup>đ</sup></p>
-                    </a>
-                </div>
-                <div class="category-right-content-item">
-                    <a href="product.html">
-                        <img src="~/Theme/images/sp3.jpg" alt="">
-                        <h3>Pate cho mèo CIAO Tuna & Whitebait vị cá ngừ và cá chạch trắng</h3>
-                        <p>20.000<sup>đ</sup></p>
-                    </a>
-                </div>
-                <div class="category-right-content-item">
-                    <a href="product.html">
-                        <img src="~/Theme/images/sp4.jpg" alt="">
-                        <h3>Pate cho mèo hương vị cá ngừ và cua IRIS Tuna & Crab</h3>
-                        <p>35.000<sup>đ</sup></p>
-                    </a>
-                </div>
-                <div class="category-right-content-item">
-                    <a href="product.html">
-                        <img src="~/Theme/images/sp5.jpg" alt="">
-                        <h3>Pate cho mèo vị cá ngừ và cá hồi IRIS Alice Cat</h3>
-                        <p>35.000<sup>đ</sup></p>
-                    </a>
-                </div>*@
+                        <a href="product.html">
+                            <img src="~/Theme/images/sp1.jpg" alt="">
+                            <h3>Pate cho mèo vị nước sốt cá ngừ WHISKAS Tuna Flavour Sauce</h3>
+                            <p>25.000<sup>đ</sup></p>
+                        </a>
+                    </div>
+                    <div class="category-right-content-item">
+                        <a href="product.html">
+                            <img src="~/Theme/images/sp2.jpg" alt="">
+                            <h3>Pate cho mèo vị cua CAT SEA FISH Tuna With Surimi</h3>
+                            <p>30.000<sup>đ</sup></p>
+                        </a>
+                    </div>
+                    <div class="category-right-content-item">
+                        <a href="product.html">
+                            <img src="~/Theme/images/sp1.jpg" alt="">
+                            <h3>Pate cho mèo vị nước sốt cá ngừ WHISKAS Tuna Flavour Sauce</h3>
+                            <p>25.000<sup>đ</sup></p>
+                        </a>
+                    </div>
+                    <div class="category-right-content-item">
+                        <a href="product.html">
+                            <img src="~/Theme/images/sp3.jpg" alt="">
+                            <h3>Pate cho mèo CIAO Tuna & Whitebait vị cá ngừ và cá chạch trắng</h3>
+                            <p>20.000<sup>đ</sup></p>
+                        </a>
+                    </div>
+                    <div class="category-right-content-item">
+                        <a href="product.html">
+                            <img src="~/Theme/images/sp4.jpg" alt="">
+                            <h3>Pate cho mèo hương vị cá ngừ và cua IRIS Tuna & Crab</h3>
+                            <p>35.000<sup>đ</sup></p>
+                        </a>
+                    </div>
+                    <div class="category-right-content-item">
+                        <a href="product.html">
+                            <img src="~/Theme/images/sp5.jpg" alt="">
+                            <h3>Pate cho mèo vị cá ngừ và cá hồi IRIS Alice Cat</h3>
+                            <p>35.000<sup>đ</sup></p>
+                        </a>
+                    </div>*@
                 @*<div class="category-right-content-item">
                         <a href="product.html">
                             <img src="~/Theme/images/sp6.jpg" alt="">
@@ -140,19 +140,19 @@
                     </div>*@
             </div>
             @*<div class="category-right-pagination">*@
-                @*<a href="#">&laquo;</a>
-                    <a href="#" class="active">1</a>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                    <a href="#">6</a>
-                    <a href="#">&raquo;</a>*@
-                @*@(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)*@
-                @*@Html.PagedListPager(Model, page => Url.Action("Index", new { page, pageSize = 5, @class = "active" }))*@
+            @*<a href="#">&laquo;</a>
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">&raquo;</a>*@
+            @*@(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)*@
+            @*@Html.PagedListPager(Model, page => Url.Action("Index", new { page, pageSize = 5, @class = "active" }))*@
             @*</div>*@
-            @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
-                @Html.PagedListPager(Model, page => Url.Action("Index", new { page, pageSize = 5, @class = "active" }))
+
+            @Html.PagedListPager(Model, page => Url.Action("DoDungTC", new { page, @class = "active" }))
         </div>
     </div>
 </div>

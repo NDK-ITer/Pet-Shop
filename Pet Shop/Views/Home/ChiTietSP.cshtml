@@ -1,0 +1,168 @@
+﻿@model Pet_Shop.Models.DoDungTC
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="product">
+    <div class="product-container">
+        <div class="product-container-top">
+            @*<a href="#">Trang chủ</a><span>&#47;</span><a href="#">THỨC ĂN CHO MÈO</a><span>&#47;</span><a href="#">Pate & Nước sốt</a>*@
+        </div>
+        <div class="product-content row">
+            <div class="product-content-left row">
+                <div class="product-content-left-big-img">
+                    <img src="@Url.Content(Model.DoiTuongKD.AnhDaiDien)">
+                </div>
+                @*<div class="product-content-left-small-img">
+                        <img src="~/Theme/images/sp1.jpg" alt="">
+                        <img src="~/Theme/images/sp2.jpg" alt="">
+                        <img src="~/Theme/images/sp3.jpg" alt="">
+                        <img src="~/Theme/images/sp4.jpg" alt="">
+                    </div>*@
+            </div>
+            <div class="product-content-right">
+                <div class="product-content-right-product-name">
+                    <h1>@Html.DisplayFor(Model => Model.TenDD)</h1>
+                    <p>Thương hiệu @Html.DisplayFor(Model => Model.HangSX.TenNSX)</p>
+                </div>
+                <div class="product-content-right-product-price">
+                    <p>Giá bán: @Html.DisplayFor(Model => Model.DoiTuongKD.DonGia)<sup>đ</sup></p>
+                </div>
+                @*<div class="product-content-right-product-size">
+                    <p style="font-weight: bold;">Size:</p>
+                    <div class="size">
+                        <button class="size-bnt">
+                            <p>Size lớn lắm luôn!</p>
+                        </button>
+                        <button class="size-bnt">
+                            <p>Size trung bình</p>
+                        </button>
+                        <button class="size-bnt">
+                            <p>Size bé tí tẹo</p>
+                        </button>
+                    </div>
+                </div>*@
+                <div class="product-content-right-product-quantity">
+                    <div class="quantity">
+                        <p>Số lượng:</p>
+                        <div id="buy-amount">
+                            <button class="minus-btn" onclick="handleMinus()">
+                                <p>-</p>
+                            </button>
+                            <input type="text" name="amount" id="amount" value="1">
+                            <button class="plus-btn" onclick="handlePlus()">
+                                <p>+</p>
+                            </button>
+                        </div>
+                        <p>@Html.DisplayFor(Model => Model.SoLuong) sản phẩm có sẵn</p>
+                    </div>
+
+                </div>
+                <div class="product-content-right-product-button">
+                    <a href="cart.html">
+                        <button id="bnt-gocart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <p>Thêm vào giỏ hàng</p>
+                        </button>
+                    </a>
+                    <a href="https://zalo.me/0963450084" target="_blank">
+                        <button>
+                            <p>Liên hệ cửa hàng</p>
+                        </button>
+                    </a>
+                </div>
+                <div class="product-content-right-bottom">
+                    <div class="product-content-right-bottom-top">
+                        &#8744;
+                    </div>
+                    <div class="product-content-right-bottom-content-big">
+                        <div class="product-content-right-bottom-content-title row">
+                            <div class="product-content-right-bottom-content-title-item mt color-item-select">
+                                <p>Mô tả</p>
+                            </div>
+                            @*<div class="product-content-right-bottom-content-title-item lic">
+                                    <p>Lợi ích chính</p>
+                                </div>
+                                <div class="product-content-right-bottom-content-title-item hdsd">
+                                    <p>Hướng dẫn sử dụng</p>
+                                </div>*@
+                        </div>
+                        <div class="product-content-right-bottom-content">
+                            <div class="product-content-right-bottom-content-mt">
+                                @Html.DisplayFor(Model => Model.DoiTuongKD.MoTa)
+                            </div>
+                            @*<div class="product-content-right-bottom-content-lic">
+                                    Pate cho mèo vị cá ngừ CAT SEA FISH Pure Tuna Meat là một sản phẩm cho sức khỏe. Cá
+                                    ngừ chứa nhiều DHA. Nó là chất dinh dưỡng thiết yếu cho bộ não cũng như cho sự phát
+                                    triển hệ thống thần kinh trung ương. Cá ngừ còn chứa một lượng lớn các EPA, ức chế
+                                    tăng cholesterol và ngăn ngừa xơ vữa động mạch. Ngăn ngừa và điều trị các bệnh về
+                                    tim mạch. Có vai trò đặc biệt đối với bệnh về mạch máu não. Là sản phẩm mà chắc chắn
+                                    chú mèo của bạn sẽ rất thích
+                                </div>
+                                <div class="product-content-right-bottom-content-hdsd">
+                                    <b>Cách 1:</b> Bạn có thể tưới nước ấm vào thức ăn khô với một lượng vừa phải rồi
+                                    cho vào lo vi sóng quay 5 – 10 giây giúp làm ấm và mềm hạt giúp mèo cưng không những
+                                    ăn ngon mà còn đảm bảo hơn.
+                                    <br>
+                                    <b>Cách 2:</b> Thay vì sử dụng bằng nước ấm bạn có thể sử dụng bằng sữa, có thể chọn
+                                    sữa dành cho mèo con rồi làm tương tự như trên.
+                                    <br>
+                                    <b>Cách 3:</b> Có thể trộn thức ăn khô cho mèo với nước hầm gà hoặc lợn để tạo vị
+                                    thơm ngon, lại bổ sung thêm nhiều dưỡng chất hơn cho các chú mèo.
+                                </div>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*<div class="product-related">
+        <div class="product-related-title">
+            <p>SẢN PHẨM LIÊN QUAN</p>
+        </div>
+        <div class="product-content row">
+            <div class="product-related-item">
+                <a href="product.html">
+                    <img src="~/Theme/images/sp1.jpg" alt="">
+                    <h3>Pate cho mèo vị nước sốt cá ngừ WHISKAS Tuna Flavour Sauce</h3>
+                    <p>25.000<sup>đ</sup></p>
+                </a>
+            </div>
+            <div class="product-related-item">
+                <a href="product.html">
+                    <img src="~/Theme/images/sp3.jpg" alt="">
+                    <h3>Pate cho mèo CIAO Tuna & Whitebait vị cá ngừ</h3>
+                    <p>20.000<sup>đ</sup></p>
+                </a>
+            </div>
+            <div class="product-related-item">
+                <a href="product.html">
+                    <img src="~/Theme/images/sp4.jpg" alt="">
+                    <h3>Pate cho mèo hương vị cá ngừ và cua IRIS Tuna & Crab</h3>
+                    <p>35.000<sup>đ</sup></p>
+                </a>
+            </div>
+            <div class="product-related-item">
+                <a href="product.html">
+                    <img src="~/Theme/images/sp5.jpg" alt="">
+                    <h3>Pate cho mèo vị cá ngừ và cá hồi IRIS Alice Cat</h3>
+                    <p>35.000<sup>đ</sup></p>
+                </a>
+            </div>
+            <div class="product-related-item">
+                <a href="product.html">
+                    <img src="~/Theme/images/sp2.jpg" alt="">
+                    <h3>Pate cho mèo vị cua CAT SEA FISH Tuna With Surimi</h3>
+                    <p>30.000<sup>đ</sup></p>
+                </a>
+            </div>
+        </div>
+    </div>*@
+<!------------------------------- <contact-button> ------------------------------->
+<div class="contact-button">
+    <button onclick="topFunction()" id="myBtn" title="Go to top">&#94;</button>
+    <a href="https://zalo.me/0963450084" target="_blank"><button id="myZalo">Zalo</button></a>
+    <a href="tel://0963450084" target="_blank"><button id="myCall"><i class="fas fa-phone"></i></button></a>
+</div>
+
