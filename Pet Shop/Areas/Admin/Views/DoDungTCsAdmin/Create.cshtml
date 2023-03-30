@@ -21,7 +21,7 @@
         </div>*@
     <div class="form-group-flex-none">
         <div class="group-left">
-            <div class="form-group">
+            <div class="form-group form-group-flex">
                 @Html.LabelFor(model => model.TenDD, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.TenDD, new { htmlAttributes = new { @class = "form-control" } })
@@ -29,14 +29,14 @@
                 </div>
             </div>
 
-            <div class="form-group ">
+            <div class="form-group form-group-flex">
                 @Html.LabelFor(model => model.DonGia, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.DonGia, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.DonGia, "", new { @class = "text-danger" })
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group form-group-flex">
                 @Html.LabelFor(model => model.GiamGia, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.GiamGia, new { htmlAttributes = new { @class = "form-control" } })
@@ -44,7 +44,7 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-group form-group-flex">
                 @Html.LabelFor(model => model.SoLuong, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.SoLuong, new { htmlAttributes = new { @class = "form-control" } })
@@ -57,14 +57,6 @@
                 <div class="col-md-10">
                     @Html.TextAreaFor(model => model.MoTa, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.MoTa, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group form-group-area">
-                @Html.LabelFor(model => model.ChiTiet, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.TextAreaFor(model => model.ChiTiet, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.ChiTiet, "", new { @class = "text-danger" })
                 </div>
             </div>
         </div>
@@ -101,16 +93,24 @@
                     @Html.ValidationMessageFor(model => model.MaNSX, "", new { @class = "text-danger" })
                 </div>
             </div>
+            <div class="form-group form-group-area form-ct">
+                @Html.LabelFor(model => model.ChiTiet, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextAreaFor(model => model.ChiTiet, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ChiTiet, "", new { @class = "text-danger" })
+                </div>
+            </div>
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group form-right">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value="Tạo mới" class="btn btn-default" />
+            <button class="btn btn-default">@Html.ActionLink("Trở lại danh sách", "Index")</button>
         </div>
     </div>
 </div>
 }
 
-<div>
-    @Html.ActionLink("Trở lại danh sách", "Index")
+<div class="form-right">
+    
 </div>
