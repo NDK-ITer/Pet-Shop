@@ -1,4 +1,7 @@
-﻿@model IEnumerable<Pet_Shop.Models.DoDungTC>
+﻿@*@model PagedList.IPagedList<Pet_Shop.Models.DoDungTC>*@
+@model IEnumerable<Pet_Shop.Models.DoDungTC>
+@using PagedList.Mvc;
+@using PagedList;
 @{
     ViewBag.Title = "Design";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -40,8 +43,18 @@
                     </select>
                 </div>
             </div>
-            <div class="category-right-content columm ">
-                <div class="category-right-content-item">
+            <div class="category-right-content columm">
+                @foreach (var item in Model)
+                {
+                    <div class="category-right-content-item">
+                        <a href="product.html">
+                            <img src="@Url.Content(item.DoiTuongKD.AnhDaiDien)" alt="">
+                            @Html.DisplayFor(modelItem => item.TenDD)
+                            @Html.DisplayFor(modelItem => item.DoiTuongKD.DonGia)
+                        </a>
+                    </div>
+                }
+                @*<div class="category-right-content-item">
                     <a href="product.html">
                         <img src="~/Theme/images/sp1.jpg" alt="">
                         <h3>Pate cho mèo vị nước sốt cá ngừ WHISKAS Tuna Flavour Sauce</h3>
@@ -82,60 +95,62 @@
                         <h3>Pate cho mèo vị cá ngừ và cá hồi IRIS Alice Cat</h3>
                         <p>35.000<sup>đ</sup></p>
                     </a>
-                </div>
-                <div class="category-right-content-item">
-                    <a href="product.html">
-                        <img src="~/Theme/images/sp6.jpg" alt="">
-                        <h3>Pate cho mèo vị cá ngừ và thịt gà IRIS Tuna Chicken</h3>
-                        <p>25.000<sup>đ</sup></p>
-                    </a>
-                </div>
-                <div class="category-right-content-item">
-                    <a href="product.html">
-                        <img src="~/Theme/images/sp7.jpg" alt="">
-                        <h3>Pate cho mèo vị cá ngừ và thịt gà IRIS Bonito Chicken</h3>
-                        <p>25.000<sup>đ</sup></p>
-                    </a>
-                </div>
-                <div class="category-right-content-item">
-                    <a href="product.html">
-                        <img src="~/Theme/images/sp8.jpg" alt="">
-                        <h3>Thịt ức gà nướng sốt cá ngừ cho mèo CIAO Tuna</h3>
-                        <p>30.000<sup>đ</sup></p>
-                    </a>
-                </div>
-                <div class="category-right-content-item">
-                    <a href="product.html">
-                        <img src="~/Theme/images/sp9.jpg" alt="">
-                        <h3>Nước sốt pate cho mèo CIAO vị cá ngừ & cá bào nhật</h3>
-                        <p>35.000<sup>đ</sup></p>
-                    </a>
-                </div>
-                <div class="category-right-content-item">
-                    <a href="product.html">
-                        <img src="~/Theme/images/sp1.jpg" alt="">
-                        <h3>Pate cho mèo vị nước sốt cá ngừ WHISKAS Tuna Flavour Sauce</h3>
-                        <p>25.000<sup>đ</sup></p>
-                    </a>
-                </div>
-                <div class="category-right-content-item">
-                    <a href="product.html">
-                        <img src="~/Theme/images/sp10.jpg" alt="">
-                        <h3>Pate cho mèo CIAO Chicken Fillet & Grilled Bonito vị gà phi lê</h3>
-                        <p>55.000<sup>đ</sup></p>
-                    </a>
-                </div>
+                </div>*@
+                @*<div class="category-right-content-item">
+                        <a href="product.html">
+                            <img src="~/Theme/images/sp6.jpg" alt="">
+                            <h3>Pate cho mèo vị cá ngừ và thịt gà IRIS Tuna Chicken</h3>
+                            <p>25.000<sup>đ</sup></p>
+                        </a>
+                    </div>
+                    <div class="category-right-content-item">
+                        <a href="product.html">
+                            <img src="~/Theme/images/sp7.jpg" alt="">
+                            <h3>Pate cho mèo vị cá ngừ và thịt gà IRIS Bonito Chicken</h3>
+                            <p>25.000<sup>đ</sup></p>
+                        </a>
+                    </div>
+                    <div class="category-right-content-item">
+                        <a href="product.html">
+                            <img src="~/Theme/images/sp8.jpg" alt="">
+                            <h3>Thịt ức gà nướng sốt cá ngừ cho mèo CIAO Tuna</h3>
+                            <p>30.000<sup>đ</sup></p>
+                        </a>
+                    </div>
+                    <div class="category-right-content-item">
+                        <a href="product.html">
+                            <img src="~/Theme/images/sp9.jpg" alt="">
+                            <h3>Nước sốt pate cho mèo CIAO vị cá ngừ & cá bào nhật</h3>
+                            <p>35.000<sup>đ</sup></p>
+                        </a>
+                    </div>
+                    <div class="category-right-content-item">
+                        <a href="product.html">
+                            <img src="~/Theme/images/sp1.jpg" alt="">
+                            <h3>Pate cho mèo vị nước sốt cá ngừ WHISKAS Tuna Flavour Sauce</h3>
+                            <p>25.000<sup>đ</sup></p>
+                        </a>
+                    </div>
+                    <div class="category-right-content-item">
+                        <a href="product.html">
+                            <img src="~/Theme/images/sp10.jpg" alt="">
+                            <h3>Pate cho mèo CIAO Chicken Fillet & Grilled Bonito vị gà phi lê</h3>
+                            <p>55.000<sup>đ</sup></p>
+                        </a>
+                    </div>*@
             </div>
-            <div class="category-right-pagination">
-                <a href="#">&laquo;</a>
-                <a href="#" class="active">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <a href="#">5</a>
-                <a href="#">6</a>
-                <a href="#">&raquo;</a>
-            </div>
+            @*<div class="category-right-pagination">*@
+                @*<a href="#">&laquo;</a>
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <a href="#">&raquo;</a>*@
+                @*@(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)*@
+                @*@Html.PagedListPager(Model, page => Url.Action("Index", new { page, pageSize = 5, @class = "active" }))*@
+            @*</div>*@
         </div>
     </div>
 </div>
