@@ -27,7 +27,7 @@ namespace Pet_Shop.Controllers
         public ActionResult DoDungTC(int? page, int? pageSize)
         {
             if (page == null) { page = 1; }
-            if (pageSize == null) {  pageSize = 12; }
+            if (pageSize == null) {  pageSize = 3; }
             return View(doDungTCs.ToPagedList((int)page,(int)pageSize));
         }
 

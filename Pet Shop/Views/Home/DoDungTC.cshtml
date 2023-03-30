@@ -1,5 +1,5 @@
-﻿@*@model PagedList.IPagedList<Pet_Shop.Models.DoDungTC>*@
-@model IEnumerable<Pet_Shop.Models.DoDungTC>
+﻿@model PagedList.IPagedList<Pet_Shop.Models.DoDungTC>
+@*@model IEnumerable<Pet_Shop.Models.DoDungTC>*@
 @using PagedList.Mvc;
 @using PagedList;
 @{
@@ -151,6 +151,8 @@
                 @*@(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)*@
                 @*@Html.PagedListPager(Model, page => Url.Action("Index", new { page, pageSize = 5, @class = "active" }))*@
             @*</div>*@
+            @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page, pageSize = 5, @class = "active" }))
         </div>
     </div>
 </div>
