@@ -53,6 +53,12 @@
     <Reference Include="mysql.data.entity.EF6, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.Entities.6.8.3.0\lib\net45\mysql.data.entity.EF6.dll</HintPath>
     </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -274,10 +280,30 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="ImagesProduct\DichVu\se1.png" />
+    <Content Include="ImagesProduct\DichVu\se2.png" />
+    <Content Include="ImagesProduct\DichVu\se3.png" />
+    <Content Include="ImagesProduct\DichVu\se4.png" />
+    <Content Include="ImagesProduct\DichVu\se5.png" />
+    <Content Include="ImagesProduct\DoDung\sp1.jpg" />
+    <Content Include="ImagesProduct\DoDung\sp10.jpg" />
+    <Content Include="ImagesProduct\DoDung\sp2.jpg" />
+    <Content Include="ImagesProduct\DoDung\sp3.jpg" />
+    <Content Include="ImagesProduct\DoDung\sp4.jpg" />
+    <Content Include="ImagesProduct\DoDung\sp5.jpg" />
+    <Content Include="ImagesProduct\DoDung\sp6.jpg" />
+    <Content Include="ImagesProduct\DoDung\sp7.jpg" />
+    <Content Include="ImagesProduct\DoDung\sp8.jpg" />
+    <Content Include="ImagesProduct\DoDung\sp9.jpg" />
     <Content Include="ImagesProduct\petChose.png" />
+    <Content Include="ImagesProduct\ThuCung\gau2.png" />
+    <Content Include="ImagesProduct\ThuCung\gâu.png" />
+    <Content Include="ImagesProduct\ThuCung\Meo.png" />
+    <Content Include="ImagesProduct\ThuCung\Meo2.png" />
     <Content Include="Models\dbContext.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>dbContext.edmx</DependentUpon>
@@ -324,10 +350,6 @@
     <Content Include="Models\dbContext.edmx.diagram">
       <DependentUpon>dbContext.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\Admin\Views\DoiTuongKDsManager\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\DoiTuongKDsManager\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\DoiTuongKDsManager\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\DoiTuongKDsManager\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\DoiTuongKDsManager\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ThuCungsAdmin\Create.cshtml" />
     <Content Include="Areas\Admin\Views\ThuCungsAdmin\Delete.cshtml" />
@@ -435,7 +457,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin_PetShop.cshtml" />
-    <Content Include="Views\Home\Products.cshtml" />
+    <Content Include="Views\Home\DoDungTC.cshtml" />
     <Content Include="Views\Home\DetailProduct.cshtml" />
     <Content Include="Views\Shared\_LoginSign.cshtml" />
     <Content Include="Views\Home\Service.cshtml" />
@@ -444,9 +466,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\ImagesProduct\" />
-    <Folder Include="ImagesProduct\DichVu\" />
-    <Folder Include="ImagesProduct\DoDung\" />
-    <Folder Include="ImagesProduct\ThuCung\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
