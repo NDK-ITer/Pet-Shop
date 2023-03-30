@@ -682,6 +682,7 @@ a {
 
 .category-right-content {
     margin-top: 20px;
+    justify-content: space-between;
     display: flex;
     justify-content: flex-start;
     height: 100%;
@@ -1725,3 +1726,30 @@ a {
         background: #fea8a717;
         font-size: 20px;
     }
+/*-------------------------phantrang---------------------------------------*/
+.pagination-container  {
+    text-align: center;
+}
+ul.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+    ul.pagination a {
+        font-size: 20px;
+        color: black;
+        float: left;
+        padding: 8px 16px;
+        text-decoration: none;
+        text-align: center;
+        transition: background-color .3s;
+    }
+    ul.pagination li.active a {
+        background-color: #FEA8A7;
+        color: white;
+        border-radius: 5px;
+    }
+        ul.pagination a:hover:not(.active) {
+            background-color: #FEA8A7;
+            border-radius: 5px;
+        }
