@@ -5,23 +5,15 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin_PetShop.cshtml";
 }
 
-<h2>Details</h2>
-
 <div>
-    <h4>LoaiDD</h4>
+    <h4>Thông tin loại đồ dùng thú cưng</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.TenLoaiDD)
+            @Html.DisplayNameFor(model => model.TenLoaiDD) : @Html.DisplayFor(model => model.TenLoaiDD)
         </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TenLoaiDD)
-        </dd>
-
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MaLoaiDD }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Trở lại danh sách", "Index")
 </p>

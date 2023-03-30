@@ -5,10 +5,10 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin_PetShop.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Loại đồ dùng thú cưng</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Thêm mới", "Create")
 </p>
 <table class="table">
     <tr>
@@ -24,9 +24,9 @@
             @Html.DisplayFor(modelItem => item.TenLoaiDD)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaLoaiDD }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaLoaiDD }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaLoaiDD })
+            @Html.ActionLink("Thêm", "Edit", new { id=item.MaLoaiDD }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.MaLoaiDD }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.MaLoaiDD })
         </td>
     </tr>
 }
