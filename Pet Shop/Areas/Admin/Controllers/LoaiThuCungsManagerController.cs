@@ -47,10 +47,11 @@ namespace Pet_Shop.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "MaLoaiTC,TenLoai")] LoaiThuCung loaiThuCung)
+        public async Task<ActionResult> Create(LoaiThuCung loaiThuCung)
         {
             if (ModelState.IsValid)
             {
+                loaiThuCung.MaLoaiTC = Guid.NewGuid().ToString();
                 db.LoaiThuCungs.Add(loaiThuCung);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");

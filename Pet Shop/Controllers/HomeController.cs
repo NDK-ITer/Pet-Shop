@@ -1,13 +1,17 @@
-﻿using System;
+﻿using Pet_Shop.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 
 namespace Pet_Shop.Controllers
 {
     public class HomeController : Controller
     {
+        private static QuanLyThuCungEntities dbContext = new QuanLyThuCungEntities();
+        List<DoDungTC> doDungTCs = dbContext.DoDungTCs.ToList();
         public ActionResult Index()
         {
             return View();
@@ -20,9 +24,9 @@ namespace Pet_Shop.Controllers
         {
             return View();
         }
-        public ActionResult Products()
+        public ActionResult DoDungTC(int? page)
         {
-            return View();
+            return View(doDungTCs);
         }
 
         public ActionResult DetailProduct()
