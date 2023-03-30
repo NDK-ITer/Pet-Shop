@@ -1,6 +1,7 @@
-﻿@model IPagedList<Pet_Shop.Models.DoDungTC>
-@using PagedList.Mvc;
-@using PagedList;
+﻿@*@model IPagedList<Pet_Shop.Models.DoDungTC>*@
+@model IEnumerable<Pet_Shop.Models.DoDungTC>
+@*@using PagedList.Mvc;
+@using PagedList;*@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin_PetShop.cshtml";
@@ -10,21 +11,21 @@
     @Html.ActionLink("Thêm mới", "Create")
 </p>
 <table class="table">
-    @*<tr>
-            <th>
-                @Html.DisplayNameFor(model => model.TenDD)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HangSX.TenNSX)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LoaiThuCung.TenLoai)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DoiTuongKD.MoTa)
-            </th>
-            <th></th>
-        </tr>*@
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenDD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HangSX.TenNSX)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoaiThuCung.TenLoai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DoiTuongKD.MoTa)
+        </th>
+        <th></th>
+    </tr>
 
     @foreach (var item in Model)
     {
@@ -50,5 +51,5 @@
     }
 
 </table>
-@Html.PagedListPager(Model, page => Url.Action("Index",
-    new { page, pageSize = 5 }))
+@*@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, pageSize = 5 }))*@
