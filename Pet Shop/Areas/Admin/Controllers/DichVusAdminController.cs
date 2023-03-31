@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using Pet_Shop.Models;
 using Pet_Shop.ClassData;
+using System.IO;
 
 namespace Pet_Shop.Areas.Admin.Controllers
 {
@@ -50,12 +51,21 @@ namespace Pet_Shop.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "MaDT,DonGia,TrangThai,GiamGia,MoTa,ChiTiet,TenDV")] DichVuAdmin dichVuAdmin)
+        public async Task<ActionResult> Create(DichVuAdmin dichVuAdmin, HttpPostedFileBase file)
         {
             DichVu dichVu = new DichVu();
             DoiTuongKD doiTuongKD = new DoiTuongKD();
             if (ModelState.IsValid)
             {
+                if (file != null && file.ContentLength > 0)
+                {
+                    string fileName = Path.GetFileNameWithoutExtension(file.FileName);
+                    string extention = Path.GetExtension(file.FileName);
+                    fileName = fileName + extention;
+                    dichVuAdmin.AnhDaiDien = "~/ImagesProduct/DichVu/" + fileName;
+                    file.SaveAs(Path.Combine(Server.MapPath("~/ImagesProduct/DichVu/"), fileName));
+                }
+
                 doiTuongKD.MaDT = Guid.NewGuid().ToString();
                 doiTuongKD.DonGia = dichVuAdmin.DonGia;
                 doiTuongKD.TrangThai = dichVuAdmin.TrangThai;
@@ -98,12 +108,20 @@ namespace Pet_Shop.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "MaDT,DonGia,TrangThai,GiamGia,MoTa,ChiTiet,TenDV")] DichVuAdmin dichVuAdmin)
+        public async Task<ActionResult> Edit(DichVu dichVu, HttpPostedFileBase file)
         {
-            DichVu dichVu = db.DichVus.FirstOrDefault(x => x.DoiTuongKD.MaDT == dichVuAdmin.MaDT);
+            
             if (ModelState.IsValid)
             {
-                
+                if (file != null && file.ContentLength > 0)
+                {
+                    string fileName = Path.GetFileNameWithoutExtension(file.FileName);
+                    string extention = Path.GetExtension(file.FileName);
+                    fileName = fileName + extention;
+                    dichVu.DoiTuongKD.AnhDaiDien = "~/ImagesProduct/DichVu/" + fileName;
+                    file.SaveAs(Path.Combine(Server.MapPath("~/ImagesProduct/DichVu/"), fileName));
+                }
+
                 db.Entry(dichVu).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
