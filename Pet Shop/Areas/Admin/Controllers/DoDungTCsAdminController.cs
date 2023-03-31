@@ -74,7 +74,7 @@ namespace Pet_Shop.Areas.Admin.Controllers
                 doDungTC.MaLoaiTC = doDungTCAdmin.MaLoaiTC;
                 doDungTC.SoLuong = doDungTCAdmin.SoLuong;
                 db.DoDungTCs.Add(doDungTC);
-                db.SaveChangesAsync();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 

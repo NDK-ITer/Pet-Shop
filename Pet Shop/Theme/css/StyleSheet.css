@@ -595,7 +595,7 @@ a {
     }
 /*-------------------------category---------------------------------------*/
 .category {
- 
+    width:100%;
     display: inline-block;
     padding: 100px 55px 12px;
     background-color: #FCCDCD;
@@ -691,6 +691,7 @@ a {
 
 .category-right-content-item {
     height: 30%;
+    max-height:304px;
     width: calc(25% - 12px);
     text-align: center;
     padding: 12px 12px;
@@ -698,7 +699,10 @@ a {
     background: linear-gradient(180deg, #F4439F 0%, #F3C960 100%);
     border-radius: 15px;
 }
-
+    .category-right-content-item a {
+        font-size:13.5px;
+        font-weight:bold;
+    }
     .category-right-content-item h3 {
         font-size: 14px;
         margin-top: 6px;
@@ -1727,8 +1731,10 @@ a {
         font-size: 20px;
     }
 /*-------------------------phantrang---------------------------------------*/
-.pagination-container  {
+.pagination-container {
     text-align: center;
+    padding-bottom: 10px;
+    background: linear-gradient(90deg, #fea8a740 0%, #fcd2ba73 100%);
 }
 ul.pagination {
     display: flex;

@@ -50,6 +50,7 @@
                         <a href="@Url.Action("ChiTietSP", "Home", new { id = item.MaDD })">
                             <img src="@Url.Content(item.DoiTuongKD.AnhDaiDien)" alt="">
                             @Html.DisplayFor(modelItem => item.TenDD)<br />
+                            @*@item.DoiTuongKD.DonGia.ToString("#,##0").Replace(',', '.') VNĐ*@
                             @Html.DisplayFor(modelItem => item.DoiTuongKD.DonGia)
                         </a>
                     </div>
