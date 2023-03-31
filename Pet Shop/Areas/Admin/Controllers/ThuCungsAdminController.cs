@@ -64,12 +64,8 @@ namespace Pet_Shop.Areas.Admin.Controllers
 
                 if (file != null && file.ContentLength > 0)
                 {
-                    //var typeFile = Path.GetExtension(Content.FileName);
-                    //thuCungAdmin.AnhDaiDien = thuCungAdmin.MaDT + typeFile;
-                    //var filePath = Path.Combine(Server.MapPath("~/ImagesProduct/ThuCung/"), thuCungAdmin.AnhDaiDien);
-                    //Content.SaveAs(filePath);
                     string fileName = Path.GetFileNameWithoutExtension(file.FileName);
-                    string extention = Path.GetExtension(thuCungAdmin.ImgUpLoad.FileName);
+                    string extention = Path.GetExtension(file.FileName);
                     fileName = fileName + extention;
                     thuCungAdmin.AnhDaiDien = "~/ImagesProduct/ThuCung/" + fileName;
                     file.SaveAs(Path.Combine(Server.MapPath("~/ImagesProduct/ThuCung/"), fileName));
@@ -121,10 +117,18 @@ namespace Pet_Shop.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit(ThuCung thuCung)
+        public async Task<ActionResult> Edit(ThuCung thuCung, HttpPostedFileBase file)
         {
             if (ModelState.IsValid)
             {
+                if (file != null && file.ContentLength > 0)
+                {
+                    string fileName = Path.GetFileNameWithoutExtension(file.FileName);
+                    string extention = Path.GetExtension(file.FileName);
+                    fileName = fileName + extention;
+                    thuCung.DoiTuongKD.AnhDaiDien = "~/ImagesProduct/ThuCung/" + fileName;
+                    file.SaveAs(Path.Combine(Server.MapPath("~/ImagesProduct/ThuCung/"), fileName));
+                }
                 db.Entry(thuCung).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");

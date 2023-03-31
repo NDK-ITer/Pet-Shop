@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using Pet_Shop.Models;
 using Pet_Shop.ClassData;
+using System.IO;
 
 namespace Pet_Shop.Areas.Admin.Controllers
 {
@@ -53,12 +54,21 @@ namespace Pet_Shop.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create(DoDungTCAdmin doDungTCAdmin)
+        public async Task<ActionResult> Create(DoDungTCAdmin doDungTCAdmin, HttpPostedFileBase file)
         {
             DoDungTC doDungTC = new DoDungTC();
             DoiTuongKD doiTuongKD = new DoiTuongKD();
             if (ModelState.IsValid)
             {
+                if (file != null && file.ContentLength > 0)
+                {
+                    string fileName = Path.GetFileNameWithoutExtension(file.FileName);
+                    string extention = Path.GetExtension(file.FileName);
+                    fileName = fileName + extention;
+                    doDungTCAdmin.AnhDaiDien = "~/ImagesProduct/DoDung/" + fileName;
+                    file.SaveAs(Path.Combine(Server.MapPath("~/ImagesProduct/DoDung/"), fileName));
+                }
+
                 doiTuongKD.MaDT = Guid.NewGuid().ToString();
                 doiTuongKD.DonGia = doDungTCAdmin.DonGia;
                 doiTuongKD.TrangThai = doDungTCAdmin.TrangThai;
@@ -107,10 +117,18 @@ namespace Pet_Shop.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "MaDD,TenDD,MaLoaiTC,MaNSX")] DoDungTC doDungTC)
+        public async Task<ActionResult> Edit(DoDungTC doDungTC, HttpPostedFileBase file)
         {
             if (ModelState.IsValid)
             {
+                if (file != null && file.ContentLength > 0)
+                {
+                    string fileName = Path.GetFileNameWithoutExtension(file.FileName);
+                    string extention = Path.GetExtension(file.FileName);
+                    fileName = fileName + extention;
+                    doDungTC.DoiTuongKD.AnhDaiDien = "~/ImagesProduct/DoDung/" + fileName;
+                    file.SaveAs(Path.Combine(Server.MapPath("~/ImagesProduct/DoDung/"), fileName));
+                }
                 db.Entry(doDungTC).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
