@@ -64,12 +64,8 @@ namespace Pet_Shop.Areas.Admin.Controllers
 
                 if (file != null && file.ContentLength > 0)
                 {
-                    //var typeFile = Path.GetExtension(Content.FileName);
-                    //thuCungAdmin.AnhDaiDien = thuCungAdmin.MaDT + typeFile;
-                    //var filePath = Path.Combine(Server.MapPath("~/ImagesProduct/ThuCung/"), thuCungAdmin.AnhDaiDien);
-                    //Content.SaveAs(filePath);
                     string fileName = Path.GetFileNameWithoutExtension(file.FileName);
-                    string extention = Path.GetExtension(thuCungAdmin.ImgUpLoad.FileName);
+                    string extention = Path.GetExtension(file.FileName);
                     fileName = fileName + extention;
                     thuCungAdmin.AnhDaiDien = "~/ImagesProduct/ThuCung/" + fileName;
                     file.SaveAs(Path.Combine(Server.MapPath("~/ImagesProduct/ThuCung/"), fileName));
