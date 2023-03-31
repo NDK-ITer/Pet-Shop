@@ -4,8 +4,7 @@
     ViewBag.Title = "Create";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin_PetShop.cshtml";
 }
-@using (Html.BeginForm())
-{
+<form action="@Url.Action("Create")" method="post" enctype="multipart/form-data">
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
@@ -57,9 +56,6 @@
                         @Html.ValidationMessageFor(model => model.MoTa, "", new { @class = "text-danger" })
                     </div>
                 </div>
-
-                
-
             </div>
             <div class="group-right">
                 <div class="form-group form-group-flex">
@@ -96,14 +92,16 @@
                         </div>
                     </div>
                 </div>
-                <form method="post" enctype="multipart/form-data">
-                    <div class="form-group form-group-flex">
-                        @Html.LabelFor(model => model.AnhDaiDien, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            <input type="file" name="Content" id="Content" />
-                        </div>
+
+                <div class="form-group form-group-flex">
+                    @Html.LabelFor(model => model.AnhDaiDien, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @*@Html.TextBoxFor(model => model.ImgUpLoad, new { type = "file" })*@
+                        <input type="file" name="file" id="file" required class="form-control" accept=".png, .jpg, .jpeg" />
+                        @*<input type="button" id="btnUpload" value="Upload Files" />*@
                     </div>
-                </form>
+                </div>
+
                 <div class="form-group form-group-area">
                     @Html.LabelFor(model => model.ChiTiet, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
@@ -113,14 +111,13 @@
                 </div>
             </div>
         </div>
-
         <div class="form-group form-right">
             <div class="col-md-offset-2 col-md-10">
-                @*<input type="submit" value="Tạo mới" class="btn btn-default" />*@
                 <button type="submit" value="Tạo mới" class="btn btn-default">Tạo mới</button>
                 <button class="btn btn-default">@Html.ActionLink("Trở lại danh sách", "Index")</button>
             </div>
         </div>
     </div>
-}
+</form>
+
 

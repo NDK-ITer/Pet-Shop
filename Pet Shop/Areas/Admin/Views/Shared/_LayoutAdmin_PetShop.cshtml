@@ -11,23 +11,7 @@
     <script src="~/Scripts/Script.js"></script>
     @* script của upload *@
 
-    <script>
-
-        fileImage.onchange = evt => {
-
-            const [file] = fileImage.files
-
-            if (file) {
-
-                preview.src = URL.createObjectURL(file);
-
-                $("#preview").removeClass("hidden");
-
-            }
-
-        }
-
-    </script>
+   
 </head>
 <body>
     <div class="BodyAdmin row">
@@ -90,12 +74,12 @@
                         <span class="links_name">Hãng sản xuất</span>
                     </a>
                 </li>
-                @*<li class="log_out">
-                    <a href="#">
+                <li class="log_out">
+                    <a href="@Url.Action("Index","Home")">
                         <i class='bx bx-log-out'></i>
-                        <span class="links_name">Log out</span>
+                        <span class="links_name">Way back home</span>
                     </a>
-                </li>*@
+                </li>
             </ul>
         </div>
         <section class="home-section">

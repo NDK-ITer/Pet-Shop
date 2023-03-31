@@ -17,6 +17,7 @@ namespace Pet_Shop.Areas.Admin.Controllers
     public class ThuCungsAdminController : Controller
     {
         private QuanLyThuCungEntities db = new QuanLyThuCungEntities();
+        private HttpPostedFileBase anhDaiDien = null;
 
         // GET: Admin/ThuCungsAdmin
         public async Task<ActionResult> Index()
@@ -54,20 +55,20 @@ namespace Pet_Shop.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create(ThuCungAdmin thuCungAdmin, HttpPostedFileBase Content)
+        public async Task<ActionResult> Create(ThuCungAdmin thuCungAdmin, HttpPostedFileBase file)
         {
             ThuCung thuCung = new ThuCung();
             DoiTuongKD doiTuongKD = new DoiTuongKD();
             if (ModelState.IsValid)
             {
 
-                if (Content != null && Content.ContentLength > 0)
+                if (file != null && file.ContentLength > 0)
                 {
                     //var typeFile = Path.GetExtension(Content.FileName);
                     //thuCungAdmin.AnhDaiDien = thuCungAdmin.MaDT + typeFile;
                     //var filePath = Path.Combine(Server.MapPath("~/ImagesProduct/ThuCung/"), thuCungAdmin.AnhDaiDien);
                     //Content.SaveAs(filePath);
-                    string fileName = Path.GetFileNameWithoutExtension(Content.FileName);
+                    string fileName = Path.GetFileNameWithoutExtension(file.FileName);
                     string extention = Path.GetExtension(thuCungAdmin.ImgUpLoad.FileName);
                     fileName = fileName + extention;
                     thuCungAdmin.AnhDaiDien = "~/ImagesProduct/ThuCung/" + fileName;
@@ -98,7 +99,6 @@ namespace Pet_Shop.Areas.Admin.Controllers
             ViewBag.MaLoaiTC = new SelectList(db.LoaiThuCungs, "MaLoaiTC", "TenLoai", thuCung.MaLoaiTC);
             return View(thuCung);
         }
-
         // GET: Admin/ThuCungsAdmin/Edit/5
         public async Task<ActionResult> Edit(string id)
         {
@@ -162,7 +162,52 @@ namespace Pet_Shop.Areas.Admin.Controllers
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
+        //[HttpPost]
+        //public ActionResult UploadFiles()
+        //{
+        //    // Checking no of files injected in Request object  
+        //    if (Request.Files.Count > 0)
+        //    {
+        //        try
+        //        {
+        //            //  Get all files from Request object  
+        //            HttpFileCollectionBase files = Request.Files;
+        //            for (int i = 0; i < files.Count; i++)
+        //            {
+        //                //string path = AppDomain.CurrentDomain.BaseDirectory + "Uploads/";  
+        //                //string filename = Path.GetFileName(Request.Files[i].FileName);  
 
+        //                HttpPostedFileBase file = files[i];
+        //                string fname;
+
+        //                // Checking for Internet Explorer  
+        //                if (Request.Browser.Browser.ToUpper() == "IE" || Request.Browser.Browser.ToUpper() == "INTERNETEXPLORER")
+        //                {
+        //                    string[] testfiles = file.FileName.Split(new char[] { '\\' });
+        //                    fname = testfiles[testfiles.Length - 1];
+        //                }
+        //                else
+        //                {
+        //                    fname = file.FileName;
+        //                }
+
+        //                // Get the complete folder path and store the file inside it.  
+        //                fname = Path.Combine(Server.MapPath("~/ImagesProduct/"), fname);
+        //                file.SaveAs(fname);
+        //            }
+        //            // Returns message that successfully uploaded  
+        //            return Json("File Uploaded Successfully!");
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            return Json("Error occurred. Error details: " + ex.Message);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        return Json("No files selected.");
+        //    }
+        //}
         protected override void Dispose(bool disposing)
         {
             if (disposing)
