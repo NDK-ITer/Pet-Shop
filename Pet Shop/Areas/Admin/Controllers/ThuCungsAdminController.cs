@@ -72,7 +72,7 @@ namespace Pet_Shop.Areas.Admin.Controllers
                     string extention = Path.GetExtension(thuCungAdmin.ImgUpLoad.FileName);
                     fileName = fileName + extention;
                     thuCungAdmin.AnhDaiDien = "~/ImagesProduct/ThuCung/" + fileName;
-                    thuCungAdmin.ImgUpLoad.SaveAs(Path.Combine(Server.MapPath("~/ImagesProduct/ThuCung/"), fileName));
+                    file.SaveAs(Path.Combine(Server.MapPath("~/ImagesProduct/ThuCung/"), fileName));
                 }
                 doiTuongKD.MaDT = Guid.NewGuid().ToString();
                 doiTuongKD.DonGia = thuCungAdmin.DonGia;
