@@ -198,6 +198,7 @@
     <Compile Include="ClassData\DoiTuongKDAdmin.cs" />
     <Compile Include="ClassData\ThuCungAdmin.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -257,6 +258,7 @@
     <Compile Include="Models\PhieuDat.cs">
       <DependentUpon>dbContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SPGioHang.cs" />
     <Compile Include="Models\ThuCung.cs">
       <DependentUpon>dbContext.tt</DependentUpon>
     </Compile>
@@ -462,6 +464,7 @@
     <Content Include="Theme\images\fast1.png" />
     <Content Include="Theme\images\fast2.png" />
     <Content Include="Theme\images\fast3.jpg" />
+    <Content Include="Views\GioHang\GioHang.cshtml" />
     <Content Include="Theme\images\fast4.jpg" />
     <Content Include="Theme\images\food.png" />
     <Content Include="Theme\images\gau2.png" />

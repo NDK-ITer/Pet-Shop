@@ -51,7 +51,8 @@
                             <img src="@Url.Content(item.DoiTuongKD.AnhDaiDien)" alt="">
                             @Html.DisplayFor(modelItem => item.TenDD)<br />
                             @*@item.DoiTuongKD.DonGia.ToString("#,##0").Replace(',', '.') VNĐ*@
-                            @Html.DisplayFor(modelItem => item.DoiTuongKD.DonGia)
+                            @String.Format("{0:0,0}", item.DoiTuongKD.DonGia)đ
+                            @*@Html.DisplayFor(modelItem => item.DoiTuongKD.DonGia)*@
                         </a>
                     </div>
                 }
