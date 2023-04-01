@@ -1,6 +1,5 @@
 ﻿@model PagedList.IPagedList<Pet_Shop.Models.DoiTuongKD>
 @using PagedList.Mvc;
-@using PagedList;
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin_PetShop.cshtml";
@@ -89,7 +88,6 @@
             </td>
             <td>
                 <img src="@Url.Content(item.AnhDaiDien)" width="50%" height="50%" />
-                @*@Html.DisplayFor(modelItem => item.AnhDaiDien)*@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DichVu.TenDV)
@@ -100,16 +98,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.ThuCung.TenTC)
             </td>
-            @*<td>
-                @Html.ActionLink("Sửa", "Edit", new { id = item.MaDT }) |
-                @Html.ActionLink("Chi tiết", "Details", new { id = item.MaDT }) |
-                @Html.ActionLink("Xóa", "Delete", new { id = item.MaDT })
-            </td>*@
         </tr>
     }
 
     @*@(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)*@
-    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, pageSize = 5 }))
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page}))
 </table>
 @*@(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)*@
-@Html.PagedListPager(Model, page => Url.Action("Index", new { page, pageSize = 5 }))
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page}))

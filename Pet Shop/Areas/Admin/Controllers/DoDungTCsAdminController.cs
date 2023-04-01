@@ -10,6 +10,7 @@ using System.Web.Mvc;
 using Pet_Shop.Models;
 using Pet_Shop.ClassData;
 using System.IO;
+using PagedList;
 
 namespace Pet_Shop.Areas.Admin.Controllers
 {
@@ -18,10 +19,12 @@ namespace Pet_Shop.Areas.Admin.Controllers
         private QuanLyThuCungEntities db = new QuanLyThuCungEntities();
 
         // GET: Admin/DoDungTCsAdmin
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index(int? page, int? pageSize)
         {
-            var doDungTCs = db.DoDungTCs.Include(d => d.HangSX).Include(d => d.LoaiThuCung).Include(d => d.DoiTuongKD);
-            return View(await doDungTCs.ToListAsync());
+            if (page == null) { page = 1; }
+            if (pageSize == null) { pageSize = 5; }
+            var doDungTC = db.DoDungTCs.ToList();
+            return View(doDungTC.ToPagedList((int)page, (int)pageSize));
         }
 
         // GET: Admin/DoDungTCsAdmin/Details/5
