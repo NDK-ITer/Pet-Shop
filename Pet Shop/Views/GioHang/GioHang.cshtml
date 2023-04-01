@@ -57,7 +57,7 @@
                                         </button>
                                     </div>
                                 </td>
-                                <td><p>@Html.DisplayFor(modelItem => item.DonGia)<sup>đ</sup></p></td>
+                                <td><p>@String.Format("{0:0,0}", item.DonGia)đ</p></td>
                                 <td><a href="@Url.Action("XoaGioHang","GioHang",new { id = item.MaDD })">X</a></td>
                             </tr>
                         }
@@ -96,11 +96,11 @@
                     </tr>
                     <tr>
                         <td>TỔNG TIỀN HÀNG</td>
-                        <td><p>@ViewBag.TongThanhTien <sup>đ</sup></p></td>
+                        <td><p>@String.Format("{0:0,0}", @ViewBag.TongThanhTien)đ</p></td>
                     </tr>
                     <tr>
                         <td>TẠM TÍNH</td>
-                        <td><p style="color:black;font-weight: bold;">@ViewBag.TongThanhTien <sup>đ</sup></p></td>
+                        <td><p style="color:black;font-weight: bold;">@String.Format("{0:0,0}", @ViewBag.TongThanhTien)đ</p></td>
                     </tr>
                 </table>
                 <div class="cart-content-right-button">

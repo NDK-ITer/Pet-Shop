@@ -26,7 +26,7 @@
                     <p>Thương hiệu @Html.DisplayFor(Model => Model.HangSX.TenNSX)</p>
                 </div>
                 <div class="product-content-right-product-price">
-                    <p>Giá bán: @Html.DisplayFor(Model => Model.DoiTuongKD.DonGia)<sup>đ</sup></p>
+                    <p>Giá bán: @String.Format("{0:0,0}", Model.DoiTuongKD.DonGia)đ</p>
                 </div>
                 @*<div class="product-content-right-product-size">
                     <p style="font-weight: bold;">Size:</p>
