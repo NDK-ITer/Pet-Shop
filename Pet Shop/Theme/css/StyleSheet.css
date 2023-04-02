@@ -1759,3 +1759,23 @@ ul.pagination {
             background-color: #FEA8A7;
             border-radius: 5px;
         }
+.category-right-content-item-bottom {
+    text-align: right;
+    font-size: 13.5px;
+    font-weight: bold;
+}
+    .category-right-content-item-bottom a {
+        text-align: right;
+        margin-left: 59px;
+        background: #FFA9A8;
+        color: #333333;
+        padding: 7px 7px 7px 5px;
+        border-radius: 50%;
+        border: 1px solid #333333;
+    }
+        .category-right-content-item-bottom a:hover {
+            background: linear-gradient(180deg, #FEA8A7 100%, #FCD2BA 0%);
+            color: #000;
+            border: 1px solid #dddddddd;
+            transform:scale(1.2);
+        }

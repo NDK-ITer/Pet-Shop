@@ -50,10 +50,14 @@
                         <a href="@Url.Action("ChiTietSP", "Home", new { id = item.MaDD })">
                             <img src="@Url.Content(item.DoiTuongKD.AnhDaiDien)" alt="">
                             @Html.DisplayFor(modelItem => item.TenDD)<br />
-                            @*@item.DoiTuongKD.DonGia.ToString("#,##0").Replace(',', '.') VNĐ*@
-                            @String.Format("{0:0,0}", item.DoiTuongKD.DonGia)đ
-                            @*@Html.DisplayFor(modelItem => item.DoiTuongKD.DonGia)*@
+                            
+
                         </a>
+                        <div class="category-right-content-item-bottom">
+                            @String.Format("{0:0,0}", item.DoiTuongKD.DonGia)đ
+                            <a class="fas fa-shopping-cart" href="@Url.Action("ThemVaoGioHang", "GioHang", new { @id = item.MaDD, @strURL = Request.Url.ToString() })"></a>
+                        </div>
+                        
                     </div>
                 }
                 @*<div class="category-right-content-item">
