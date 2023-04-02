@@ -17,8 +17,12 @@
             }
             else
             {
-                <li> @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link" })</li>
-                <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                <li class="user-drop">
+                    @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link" })
+                    <ul class="menu-u-drop">
+                        <li><a class="nav-link" href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                    </ul>
+                </li>
             }
         </ul>
     }
