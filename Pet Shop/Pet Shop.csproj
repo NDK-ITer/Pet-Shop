@@ -235,6 +235,9 @@
     <Compile Include="Models\DoiTuongKD.cs">
       <DependentUpon>dbContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\GioHang.cs">
+      <DependentUpon>dbContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\HangSX.cs">
       <DependentUpon>dbContext.tt</DependentUpon>
     </Compile>
@@ -253,6 +256,9 @@
     </Compile>
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\NhanSU.cs">
+      <DependentUpon>dbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhanLoaiDTKD.cs">
       <DependentUpon>dbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PhieuDat.cs">
@@ -509,7 +515,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin_PetShop.cshtml" />
-    <Content Include="Views\Home\DoDungTC.cshtml" />
+    <Content Include="Views\Home\DoiTuongKD.cshtml" />
     <Content Include="Views\Home\ChiTietSP.cshtml" />
     <Content Include="Views\Shared\_LoginSign.cshtml" />
     <Content Include="Views\Home\DichVu.cshtml" />

@@ -31,6 +31,10 @@
         <AssociationConnector Association="QuanLyThuCungModel.FK_ThuCung_LoaiThuCung1" ManuallyRouted="false" />
         <EntityTypeShape EntityType="QuanLyThuCungModel.LoaiDD" Width="1.5" PointX="0.75" PointY="0.875" />
         <AssociationConnector Association="QuanLyThuCungModel.FK_DoDungTC_LoaiDD" />
+        <EntityTypeShape EntityType="QuanLyThuCungModel.GioHang" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="QuanLyThuCungModel.PhanLoaiDTKD" Width="1.5" PointX="0.75" PointY="16.875" />
+        <AssociationConnector Association="QuanLyThuCungModel.FK_DoiTuongKD_PhanLoaiDTKD" />
+        <AssociationConnector Association="QuanLyThuCungModel.FK_GioHang_DoiTuongKD" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

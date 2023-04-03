@@ -12,18 +12,18 @@ namespace Pet_Shop.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class LoaiDD
+    public partial class PhanLoaiDTKD
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public LoaiDD()
+        public PhanLoaiDTKD()
         {
-            this.DoDungTCs = new HashSet<DoDungTC>();
+            this.DoiTuongKDs = new HashSet<DoiTuongKD>();
         }
     
-        public string MaLoaiDD { get; set; }
-        public string TenLoaiDD { get; set; }
+        public string MaPLDTKD { get; set; }
+        public string TenLoai { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DoDungTC> DoDungTCs { get; set; }
+        public virtual ICollection<DoiTuongKD> DoiTuongKDs { get; set; }
     }
 }
