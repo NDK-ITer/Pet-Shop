@@ -6,7 +6,6 @@
 
 body {
     font-family: Raleway;
-
     height: auto;
 }
 /*-------------------------header---------------------------------------*/
@@ -133,7 +132,7 @@ a {
 
 .others {
     display: flex;
-    align-items:center;
+    align-items: center;
 }
 
     .others li {
@@ -141,6 +140,7 @@ a {
         position: relative;
         cursor: pointer;
     }
+
 .menu-u-drop {
     position: absolute;
     transition: 0.3s;
@@ -248,7 +248,6 @@ a {
 
 .body-page-fast {
     background: linear-gradient(90deg, #FEA8A7 0%, #FCD2BA 100%);
- 
     align-items: center;
     text-align: center;
 }
@@ -271,7 +270,6 @@ a {
     }
 /*-------------------------body-page-ads---------------------------------------*/
 .body-page-ads {
-
     background: whitesmoke;
 }
 
@@ -287,7 +285,6 @@ a {
 }
 
 .body-page-ads-top-content {
-
     height: 400px;
     display: flex;
     justify-content: space-evenly;
@@ -333,7 +330,6 @@ a {
 }
 
 .body-page-ads-bottom-content {
- 
     height: 400px;
     display: flex;
     justify-content: space-evenly;
@@ -375,7 +371,6 @@ a {
 }
 /*-------------------------body-page-service---------------------------------------*/
 .body-page-service {
-   
     background: linear-gradient(89.92deg, #FE8A93 1.14%, #E5DAB2 99.93%);
 }
 
@@ -386,7 +381,6 @@ a {
 }
 
 .body-page-service-bottom {
- 
     height: 500px;
 }
 
@@ -470,7 +464,6 @@ a {
         }
 /*-------------------------footer---------------------------------------*/
 .footer {
- 
     align-items: center;
     background: linear-gradient(180deg, #FB7677 0%, #FCD2BA 100%);
 }
@@ -595,7 +588,7 @@ a {
     }
 /*-------------------------category---------------------------------------*/
 .category {
-    width:100%;
+    width: 100%;
     display: inline-block;
     padding: 100px 55px 12px;
     background-color: #FCCDCD;
@@ -691,7 +684,7 @@ a {
 
 .category-right-content-item {
     height: 30%;
-    max-height:304px;
+    max-height: 304px;
     width: calc(25% - 12px);
     text-align: center;
     padding: 12px 12px;
@@ -699,10 +692,12 @@ a {
     background: linear-gradient(180deg, #F4439F 0%, #F3C960 100%);
     border-radius: 15px;
 }
+
     .category-right-content-item a {
-        font-size:13.5px;
-        font-weight:bold;
+        font-size: 13.5px;
+        font-weight: bold;
     }
+
     .category-right-content-item h3 {
         font-size: 14px;
         margin-top: 6px;
@@ -752,7 +747,6 @@ a {
         }
 /*-------------------------product---------------------------------------*/
 .product {
- 
     padding: 100px 55px 0 12px;
     background: linear-gradient(90deg, #FEA8A7 0%, #FCD2BA 100%);
 }
@@ -1592,7 +1586,6 @@ a {
         }
 /*-------------------------service---------------------------------------*/
 .service {
- 
     padding: 90px 75px;
     background: linear-gradient(90deg, #fea8a740 0%, #fcd2ba73 100%);
 }
@@ -1715,7 +1708,6 @@ a {
         }
 /*-------------------------introduce---------------------------------------*/
 .introduce {
- 
     padding: 150px 75px;
     background: linear-gradient(90deg, #fea8a740 0%, #fcd2ba73 100%);
 }
@@ -1736,11 +1728,13 @@ a {
     padding-bottom: 10px;
     background: linear-gradient(90deg, #fea8a740 0%, #fcd2ba73 100%);
 }
+
 ul.pagination {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
     ul.pagination a {
         font-size: 20px;
         color: black;
@@ -1750,20 +1744,24 @@ ul.pagination {
         text-align: center;
         transition: background-color .3s;
     }
+
     ul.pagination li.active a {
         background-color: #FEA8A7;
         color: white;
         border-radius: 5px;
     }
-        ul.pagination a:hover:not(.active) {
-            background-color: #FEA8A7;
-            border-radius: 5px;
-        }
+
+    ul.pagination a:hover:not(.active) {
+        background-color: #FEA8A7;
+        border-radius: 5px;
+    }
+
 .category-right-content-item-bottom {
     text-align: right;
     font-size: 13.5px;
     font-weight: bold;
 }
+
     .category-right-content-item-bottom a {
         text-align: right;
         margin-left: 59px;
@@ -1773,9 +1771,207 @@ ul.pagination {
         border-radius: 50%;
         border: 1px solid #333333;
     }
+
         .category-right-content-item-bottom a:hover {
             background: linear-gradient(180deg, #FEA8A7 100%, #FCD2BA 0%);
             color: #000;
             border: 1px solid #dddddddd;
-            transform:scale(1.2);
+            transform: scale(1.2);
         }
+/*---------------------------------------CTDichVu---------------------------------*/
+.CTDichVu {
+    padding: 100px 55px 0 12px;
+    background: linear-gradient(90deg, #FEA8A7 0%, #FCD2BA 100%);
+}
+
+.CTDichVu-container-top {
+    display: flex;
+    text-align: left;
+    padding: 0px 12px 20px 12px;
+}
+
+.CTDichVu-content-left {
+    width: 50%;
+    padding-left: 20px;
+}
+
+.CTDichVu-content-left-big-img {
+    width: 85%;
+    padding: 25px 0px 24px 0px;
+}
+
+    .CTDichVu-content-left-big-img img {
+        width: 100%;
+        border-radius: 5px;
+    }
+
+.CTDichVu-content-right {
+    width: 50%;
+    padding-top: 24px;
+}
+
+.CTDichVu-content-right-CTDichVu-name h1 {
+    font-size: 26px;
+}
+
+.CTDichVu-content-right-CTDichVu-name p {
+    font-size: 16px;
+    padding-top: 11px;
+    padding-left: 5px;
+    font-weight: bold;
+}
+
+.CTDichVu-content-right-CTDichVu-price p {
+    font-size: 17px;
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+.CTDichVu-content-right-CTDichVu-button {
+    display: flex;
+    align-items: center;
+    padding-top: 22px;
+    padding-left: 5px;
+}
+
+    .CTDichVu-content-right-CTDichVu-button p {
+        font-size: 16px;
+        font-weight: bold;
+        padding: 0 5px;
+    }
+
+    .CTDichVu-content-right-CTDichVu-button button {
+        cursor: pointer;
+        height: 40px;
+        transition: all 0.3s ease;
+        padding: 0 10px;
+        margin-right: 10px;
+        align-items: center;
+        border-radius: 5px;
+    }
+
+    .CTDichVu-content-right-CTDichVu-button #bnt-gocart {
+        display: flex;
+        color: #000;
+        background-color: #FF9F87;
+    }
+
+    .CTDichVu-content-right-CTDichVu-button #bnt-gocart {
+        background-color: #FB7677;
+        border: 1px solid #191818;
+    }
+
+    .CTDichVu-content-right-CTDichVu-button button:last-child {
+        background-color: #0074CC;
+        color: white;
+    }
+
+        .CTDichVu-content-right-CTDichVu-button button:last-child:hover {
+            border: 1px solid #191818;
+            background-color: #055b9d;
+        }
+
+.CTDichVu-content-right-bottom {
+    padding-top: 25px;
+    margin-top: 25px;
+    border-top: 1px solid #dddddd;
+    position: relative;
+}
+
+.CTDichVu-content-right-bottom-top {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #dddddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    top: -15px;
+    left: 50%;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.CTDichVu-content-right-bottom-content-title {
+    border-bottom: 2px solid #dddddd;
+}
+
+.CTDichVu-content-right-bottom-content-title-item {
+    padding: 6px;
+    cursor: pointer;
+    margin-right: 6px;
+}
+
+    .CTDichVu-content-right-bottom-content-title-item p {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+.CTDichVu-content-right-bottom-content {
+    padding-top: 20px;
+    font-size: 15px;
+    padding-left: 5px;
+}
+
+.CTDichVu-content-right-bottom-content-lic {
+    display: none;
+}
+
+.CTDichVu-content-right-bottom-content-hdsd {
+    display: none;
+}
+
+.activeB {
+    display: none;
+}
+
+.color-item-select {
+    background: linear-gradient(90deg, #FEA8A7 0%, #FCD2BA 100%) !important;
+}
+
+.color-item {
+    background: none;
+}
+
+.CTDichVu-related {
+    padding: 1px 45px 45px;
+    background: linear-gradient(90deg, #FEA8A7 0%, #FCD2BA 100%);
+}
+
+.CTDichVu-related-title {
+    margin: 20px 0;
+}
+
+    .CTDichVu-related-title p {
+        font-size: 16px;
+        font-weight: bold;
+        color: #333333;
+    }
+
+.CTDichVu-related-item {
+    width: calc(20% - 10px);
+    text-align: center;
+    padding: 12px 12px;
+    margin: 5px;
+    background: linear-gradient(180deg, #F4439F 0%, #F3C960 100%);
+    border-radius: 15px;
+}
+
+    .CTDichVu-related-item img {
+        width: 100%;
+        padding: 0 6px;
+        border-radius: 15px;
+    }
+
+    .CTDichVu-related-item h1 {
+        font-size: 15px;
+        font-weight: bold;
+        color: #333333;
+        margin-top: 6px;
+    }
+
+    .CTDichVu-related-item p {
+        font-size: 13px;
+    }

@@ -1,0 +1,61 @@
+﻿@model Pet_Shop.Models.DichVu
+@{
+    ViewBag.Title = "ChiTietDichVu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="CTDichVu">
+    <div class="CTDichVu-container">
+        <div class="CTDichVu-content row">
+            <div class="CTDichVu-content-left">
+                <div class="CTDichVu-content-left-big-img">
+                    <img src="@Url.Content(Model.DoiTuongKD.AnhDaiDien)" alt="">
+                </div>
+            </div>
+            <div class="CTDichVu-content-right">
+                <div class="CTDichVu-content-right-CTDichVu-name">
+                    <h1>@Html.DisplayFor(Model => Model.TenDV)</h1>
+                </div>
+                <div class="CTDichVu-content-right-CTDichVu-price">
+                    <p>Đơn giá: @String.Format("{0:0,0}", Model.DoiTuongKD.DonGia)đ</p>
+                </div>
+                <div class="CTDichVu-content-right-CTDichVu-button">
+                    <a href="cart.html">
+                        <button id="bnt-gocart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <p>Liên hệ đặt lịch</p>
+                        </button>
+                    </a>
+                    <<a href="https://zalo.me/0345438160" target="_blank">
+                        <button>
+                            <p>Liên hệ cửa hàng</p>
+                        </button>
+                    </a>
+                </div>
+                <div class="CTDichVu-content-right-bottom">
+                    <div class="CTDichVu-content-right-bottom-top">
+                        &#8744;
+                    </div>
+                    <div class="CTDichVu-content-right-bottom-content-big">
+                        <div class="CTDichVu-content-right-bottom-content-title row">
+                            <div class="CTDichVu-content-right-bottom-content-title-item mt color-item-select">
+                                <p>Mô tả</p>
+                            </div>
+                            <div class="CTDichVu-content-right-bottom-content-title-item hdsd">
+                                <p>Chi tiết</p>
+                            </div>
+                        </div>
+                        <div class="CTDichVu-content-right-bottom-content">
+                            <div class="CTDichVu-content-right-bottom-content-mt">
+                                Mama , Papa đi chơi bỏ con ở nhà hả :<<<. Thoi con đừng buồn, đến đây chơi với cô chú và các bạn con sẽ không cô đơn nữa nè.
+                            </div>
+                            <div class="CTDichVu-content-right-bottom-content-hdsd">
+                                Mama , Papa đi chơi bỏ con ở nhà hả :<<<. Thoi con đừng buồn, đến đây chơi với cô chú và các bạn con sẽ không cô đơn nữa nè.Mama , Papa đi chơi bỏ con ở nhà hả :<<<. Thoi con đừng buồn, đến đây chơi với cô chú và các bạn con sẽ không cô đơn nữa nè.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

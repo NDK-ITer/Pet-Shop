@@ -297,6 +297,7 @@
     <Content Include="ImagesProduct\DichVu\se3.png" />
     <Content Include="ImagesProduct\DichVu\se4.png" />
     <Content Include="ImagesProduct\DichVu\se5.png" />
+    <Content Include="ImagesProduct\DoDung\3.png" />
     <Content Include="ImagesProduct\DoDung\Balo1.png" />
     <Content Include="ImagesProduct\DoDung\Balo2.png" />
     <Content Include="ImagesProduct\DoDung\Balo3.png" />
@@ -338,17 +339,28 @@
     <Content Include="ImagesProduct\DoDung\LuocChaiLong1.png" />
     <Content Include="ImagesProduct\DoDung\LuocChaiLong2.png" />
     <Content Include="ImagesProduct\DoDung\LuocChaiLong3.png" />
+    <Content Include="ImagesProduct\DoDung\NhaCMeo1.png" />
+    <Content Include="ImagesProduct\DoDung\NhaCMeo2.png" />
+    <Content Include="ImagesProduct\DoDung\NhaCMeo3.png" />
     <Content Include="ImagesProduct\DoDung\NSCCho1.png" />
     <Content Include="ImagesProduct\DoDung\NSCCho2.png" />
     <Content Include="ImagesProduct\DoDung\NSCCho3.png" />
     <Content Include="ImagesProduct\DoDung\NSCCho4.png" />
     <Content Include="ImagesProduct\DoDung\NSCCho5.png" />
+    <Content Include="ImagesProduct\DoDung\NSCMeo1.png" />
+    <Content Include="ImagesProduct\DoDung\NSCMeo2.png" />
+    <Content Include="ImagesProduct\DoDung\NSCMeo3.png" />
     <Content Include="ImagesProduct\DoDung\QuanAo1.png" />
     <Content Include="ImagesProduct\DoDung\QuanAo2.png" />
     <Content Include="ImagesProduct\DoDung\QuanAo3.png" />
     <Content Include="ImagesProduct\DoDung\SuaTam1.png" />
     <Content Include="ImagesProduct\DoDung\SuaTam2.png" />
     <Content Include="ImagesProduct\DoDung\SuaTam3.png" />
+    <Content Include="ImagesProduct\DoDung\Thuoc1.png" />
+    <Content Include="ImagesProduct\DoDung\Thuoc2.png" />
+    <Content Include="ImagesProduct\DoDung\Thuoc3.png" />
+    <Content Include="ImagesProduct\DoDung\Thuoc4.png" />
+    <Content Include="ImagesProduct\DoDung\Thuoc5.png" />
     <Content Include="ImagesProduct\DoDung\TruCot1.png" />
     <Content Include="ImagesProduct\DoDung\TruCot2.png" />
     <Content Include="ImagesProduct\DoDung\TruCot3.png" />
@@ -359,6 +371,7 @@
     <Content Include="ImagesProduct\petChose.png" />
     <Content Include="ImagesProduct\ThuCung\gau2.png" />
     <Content Include="ImagesProduct\ThuCung\gâu.png" />
+    <Content Include="ImagesProduct\ThuCung\hamster-bear-2.jpg" />
     <Content Include="ImagesProduct\ThuCung\Meo.png" />
     <Content Include="ImagesProduct\ThuCung\Meo2.png" />
     <Content Include="Models\dbContext.Context.tt">
@@ -441,7 +454,9 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\Script.js" />
     <Content Include="Theme\css\StyleSheet.css" />
+    <Content Include="Theme\css\StyleSheetDV.css" />
     <Content Include="Theme\css\StyleSheetLogin.css" />
+    <Content Include="Theme\css\StyleSheetTC.css" />
     <Content Include="Theme\images\Logo.png" />
     <Content Include="Theme\images\bodydv.png" />
     <Content Include="Theme\images\cart.png" />
@@ -516,10 +531,13 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin_PetShop.cshtml" />
     <Content Include="Views\Home\DoiTuongKD.cshtml" />
-    <Content Include="Views\Home\ChiTietSP.cshtml" />
+    <Content Include="Views\Home\ChiTietDoDung.cshtml" />
     <Content Include="Views\Shared\_LoginSign.cshtml" />
     <Content Include="Views\Home\DichVu.cshtml" />
     <Content Include="Views\Home\Introduce.cshtml" />
+    <Content Include="Views\Home\ChiTietDichVu.cshtml" />
+    <Content Include="Views\Shared\_PhanLoaiDDPartial.cshtml" />
+    <Content Include="Views\Home\ChiTietThuCung.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

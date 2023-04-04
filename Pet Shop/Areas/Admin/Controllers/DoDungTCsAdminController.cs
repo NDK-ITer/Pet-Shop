@@ -79,6 +79,7 @@ namespace Pet_Shop.Areas.Admin.Controllers
                 doiTuongKD.MoTa = doDungTCAdmin.MoTa;
                 doiTuongKD.ChiTiet = doDungTCAdmin.ChiTiet;
                 doiTuongKD.AnhDaiDien = doDungTCAdmin.AnhDaiDien;
+                doiTuongKD.MaPLDTKD = "DD";
                 db.DoiTuongKDs.Add(doiTuongKD);
                 await db.SaveChangesAsync();
 

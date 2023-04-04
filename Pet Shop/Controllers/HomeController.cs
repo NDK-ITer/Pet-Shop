@@ -36,7 +36,7 @@ namespace Pet_Shop.Controllers
             doiTuongKDs = doiTuongKDs.Where(n=>n.MaPLDTKD != "DV").ToList();
             return View(doiTuongKDs.ToPagedList((int)page,(int)pageSize));
         }
-        public async Task<ActionResult> ChiTietSP(string id)
+        public async Task<ActionResult> ChiTietDoDung(string id)
         {
             if (id == null)
             {
@@ -48,6 +48,34 @@ namespace Pet_Shop.Controllers
                 return HttpNotFound();
             }
             return View(doDungTC);
+        }
+
+        public async Task<ActionResult> ChiTietThuCung(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            ThuCung thuCung = dbContext.ThuCungs.Find(id);
+            if (thuCung == null)
+            {
+                return HttpNotFound();
+            }
+            return View(thuCung);
+        }
+
+        public async Task<ActionResult> ChiTietDichVu(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            DichVu dichVu = dbContext.DichVus.Find(id);
+            if (dichVu == null)
+            {
+                return HttpNotFound();
+            }
+            return View(dichVu);
         }
     }
 }

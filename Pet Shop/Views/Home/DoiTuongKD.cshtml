@@ -49,7 +49,7 @@
                     if (item.MaPLDTKD == "DD")
                     {
                         <div class="category-right-content-item">
-                            <a href="@Url.Action("ChiTietSP", "Home", new { id = item.MaDT })">
+                            <a href="@Url.Action("ChiTietDoDung", "Home", new { id = item.MaDT })">
                                 <img src="@Url.Content(item.AnhDaiDien)" alt="">
                                 @Html.DisplayFor(modelItem => item.DoDungTC.TenDD)<br />
                             </a>
@@ -59,6 +59,20 @@
                             </div>
                         </div>
                     }
+                    else if (item.MaPLDTKD == "TC")
+                    {
+                        <div class="category-right-content-item">
+                            <a href="@Url.Action("ChiTietThuCung", "Home", new { id = item.MaDT })">
+                                <img src="@Url.Content(item.AnhDaiDien)" alt="">
+                                @Html.DisplayFor(modelItem => item.ThuCung.TenTC)<br />
+                            </a>
+                            <div class="category-right-content-item-bottom">
+                                @String.Format("{0:0,0}", item.DonGia)đ
+                                <a class="fas fa-shopping-cart" href="@Url.Action("ThemVaoGioHang", "GioHang", new { @id = item.MaDT, @strURL = Request.Url.ToString() })"></a>
+                            </div>
+                        </div>
+                    }
+                    continue;
                 }
             </div>
             @Html.PagedListPager(Model, page => Url.Action("DoiTuongKD", new { page, @class = "active" }))
