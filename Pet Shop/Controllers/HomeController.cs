@@ -15,6 +15,7 @@ namespace Pet_Shop.Controllers
         private static QuanLyThuCungEntities dbContext = new QuanLyThuCungEntities();
         List<DoiTuongKD> doiTuongKDs = dbContext.DoiTuongKDs.ToList();
         List<DichVu> dichVus = dbContext.DichVus.ToList();
+        List<ThuCung> thuCungs = dbContext.ThuCungs.ToList();
         public ActionResult Index()
         {
             return View();
@@ -24,6 +25,12 @@ namespace Pet_Shop.Controllers
             if (page == null) { page = 1; }
             if (pageSize == null) { pageSize = 2; }
             return View(dichVus.ToPagedList((int)page, (int)pageSize));
+        }
+        public ActionResult ThuCung(int? page, int? pageSize)
+        {
+            if (page == null) { page = 1; }
+            if (pageSize == null) { pageSize = 2; }
+            return View(thuCungs.ToPagedList((int)page, (int)pageSize));
         }
         public ActionResult Introduce()
         {

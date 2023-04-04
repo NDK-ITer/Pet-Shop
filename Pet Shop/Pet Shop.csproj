@@ -530,6 +530,7 @@
     <Content Include="Views\Home\ChiTietDichVu.cshtml" />
     <Content Include="Views\Shared\_PhanLoaiDDPartial.cshtml" />
     <Content Include="Views\Home\ChiTietThuCung.cshtml" />
+    <Content Include="Views\Home\ThuCung.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
