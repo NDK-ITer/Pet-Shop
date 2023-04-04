@@ -31,7 +31,7 @@ namespace Pet_Shop.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_HoaDon> CT_HoaDon { get; set; }
-        public virtual NhanSU NhanSU { get; set; }
         public virtual HinhThucThanhToan HinhThucThanhToan { get; set; }
+        public virtual NhanSU NhanSU { get; set; }
     }
 }

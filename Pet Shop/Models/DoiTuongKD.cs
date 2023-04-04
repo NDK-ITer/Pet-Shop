@@ -19,8 +19,8 @@ namespace Pet_Shop.Models
         {
             this.CT_HoaDon = new HashSet<CT_HoaDon>();
             this.CT_PhieuDat = new HashSet<CT_PhieuDat>();
-            this.HinhAnhDTKDs = new HashSet<HinhAnhDTKD>();
             this.GioHangs = new HashSet<GioHang>();
+            this.HinhAnhDTKDs = new HashSet<HinhAnhDTKD>();
         }
     
         public string MaDT { get; set; }
@@ -38,11 +38,11 @@ namespace Pet_Shop.Models
         public virtual ICollection<CT_PhieuDat> CT_PhieuDat { get; set; }
         public virtual DichVu DichVu { get; set; }
         public virtual DoDungTC DoDungTC { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HinhAnhDTKD> HinhAnhDTKDs { get; set; }
-        public virtual ThuCung ThuCung { get; set; }
         public virtual PhanLoaiDTKD PhanLoaiDTKD { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GioHang> GioHangs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HinhAnhDTKD> HinhAnhDTKDs { get; set; }
+        public virtual ThuCung ThuCung { get; set; }
     }
 }

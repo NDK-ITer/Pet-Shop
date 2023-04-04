@@ -30,16 +30,16 @@ namespace Pet_Shop.Models
         public virtual DbSet<DichVu> DichVus { get; set; }
         public virtual DbSet<DoDungTC> DoDungTCs { get; set; }
         public virtual DbSet<DoiTuongKD> DoiTuongKDs { get; set; }
+        public virtual DbSet<GioHang> GioHangs { get; set; }
         public virtual DbSet<HangSX> HangSXes { get; set; }
         public virtual DbSet<HinhAnhDTKD> HinhAnhDTKDs { get; set; }
+        public virtual DbSet<HinhThucThanhToan> HinhThucThanhToans { get; set; }
         public virtual DbSet<HoaDon> HoaDons { get; set; }
+        public virtual DbSet<LoaiDD> LoaiDDs { get; set; }
         public virtual DbSet<LoaiThuCung> LoaiThuCungs { get; set; }
         public virtual DbSet<NhanSU> NhanSUs { get; set; }
+        public virtual DbSet<PhanLoaiDTKD> PhanLoaiDTKDs { get; set; }
         public virtual DbSet<PhieuDat> PhieuDats { get; set; }
         public virtual DbSet<ThuCung> ThuCungs { get; set; }
-        public virtual DbSet<LoaiDD> LoaiDDs { get; set; }
-        public virtual DbSet<GioHang> GioHangs { get; set; }
-        public virtual DbSet<PhanLoaiDTKD> PhanLoaiDTKDs { get; set; }
-        public virtual DbSet<HinhThucThanhToan> HinhThucThanhToans { get; set; }
     }
 }

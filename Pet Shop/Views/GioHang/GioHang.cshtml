@@ -1,6 +1,6 @@
 ﻿@using PagedList.Mvc;
 
-@model PagedList.IPagedList<Pet_Shop.Models.SPGioHang>
+@model PagedList.IPagedList<Pet_Shop.Models.GioHang>
 @{
     ViewBag.Title = "Cart";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -43,9 +43,15 @@
                         foreach (var item in Model)
                         {
                             <tr>
-                                <td><img src="@Url.Content(item.AnhDaiDien)" alt=""></td>
-                                <td><p>@Html.DisplayFor(modelItem => item.TenDD)</p></td>
-                                @*<td><p>Lon lam lun</p></td>*@
+                                <td><img src="@Url.Content(item.DoiTuongKD.AnhDaiDien)" alt=""></td>
+                                @if (item.DoiTuongKD.PhanLoaiDTKD.MaPLDTKD == "DD")
+                                {
+                                    <td><p>@Html.DisplayFor(modelItem => item.DoiTuongKD.DoDungTC.TenDD)</p></td>
+                                }
+                                else if (item.DoiTuongKD.PhanLoaiDTKD.MaPLDTKD == "TC")
+                                {
+                                    <td><p>@Html.DisplayFor(modelItem => item.DoiTuongKD.ThuCung.TenTC)</p></td>
+                                }
                                 <td>
                                     <div id="buy-amount">
                                         <button class="minus-btn" onclick="handleMinus()">
@@ -57,8 +63,8 @@
                                         </button>
                                     </div>
                                 </td>
-                                <td><p>@String.Format("{0:0,0}", item.DonGia)đ</p></td>
-                                <td><a href="@Url.Action("XoaGioHang","GioHang",new { id = item.MaDD })">X</a></td>
+                                <td><p>@String.Format("{0:0,0}", item.DoiTuongKD.DonGia)đ</p></td>
+                                <td><a href="@Url.Action("XoaGioHang","GioHang",new { id = item.DoiTuongKD.MaDT })">X</a></td>
                             </tr>
                         }
                     }

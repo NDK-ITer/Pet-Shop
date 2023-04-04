@@ -27,7 +27,7 @@ namespace Pet_Shop.Models
             SoLuong = 1;
         }
 
-        public void ThemSP()
+        public void ThemSP(string id)
         {
 
         }

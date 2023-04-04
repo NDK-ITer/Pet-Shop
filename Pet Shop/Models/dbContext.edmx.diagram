@@ -4,39 +4,39 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3cc06bbad30b406a87cb5c589ed06b92" Name="Diagram1" ZoomLevel="64">
-        <EntityTypeShape EntityType="QuanLyThuCungModel.CT_HoaDon" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyThuCungModel.CT_PhieuDat" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyThuCungModel.DichVu" Width="1.5" PointX="3" PointY="13" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyThuCungModel.DoDungTC" Width="1.5" PointX="6" PointY="8.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyThuCungModel.DoiTuongKD" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyThuCungModel.HangSX" Width="1.5" PointX="3.75" PointY="15.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyThuCungModel.HinhAnhDTKD" Width="1.5" PointX="3" PointY="18.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyThuCungModel.HoaDon" Width="1.5" PointX="0.75" PointY="12.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyThuCungModel.LoaiThuCung" Width="1.5" PointX="3.75" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyThuCungModel.NhanSU" Width="1.5" PointX="1.5" PointY="21.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyThuCungModel.PhieuDat" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyThuCungModel.ThuCung" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
+      <Diagram DiagramId="0a03d81e565b4367a4c129631ddb4346" Name="Diagram1">
+        <EntityTypeShape EntityType="QuanLyThuCungModel.CT_HoaDon" Width="1.5" PointX="5.25" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThuCungModel.CT_PhieuDat" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThuCungModel.DichVu" Width="1.5" PointX="5.25" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThuCungModel.DoDungTC" Width="1.5" PointX="8.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThuCungModel.DoiTuongKD" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThuCungModel.GioHang" Width="1.5" PointX="5.25" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThuCungModel.HangSX" Width="1.5" PointX="6" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThuCungModel.HinhAnhDTKD" Width="1.5" PointX="5.25" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThuCungModel.HinhThucThanhToan" Width="1.5" PointX="0.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThuCungModel.HoaDon" Width="1.5" PointX="3" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThuCungModel.LoaiDD" Width="1.5" PointX="6" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThuCungModel.LoaiThuCung" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThuCungModel.NhanSU" Width="1.5" PointX="0.75" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThuCungModel.PhanLoaiDTKD" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThuCungModel.PhieuDat" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThuCungModel.ThuCung" Width="1.5" PointX="8.25" PointY="6.125" IsExpanded="true" />
         <AssociationConnector Association="QuanLyThuCungModel.FK_CT_HoaDon_HoaDon" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyThuCungModel.FK_CT_HoaDon_SPKD" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyThuCungModel.FK_CT_PhieuDat_PhieuDat1" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyThuCungModel.FK_CT_PhieuDat_SPKD" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyThuCungModel.FK_DichVu_SPKD" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyThuCungModel.FK_DoDungTC_HangSX" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThuCungModel.FK_DoDungTC_LoaiDD" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyThuCungModel.FK_DoDungTC_LoaiThuCung" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyThuCungModel.FK_DoDungTC_SPKD" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThuCungModel.FK_DoiTuongKD_PhanLoaiDTKD" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThuCungModel.FK_GioHang_DoiTuongKD" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyThuCungModel.FK_HinhAnhDTKD_DoiTuongKD" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyThuCungModel.FK_ThuCung_SPKD" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThuCungModel.FK_HoaDon_HinhThucThanhToan" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyThuCungModel.FK_HoaDon_NhanSU" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyThuCungModel.FK_ThuCung_LoaiThuCung1" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="QuanLyThuCungModel.LoaiDD" Width="1.5" PointX="0.75" PointY="0.875" />
-        <AssociationConnector Association="QuanLyThuCungModel.FK_DoDungTC_LoaiDD" />
-        <EntityTypeShape EntityType="QuanLyThuCungModel.GioHang" Width="1.5" PointX="3" PointY="0.75" />
-        <EntityTypeShape EntityType="QuanLyThuCungModel.PhanLoaiDTKD" Width="1.5" PointX="0.75" PointY="16.875" />
-        <AssociationConnector Association="QuanLyThuCungModel.FK_DoiTuongKD_PhanLoaiDTKD" />
-        <AssociationConnector Association="QuanLyThuCungModel.FK_GioHang_DoiTuongKD" />
-        <EntityTypeShape EntityType="QuanLyThuCungModel.HinhThucThanhToan" Width="1.5" PointX="6.375" PointY="0.875" />
-        <AssociationConnector Association="QuanLyThuCungModel.FK_HoaDon_HinhThucThanhToan" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

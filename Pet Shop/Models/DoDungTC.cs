@@ -22,8 +22,8 @@ namespace Pet_Shop.Models
         public Nullable<int> SoLuong { get; set; }
     
         public virtual HangSX HangSX { get; set; }
+        public virtual LoaiDD LoaiDD { get; set; }
         public virtual LoaiThuCung LoaiThuCung { get; set; }
         public virtual DoiTuongKD DoiTuongKD { get; set; }
-        public virtual LoaiDD LoaiDD { get; set; }
     }
 }
