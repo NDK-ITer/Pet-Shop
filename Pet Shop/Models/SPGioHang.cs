@@ -9,6 +9,7 @@ namespace Pet_Shop.Models
     public class SPGioHang
     {
         private QuanLyThuCungEntities db = new QuanLyThuCungEntities();
+        GioHang gioHang = new GioHang();
         public string MaDD { get; set; }
         public string TenDD { get; set; }
         public double DonGia { get; set; }
@@ -24,6 +25,11 @@ namespace Pet_Shop.Models
             AnhDaiDien = doDungTC.DoiTuongKD.AnhDaiDien;
             DonGia = (double)doDungTC.DoiTuongKD.DonGia;
             SoLuong = 1;
+        }
+
+        public void ThemSP()
+        {
+
         }
     }
 }

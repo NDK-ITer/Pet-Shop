@@ -40,5 +40,6 @@ namespace Pet_Shop.Models
         public virtual DbSet<LoaiDD> LoaiDDs { get; set; }
         public virtual DbSet<GioHang> GioHangs { get; set; }
         public virtual DbSet<PhanLoaiDTKD> PhanLoaiDTKDs { get; set; }
+        public virtual DbSet<HinhThucThanhToan> HinhThucThanhToans { get; set; }
     }
 }

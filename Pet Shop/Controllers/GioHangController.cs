@@ -9,12 +9,14 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Services.Description;
 using PagedList;
+using Microsoft.AspNet.Identity;
 
 namespace Pet_Shop.Controllers
 {
     public class GioHangController : Controller
     {
         private QuanLyThuCungEntities dbContext ;
+        List<GioHang> GioHangs = new List<GioHang>();
         public GioHangController()
         {
             dbContext = new QuanLyThuCungEntities();
