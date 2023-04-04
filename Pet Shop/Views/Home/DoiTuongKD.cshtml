@@ -1,0 +1,82 @@
+﻿@model PagedList.IPagedList<Pet_Shop.Models.DoiTuongKD>
+@*@model IEnumerable<Pet_Shop.Models.DoDungTC>*@
+@using PagedList.Mvc;
+@using PagedList;
+@{
+    ViewBag.Title = "Design";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<<div class="category">
+    <div class="category-top">
+
+    </div>
+    <div class="row">
+        <div class="category-left">
+            <div class="category-left-item row">
+                <img src="~/Theme/images/Meo2.png" alt="">
+                <p>Mèo</p>
+            </div>
+            <div class="category-left-item row">
+                <img src="~/Theme/images/gau2.png" alt="">
+                <p>Chó</p>
+            </div>
+            <div class="category-left-item row">
+                <img src="~/Theme/images/food.png" alt="">
+                <p>Thức ăn</p>
+            </div>
+            <div class="category-left-item row">
+                <img src="~/Theme/images/bodydv.png" alt="">
+                <p>Đồ dùng</p>
+            </div>
+        </div>
+        <div class="category-right">
+            <div class="category-right-top row">
+                <div class="category-right-top-item">
+                    <h2>Pate & Nước sốt</h2>
+                </div>
+                <div class="category-right-top-item">
+                    <select name="" id="">
+                        <option value="">Sắp xếp</option>
+                        <option value="">Giá cao đến thấp</option>
+                        <option value="">Giá thấp đến cao</option>
+                    </select>
+                </div>
+            </div>
+            <div class="category-right-content columm">
+                @foreach (var item in Model)
+                {
+                    if (item.MaPLDTKD == "DD")
+                    {
+                        <div class="category-right-content-item">
+                            <a href="@Url.Action("ChiTietDoDung", "Home", new { id = item.MaDT })">
+                                <img src="@Url.Content(item.AnhDaiDien)" alt="">
+                                @Html.DisplayFor(modelItem => item.DoDungTC.TenDD)<br />
+                            </a>
+                            <div class="category-right-content-item-bottom">
+                                @String.Format("{0:0,0}", item.DonGia)đ
+                                <a class="fas fa-shopping-cart" href="@Url.Action("ThemSPVaoGioHang", "GioHang", new { @id = item.MaDT, @strURL = Request.Url.ToString() })"></a>
+                            </div>
+                        </div>
+                    }
+                    else if (item.MaPLDTKD == "TC")
+                    {
+                        <div class="category-right-content-item">
+                            <a href="@Url.Action("ChiTietThuCung", "Home", new { id = item.MaDT })">
+                                <img src="@Url.Content(item.AnhDaiDien)" alt="">
+                                @Html.DisplayFor(modelItem => item.ThuCung.TenTC)<br />
+                            </a>
+                            <div class="category-right-content-item-bottom">
+                                @String.Format("{0:0,0}", item.DonGia)đ
+                                <a class="fas fa-shopping-cart" href="@Url.Action("ThemSPVaoGioHang", "GioHang", new { @id = item.MaDT, @strURL = Request.Url.ToString() })"></a>
+                            </div>
+                        </div>
+                    }
+                    continue;
+                }
+            </div>
+            @Html.PagedListPager(Model, page => Url.Action("DoiTuongKD", new { page, @class = "active" }))
+        </div>
+    </div>
+</div>
+

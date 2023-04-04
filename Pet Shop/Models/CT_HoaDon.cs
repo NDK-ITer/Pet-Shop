@@ -16,7 +16,7 @@ namespace Pet_Shop.Models
     {
         public string SoHD { get; set; }
         public string MaDT { get; set; }
-        public string GhiChu { get; set; }
+        public Nullable<int> SoLuong { get; set; }
     
         public virtual HoaDon HoaDon { get; set; }
         public virtual DoiTuongKD DoiTuongKD { get; set; }

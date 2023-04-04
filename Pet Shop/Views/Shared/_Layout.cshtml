@@ -16,13 +16,13 @@
     <!------------------------------- <header> ------------------------------->
     <div class="header">
         <div class="logo">
-            <a href=""><img src="/Theme/images/Logo.png" /></a>
+            <a href="@Url.Action("Index", "Home")"><img src="/Theme/images/Logo.png" /></a>
         </div>
         <div class="menu">
             <li>@Html.ActionLink("Trang Chủ", "Index", "Home")</li>
             <li>
-                <a>@Html.ActionLink("Sản Phẩm", "DoDungTC", "Home")</a>
-                <ul class="sub-menu columm">
+                <a>@Html.ActionLink("Sản Phẩm", "DoiTuongKD", "Home")</a>
+                @*<ul class="sub-menu columm">
                     <li class="menu-category">
                         <a href="">VỆ SINH & CHĂM SÓC</a>
                         <ul>
@@ -70,7 +70,7 @@
                             <li><a href="">Trị ve rận & Bọ chét</a></li>
                         </ul>
                     </li>
-                </ul>
+                </ul>*@
             </li>
             <li>@Html.ActionLink("Dịch vụ", "DichVu", "Home")</li>
             <li>@Html.ActionLink("Giới thiệu", "Introduce", "Home")</li>
@@ -88,8 +88,8 @@
     <!------------------------------- <contact-button> ------------------------------->
     <div class="contact-button">
         <button onclick="topFunction()" id="myBtn" title="Go to top">&#94;</button>
-        <a href="https://zalo.me/0963450084" target="_blank"><button id="myZalo">Zalo</button></a>
-        <a href="tel://0963450084" target="_blank"><button id="myCall"><i class="fas fa-phone"></i></button></a>
+        <a href="https://zalo.me/0345438160" target="_blank"><button id="myZalo">Zalo</button></a>
+        <a href="tel://0345438160" target="_blank"><button id="myCall"><i class="fas fa-phone"></i></button></a>
     </div>
     <!------------------------------- <footer> ------------------------------->
     <div class="footer">
@@ -121,8 +121,6 @@
         </div>
     </div>
     <script>
-        @*@Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")*@
         @RenderSection("scripts", required: false)
         const left = document.querySelector(".left img")
         const right = document.querySelector(".right img")

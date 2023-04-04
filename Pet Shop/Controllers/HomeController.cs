@@ -13,7 +13,7 @@ namespace Pet_Shop.Controllers
     public class HomeController : Controller
     {
         private static QuanLyThuCungEntities dbContext = new QuanLyThuCungEntities();
-        List<DoDungTC> doDungTCs = dbContext.DoDungTCs.ToList();
+        List<DoiTuongKD> doiTuongKDs = dbContext.DoiTuongKDs.ToList();
         List<DichVu> dichVus = dbContext.DichVus.ToList();
         public ActionResult Index()
         {
@@ -29,13 +29,14 @@ namespace Pet_Shop.Controllers
         {
             return View();
         }
-        public ActionResult DoDungTC(int? page, int? pageSize)
+        public ActionResult DoiTuongKD(int? page, int? pageSize)
         {
             if (page == null) { page = 1; }
             if (pageSize == null) {  pageSize = 12; }
-            return View(doDungTCs.ToPagedList((int)page,(int)pageSize));
+            doiTuongKDs = doiTuongKDs.Where(n=>n.MaPLDTKD != "DV").ToList();
+            return View(doiTuongKDs.ToPagedList((int)page,(int)pageSize));
         }
-        public async Task<ActionResult> ChiTietSP(string id)
+        public async Task<ActionResult> ChiTietDoDung(string id)
         {
             if (id == null)
             {
@@ -47,6 +48,34 @@ namespace Pet_Shop.Controllers
                 return HttpNotFound();
             }
             return View(doDungTC);
+        }
+
+        public async Task<ActionResult> ChiTietThuCung(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            ThuCung thuCung = dbContext.ThuCungs.Find(id);
+            if (thuCung == null)
+            {
+                return HttpNotFound();
+            }
+            return View(thuCung);
+        }
+
+        public async Task<ActionResult> ChiTietDichVu(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            DichVu dichVu = dbContext.DichVus.Find(id);
+            if (dichVu == null)
+            {
+                return HttpNotFound();
+            }
+            return View(dichVu);
         }
     }
 }

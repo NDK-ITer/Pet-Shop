@@ -1,0 +1,158 @@
+﻿@model Pet_Shop.Models.ThuCung
+@{
+    ViewBag.Title = "ChiTietThuCung";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Theme/css/StyleSheetTC.css" rel="stylesheet" />
+<div class="CTThuCung">
+    <div class="CTThuCung-container">
+        <div class="CTThuCung-content row">
+            <div class="CTThuCung-content-left row">
+                <div class="CTThuCung-content-left-big-img">
+                    <img src="@Url.Content(Model.DoiTuongKD.AnhDaiDien)" alt="">
+                </div>
+            </div>
+            <div class="CTThuCung-content-right">
+                <div class="CTThuCung-content-right-CTThuCung-name">
+                    <h1>@Html.DisplayFor(model => model.TenTC)</h1><!-- Tên thú cưng -->
+                </div>
+
+                <div class="CTThuCung-content-right-CTThuCung-price">
+                    <p>Giá bán: @String.Format("{0:0,0}", Model.DoiTuongKD.DonGia)<sup>đ</sup></p>              <!-- Giá thú cưng -->
+                    <div class="CTThuCung-content-right-CTThuCung-button">
+                        <a href="cart.html">
+                            <button id="bnt-gocart">
+                                <i class="fas fa-shopping-cart"></i>
+                                <a href="@Url.Action("ThemSPVaoGioHang", "GioHang", new { @id = Model.MaTC, @strURL = Request.Url.ToString() })">Thêm vào giỏ hàng</a><!-- Thêm vào giỏ hàng nè -->
+                            </button>
+                        </a>
+                        <a href="https://zalo.me/0963450084" target="_blank">
+                            <button>
+                                <p>Liên hệ cửa hàng</p>
+                            </button>
+                        </a>
+                    </div>
+                    <div class="CTThuCung-content-right-bottom">
+                        <div class="CTThuCung-content-right-bottom-top">
+                            &#8744;
+                        </div>
+                        <div class="CTThuCung-content-right-bottom-content-big">
+                            <div class="CTThuCung-content-right-bottom-content-title row">
+                                <div class="CTThuCung-content-right-bottom-content-title-item mt color-item-select">
+                                    <p>Thông tin</p>
+                                </div>
+                                <div class="CTThuCung-content-right-bottom-content-title-item hdsd">
+                                    <p>Chi tiết</p>
+                                </div>
+                            </div>
+                            <div class="CTThuCung-content-right-bottom-content">
+                                <div class="CTThuCung-content-right-bottom-content-mt">
+                                    <p>Loài: @Html.DisplayFor(model => model.LoaiThuCung.TenLoai)</p><br> <!-- loài  -->
+                                    @if (Model.GioiTinh == true)
+                                    {
+                                        <p>Giới tính: Đực</p><br> <!-- giới tính -->
+
+                                    }
+                                    else
+                                    {
+                                        <p>Giới tính: Cái</p><br> <!-- giới tính -->
+                                    }
+
+                                    @if (Model.TiemPhong == true)
+                                    {
+                                        <p>Tiêm phòng: Đã tiêm</p> <!-- Tiêm phòng -->
+
+                                    }
+                                    else
+                                    {
+                                        <p>Tiêm phòng: Chưa tiêm</p> <!-- Tiêm phòng -->
+                                    }
+                                </div>
+                                <div class="CTThuCung-content-right-bottom-content-hdsd">
+                                    @Html.DisplayFor(model=>model.DoiTuongKD.ChiTiet)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const mota = document.querySelector(".mt")
+    const huongdansudung = document.querySelector(".hdsd")
+    if (mota) {
+        mota.addEventListener("click", function () {
+            if (!mota.classList.contains("color-item-select")) {
+                document.querySelector(".CTThuCung-content-right-bottom-content-mt").style.display = "block"
+                document.querySelector(".CTThuCung-content-right-bottom-content-hdsd").style.display = "none"
+                mota.classList.add("color-item-select");
+                huongdansudung.classList.remove("color-item-select");
+            }
+        })
+    }
+    if (huongdansudung) {
+        huongdansudung.addEventListener("click", function () {
+            if (!huongdansudung.classList.contains("color-item-select")) {
+                document.querySelector(".CTThuCung-content-right-bottom-content-mt").style.display = "none"
+                document.querySelector(".CTThuCung-content-right-bottom-content-hdsd").style.display = "block"
+                huongdansudung.classList.add("color-item-select");
+                mota.classList.remove("color-item-select");
+                
+            }
+        })
+    }
+    const butTon = document.querySelector(".CTThuCung-content-right-bottom-top")
+    if (butTon) {
+        butTon.addEventListener("click", function () {
+            document.querySelector(".CTThuCung-content-right-bottom-content-big").classList.toggle("activeB")
+        })
+    }
+    const header = document.querySelector(".header")
+    window.addEventListener("scroll", function () {
+        x = window.pageYOffset;
+        if (x > 0) {
+            header.classList.add("sticky")
+        }
+        else {
+            header.classList.remove("sticky")
+        }
+    })
+    window.onscroll = function () { scrollFunction() };
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("myBtn").style.display = "block";
+            document.getElementById("myZalo").style.display = "block";
+            document.getElementById("myCall").style.display = "block";
+        } else {
+            document.getElementById("myBtn").style.display = "none";
+        }
+    }
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    let amountElement = document.getElementById('amount')
+    let amount = amountElement.value
+    let render = (amount) => {
+        amountElement.value = amount
+    }
+    let handlePlus = () => {
+        if (amount < 20)
+            amount++
+        render(amount);
+    }
+    let handleMinus = () => {
+        if (amount > 1)
+            amount--
+        render(amount);
+    }
+    amountElement.addEventListener('input', () => {
+        amount = amountElement.value;
+        amount = parseInt(amount);
+        amount = (isNaN(amount) || amount < 1 || amount > 20) ? 1 : amount;
+        render(amount)
+    });
+</script>
+
