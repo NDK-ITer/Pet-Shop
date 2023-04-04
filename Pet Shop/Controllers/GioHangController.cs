@@ -76,6 +76,7 @@ namespace Pet_Shop.Controllers
         [Authorize]
         public ActionResult XoaSPGioHang(string id)
         {
+            LayGiohang(User.Identity.GetUserId());
             GioHang sanPham = gioHangs.FirstOrDefault(n => n.MaDT == id);
             if (sanPham != null)
             {

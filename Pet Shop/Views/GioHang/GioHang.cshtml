@@ -36,7 +36,7 @@
                     </tr>
                     @if (ViewBag.TongSL == 0)
                     {
-                        @*<tr>Giỏ Hàng hiện đang trống</tr>*@
+                        <tr>Giỏ Hàng hiện đang trống</tr>
                     }
                     else
                     {
@@ -54,13 +54,15 @@
                                 }
                                 <td>
                                     <div id="buy-amount">
-                                        <button class="minus-btn" onclick="handleMinus()">
-                                            <p>-</p>
-                                        </button>
+                                        @*<button class="minus-btn" onclick="handleMinus()">
+                                                <p>-</p>
+                                            </button>*@
+
                                         <input type="text" name="amount" id="amount" value="@Html.DisplayFor(modelItem => item.SoLuong)">
-                                        <button class="plus-btn" onclick="handlePlus()">
-                                            <p>+</p>
-                                        </button>
+
+                                        @*<button class="plus-btn" onclick="handlePlus()">
+                                                <p>+</p>
+                                            </button>*@
                                     </div>
                                 </td>
                                 <td><p>@String.Format("{0:0,0}", item.DoiTuongKD.DonGia)đ</p></td>
@@ -68,26 +70,6 @@
                             </tr>
                         }
                     }
-
-
-                    @*<tr>
-            <td><img src="~/Theme/images/sp9.jpg" alt=""></td>
-            <td><p>Nước sốt pate cho mèo CIAO vị cá ngừ & cá bào nhật</p></td>
-            <td><p>nho</p></td>
-            <td>
-                <div id="buy-amount">
-                    <button class="minus-btn" onclick="handleMinus()">
-                        <p>-</p>
-                    </button>
-                    <input type="text" name="amount" id="amount" value="1">
-                    <button class="plus-btn" onclick="handlePlus()">
-                        <p>+</p>
-                    </button>
-                </div>
-            </td>
-            <td><p>35.000 <sup>đ</sup></p></td>
-            <td><span>X</span></td>
-        </tr>*@
                 </table>
                 @Html.PagedListPager(Model, page => Url.Action("GioHang", new { page, @class = "active" }))
             </div>
@@ -110,7 +92,7 @@
                     </tr>
                 </table>
                 <div class="cart-content-right-button">
-                    <button>@Html.ActionLink("TIẾP TỤC MUA SẮM","DoDungTC","Home")</button>
+                    <button>@Html.ActionLink("TIẾP TỤC MUA SẮM", "DoDungTC", "Home")</button>
                     <a href="payment.html"> <button>THANH TOÁN</button></a>
                 </div>
             </div>
