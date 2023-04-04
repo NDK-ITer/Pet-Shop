@@ -45,15 +45,15 @@
                             <a href="@Url.Action("ThemSPVaoGioHang", "GioHang", new { @id = Model.MaDD, @strURL = Request.Url.ToString() })">Thêm vào giỏ hàng</a>
                         </button>
                     </a>
-                    <a href="https://zalo.me/0345438160" target="_blank">
+                    <a href="#">
                         <button>
-                            <p>Liên hệ cửa hàng</p>
+                            <p>Mua ngay</p>
                         </button>
                     </a>
                 </div>
                 <div class="product-content-right-bottom">
                     <div class="product-content-right-bottom-top">
-                        
+                        &#8744;
                     </div>
                     <div class="product-content-right-bottom-content-big">
                         <div class="product-content-right-bottom-content-title row">
@@ -81,13 +81,6 @@
 
 <!------------------------------- <contact-button> ------------------------------->
 <script>
-    const bigImg = document.querySelector(".product-content-left-big-img img")
-    const smalImg = document.querySelectorAll(".product-content-left-small-img img")
-    smalImg.forEach(function (imgItem, X) {
-        imgItem.addEventListener("click", function () {
-            bigImg.src = imgItem.src
-        })
-    })
     const mota = document.querySelector(".mt")
     const huongdansudung = document.querySelector(".hdsd")
     if (mota) {
@@ -116,28 +109,5 @@
             document.querySelector(".product-content-right-bottom-content-big").classList.toggle("activeB")
         })
     }
-    const header = document.querySelector(".header")
-    window.addEventListener("scroll", function () {
-        x = window.pageYOffset;
-        if (x > 0) {
-            header.classList.add("sticky")
-        }
-        else {
-            header.classList.remove("sticky")
-        }
-    })
-    window.onscroll = function () { scrollFunction() };
-    function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            document.getElementById("myBtn").style.display = "block";
-            document.getElementById("myZalo").style.display = "block";
-            document.getElementById("myCall").style.display = "block";
-        } else {
-            document.getElementById("myBtn").style.display = "none";
-        }
-    }
-    function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }
+
 </script>

@@ -25,7 +25,7 @@
                             <p>Liên hệ đặt lịch</p>
                         </button>
                     </a>
-                    <<a href="https://zalo.me/0345438160" target="_blank">
+                    <a href="https://zalo.me/0345438160" target="_blank">
                         <button>
                             <p>Liên hệ cửa hàng</p>
                         </button>
@@ -46,10 +46,10 @@
                         </div>
                         <div class="CTDichVu-content-right-bottom-content">
                             <div class="CTDichVu-content-right-bottom-content-mt">
-                                Mama , Papa đi chơi bỏ con ở nhà hả :<<<. Thoi con đừng buồn, đến đây chơi với cô chú và các bạn con sẽ không cô đơn nữa nè.
+                                @Html.DisplayFor(Model => Model.DoiTuongKD.MoTa)
                             </div>
                             <div class="CTDichVu-content-right-bottom-content-hdsd">
-                                Mama , Papa đi chơi bỏ con ở nhà hả :<<<. Thoi con đừng buồn, đến đây chơi với cô chú và các bạn con sẽ không cô đơn nữa nè.Mama , Papa đi chơi bỏ con ở nhà hả :<<<. Thoi con đừng buồn, đến đây chơi với cô chú và các bạn con sẽ không cô đơn nữa nè.
+                                @Html.DisplayFor(Model => Model.DoiTuongKD.ChiTiet)
                             </div>
                         </div>
                     </div>
@@ -58,4 +58,34 @@
         </div>
     </div>
 </div>
+<script>
+    const mota = document.querySelector(".mt")
+    const huongdansudung = document.querySelector(".hdsd")
+    if (mota) {
+        mota.addEventListener("click", function () {
+            if (!mota.classList.contains("color-item-select")) {
+                document.querySelector(".CTDichVu-content-right-bottom-content-mt").style.display = "block"
+                document.querySelector(".CTDichVu-content-right-bottom-content-hdsd").style.display = "none"
+                mota.classList.add("color-item-select");
+                huongdansudung.classList.remove("color-item-select");
+            }
+        })
+    }
+    if (huongdansudung) {
+        huongdansudung.addEventListener("click", function () {
+            if (!huongdansudung.classList.contains("color-item-select")) {
+                document.querySelector(".CTDichVu-content-right-bottom-content-mt").style.display = "none"
+                document.querySelector(".CTDichVu-content-right-bottom-content-hdsd").style.display = "block"
+                huongdansudung.classList.add("color-item-select");
+                mota.classList.remove("color-item-select");
+            }
+        })
+    }
+    const butTon = document.querySelector(".product-content-right-bottom-top")
+    if (butTon) {
+        butTon.addEventListener("click", function () {
+            document.querySelector(".product-content-right-bottom-content-big").classList.toggle("activeB")
+        })
+    }
 
+</script>
