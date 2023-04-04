@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     <link href="~/Theme/css/StyleSheet.css" rel="stylesheet" />
-    <link href="~/Theme/css/StyleSheetTC.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,300&display=swap" rel="stylesheet">
@@ -122,8 +121,6 @@
         </div>
     </div>
     <script>
-        @*@Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")*@
         @RenderSection("scripts", required: false)
         const left = document.querySelector(".left img")
         const right = document.querySelector(".right img")
