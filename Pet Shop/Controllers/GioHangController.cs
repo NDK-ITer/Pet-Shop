@@ -90,7 +90,7 @@ namespace Pet_Shop.Controllers
         {
             LayGiohang(User.Identity.GetUserId());
             int result = 0;
-            if (gioHangs == null || gioHangs.Count == 0)
+            if (gioHangs.Count == 0)
             {
                 return result;
             }
@@ -105,7 +105,7 @@ namespace Pet_Shop.Controllers
         {
             LayGiohang(User.Identity.GetUserId());
             double result = 0;
-            if (gioHangs == null || gioHangs.Count == 0)
+            if (gioHangs.Count == 0)
             {
                 return result;
             }
