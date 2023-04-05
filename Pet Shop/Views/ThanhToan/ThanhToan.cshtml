@@ -1,4 +1,5 @@
-﻿@model PagedList.IPagedList<Pet_Shop.Models.CT_HoaDon>
+﻿@model Pet_Shop.Models.HoaDon
+@using Microsoft.AspNet.Identity
 @{
     ViewBag.Title = "ThanhToan";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -29,85 +30,107 @@
                             <h1>Thông tin mua hàng</h1>
                             <a class="fas fa-user" href=""> Đăng nhập</a>
                         </div>
+
                         <div class="payment-content-left-input">
-                            <div class="payment-content-left-input-item">
-                                <input type="text" placeholder="Nhập họ và tên" name="text-name">
-                            </div>
-                            <div class="payment-content-left-input-item">
-                                <input type="email" placeholder="Nhập email" name="text-email">
-                            </div>
-                            <div class="payment-content-left-input-item">
-                                <input type="text" placeholder="Nhập số điện thoại" name="text-call">
-                            </div>
-                            <div class="payment-content-left-input-item">
-                                <input type="text" placeholder="Nhập địa chỉ" name="text-place">
-                            </div>
-                            <div class="payment-content-left-input-item">
-                                <textarea placeholder="Ghi chú cho đơn hàng" name="text-note" style="height: 83px;"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="payment-content-left-payment">
-                        <div class="container">
-                            <h1>Thanh toán</h1>
-                            <div class="box">
-                                <input type="radio" name="select" id="option-1">
-                                <input type="radio" name="select" id="option-2">
-                                <label for="option-1" class="option-1">
-                                    <div class="dot"></div>
-                                    <div class="text">Chuyển khoản qua ngân hàng</div>
-                                    <i style="color: forestgreen; padding-left: 5px;" class="far fa-money-bill-alt"></i>
-                                </label>
-                                <div class="payment-content-left-payment-bank">
-                                    <p>Chủ TK: TRẦN TRUNG BẢO KHA<br>STK: 0271001099238</p>
+                            @if (Request.IsAuthenticated)
+                            {
+                                <div class="payment-content-left-input-item">
+                                    @*<input type="text" placeholder="Nhập họ và tên" name="text-name">*@
+                                    @Html.EditorFor(model => model.TenNguoiNhan, new { placeholder = "Nhập họ và tên", name = "text-name", type = "text" ,value = User.Identity.GetUserName()})
+                                    @Html.ValidationMessageFor(model => model.TenNguoiNhan, "", new { @class = "text-danger" })
                                 </div>
-                                <label for="option-2" class="option-2">
-                                    <div class="dot"></div>
-                                    <div class="text">Thanh toán bằng tiền mặt</div>
-                                    <i style="color: forestgreen; padding-left: 35px;" class="far fa-money-bill-alt"></i>
-                                </label>
+                            }
+                            else
+                            {
+                                <div class="payment-content-left-input-item">
+                                    @*<input type="text" placeholder="Nhập họ và tên" name="text-name">*@
+                                    @Html.EditorFor(model => model.TenNguoiNhan, new { placeholder = "Nhập họ và tên", name = "text-name", type = "text" })
+                                    @Html.ValidationMessageFor(model => model.TenNguoiNhan, "", new { @class = "text-danger" })
+                                </div>
+                            }
+                            <div class="payment-content-left-input-item">
+                                @*<input type="email" placeholder="Nhập email" name="text-email">*@
+                                @Html.EditorFor(model => model.EmailNguoiNhan, new { placeholder = "Nhập email người nhận", name = "text-name", type = "text" })
+                                @Html.ValidationMessageFor(model => model.EmailNguoiNhan, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="payment-content-left-input-item">
+                                @*<input type="text" placeholder="Nhập số điện thoại" name="text-call">*@
+                                @Html.EditorFor(model => model.SDTNguoiNhan, new { placeholder = "Nhập SDT người nhận", name = "text-name", type = "text" })
+                                @Html.ValidationMessageFor(model => model.SDTNguoiNhan, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="payment-content-left-input-item">
+                                @*<input type="text" placeholder="Nhập địa chỉ" name="text-place">*@
+                                @Html.EditorFor(model => model.DiaChiGiao, new { placeholder = "Nhập địa chỉ giao", name = "text-name", type = "text" })
+                                @Html.ValidationMessageFor(model => model.DiaChiGiao, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="payment-content-left-input-item">
+                                @*<textarea placeholder="Ghi chú cho đơn hàng" name="text-note" style="height: 83px;"></textarea>*@
+                                @Html.EditorFor(model => model.GhiChu, new { placeholder = "Ghi chú đơn hàng", name = "text-name", type = "textarea" })
+                                @Html.ValidationMessageFor(model => model.GhiChu, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>
+                    @*<div class="payment-content-left-payment">
+                            <div class="container">
+                                <h1>Thanh toán</h1>
+                                <div class="box">
+                                    <input type="radio" name="select" id="option-1">
+                                    <input type="radio" name="select" id="option-2">
+                                    <label for="option-1" class="option-1">
+                                        <div class="dot"></div>
+                                        <div class="text">Chuyển khoản qua ngân hàng</div>
+                                        <i style="color: forestgreen; padding-left: 5px;" class="far fa-money-bill-alt"></i>
+                                    </label>
+                                    <div class="payment-content-left-payment-bank">
+                                        <p>Chủ TK: TRẦN TRUNG BẢO KHA<br>STK: 0271001099238</p>
+                                    </div>
+                                    <label for="option-2" class="option-2">
+                                        <div class="dot"></div>
+                                        <div class="text">Thanh toán bằng tiền mặt</div>
+                                        <i style="color: forestgreen; padding-left: 35px;" class="far fa-money-bill-alt"></i>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>*@
                 </div>
-                <div class="payment-content-right">
-                    <table>
-                        <tr>
-                            <th>Tên sản phẩm</th>
-                            <th>Giảm giá</th>
-                            <th>Số lượng</th>
-                            <th>Thành tiền</th>
-                        </tr>
-                        <tr>
-                            <td>Pate</td>
-                            <td>-30%</td>
-                            <td>1</td>
-                            <td>20.000 <sup>đ</sup></td>
-                        </tr>
-                        <tr>
-                            <td>Vòng cổ</td>
-                            <td>-20%</td>
-                            <td>1</td>
-                            <td>25.000 <sup>đ</sup></td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: bold;" colspan="3">Tổng</td>
-                            <td style="font-weight: bold;">45.000 <sup>đ</sup></td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: bold;" colspan="3">Phí vận chuyển</td>
-                            <td style="font-weight: bold;">15.000 <sup>đ</sup></td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: bold;" colspan="3">Tổng tiền hàng</td>
-                            <td style="font-weight: bold;">60.000 <sup>đ</sup></td>
-                        </tr>
-                    </table>
-                    <div class="payment-content-right-button">
-                        <a href="cart.html"><button>Quay lại giỏ hàng</button></a>
-                        <a href="success.html"> <button>ĐẶT HÀNG</button></a>
-                    </div>
-                </div>
+                @*<div class="payment-content-right">
+                        <table>
+                            <tr>
+                                <th>Tên sản phẩm</th>
+                                <th>Giảm giá</th>
+                                <th>Số lượng</th>
+                                <th>Thành tiền</th>
+                            </tr>
+                            <tr>
+                                <td>Pate</td>
+                                <td>-30%</td>
+                                <td>1</td>
+                                <td>20.000 <sup>đ</sup></td>
+                            </tr>
+                            <tr>
+                                <td>Vòng cổ</td>
+                                <td>-20%</td>
+                                <td>1</td>
+                                <td>25.000 <sup>đ</sup></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold;" colspan="3">Tổng</td>
+                                <td style="font-weight: bold;">45.000 <sup>đ</sup></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold;" colspan="3">Phí vận chuyển</td>
+                                <td style="font-weight: bold;">15.000 <sup>đ</sup></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold;" colspan="3">Tổng tiền hàng</td>
+                                <td style="font-weight: bold;">60.000 <sup>đ</sup></td>
+                            </tr>
+                        </table>
+                        <div class="payment-content-right-button">
+                            <a href="cart.html"><button>Quay lại giỏ hàng</button></a>
+                            <a href="success.html"> <button>ĐẶT HÀNG</button></a>
+                        </div>
+                    </div>*@
             </div>
         </form>
     </div>

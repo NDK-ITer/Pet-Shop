@@ -9,33 +9,24 @@ using Pet_Shop.Models;
 
 namespace Pet_Shop.Controllers
 {
-    public class ThongTinHoaDon
-    {
-        public string TenNguoiNhan { get; set; }
-        public string DiaChiGiao { get; set; }
-        public string SDTNguoiNhan { get; set; }
-        public string EmailNguoiNhan { get; set; }
-        public string GhiChu { get; set; }
-    }
     public class ThanhToanController : Controller
     {
         private QuanLyThuCungEntities dbContext = new QuanLyThuCungEntities();
         List<CT_HoaDon> cT_HoaDons = new List<CT_HoaDon>();
-        List<GioHang> = 
+        private HoaDon hoaDon = new HoaDon();
         public ActionResult ThanhToan()
         {
-
-            return View();
+            return View(hoaDon);
         }
-        [HttpPost]
-        public Task<ActionResult> ThanhToan(ThongTinHoaDon thongTinHoaDon)
-        {
-            if (ModelState.IsValid)
-            {
+        //[HttpPost]
+        //public Task<ActionResult> ThanhToan(ThongTinHoaDon thongTinHoaDon)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
 
-            }
-            return View();
-        }
+        //    }
+        //    return View();
+        //}
 
     }
 }
