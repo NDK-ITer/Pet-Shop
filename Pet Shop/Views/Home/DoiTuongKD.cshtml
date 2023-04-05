@@ -5,6 +5,9 @@
 @{
     ViewBag.Title = "Design";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+
 }
 
 <<div class="category">
@@ -13,27 +16,31 @@
     </div>
     <div class="row">
         <div class="category-left">
-            <div class="category-left-item row">
+            <a class="category-left-item row">
                 <img src="~/Theme/images/Meo2.png" alt="">
                 <p>Mèo</p>
-            </div>
-            <div class="category-left-item row">
+            </a>
+            <a class="category-left-item row">
                 <img src="~/Theme/images/gau2.png" alt="">
                 <p>Chó</p>
-            </div>
-            <div class="category-left-item row">
+            </a>
+            <a class="category-left-item row">
                 <img src="~/Theme/images/food.png" alt="">
                 <p>Thức ăn</p>
-            </div>
-            <div class="category-left-item row">
+            </a>
+            <a class="category-left-item row">
                 <img src="~/Theme/images/bodydv.png" alt="">
                 <p>Đồ dùng</p>
-            </div>
+            </a>
         </div>
         <div class="category-right">
             <div class="category-right-top row">
                 <div class="category-right-top-item">
-                    <input placeholder="  Bạn đang tìm gì ?" type="text"><i class="fas fa-search"></i>
+                    @using (Html.BeginForm("TimKiem","Home",FormMethod.Get, new { @class = "form-inline" }))
+                    {
+                        <input placeholder="Bạn đang tìm gì ?" type="text" name="searchKey">
+                        <button type="submit" class="fas fa-search"><i ></i></button>
+                    }
                 </div>
                 <div class="category-right-top-item">
                     <select name="" id="">

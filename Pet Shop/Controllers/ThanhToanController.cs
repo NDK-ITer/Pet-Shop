@@ -178,31 +178,6 @@ namespace Pet_Shop.Controllers
                 }
                 return RedirectToAction("LapHoaDon");
             }
-            //List<CT_HoaDon> cT_HoaDons = LayDsSPMua();
-            //List<GioHang> gioHangs = dbContext.GioHangs.Where(n => n.Id == id).ToList();
-            //foreach (var item in gioHangs)
-            //{
-            //    CT_HoaDon newItem = cT_HoaDons.FirstOrDefault(n => n.MaDT == item.MaDT);
-            //    if (newItem != null)
-            //    {
-            //        newItem.SoLuong = newItem.SoLuong + item.SoLuong;
-            //        if (item.DoiTuongKD.GiamGia != 0)
-            //        {
-            //            newItem.ThanhTien = item.SoLuong * (item.DoiTuongKD.DonGia * item.DoiTuongKD.GiamGia);
-            //        }
-            //        continue;
-            //    }
-            //    newItem = new CT_HoaDon();
-            //    newItem.DoiTuongKD = item.DoiTuongKD;
-            //    newItem.MaDT = item.MaDT;
-            //    newItem.SoLuong = item.SoLuong;
-            //    if (item.DoiTuongKD.GiamGia != 0)
-            //    {
-            //        newItem.ThanhTien = item.SoLuong * (item.DoiTuongKD.DonGia * item.DoiTuongKD.GiamGia);
-            //    }
-            //    newItem.ThanhTien = item.SoLuong * (item.DoiTuongKD.DonGia);
-            //    cT_HoaDons.Add(newItem);
-            //}
             return RedirectToAction("LapHoaDon");
         }
 
