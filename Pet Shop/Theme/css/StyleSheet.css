@@ -1219,13 +1219,9 @@ a {
         .cart-content-right table td {
             font-size: 15px;
             color: #333;
+            font-weight:bold;
             padding: 12px 0;
         }
-
-    .cart-content-right tr:nth-child(4) td {
-        border-bottom: 2px solid #dddddd;
-    }
-
     .cart-content-right tr td:last-child {
         text-align: right;
     }
@@ -1308,22 +1304,25 @@ a {
 }
 
 .payment-content-left-information {
-    width: 60%;
+    width: 39%;
     padding-bottom:20px;
 }
 
 .payment-content-left-title {
     padding: 12px 11px 0 11px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .payment-content-left-information h1 {
     font-size: 20px;
-    padding-right: 200px;
 }
 
 .payment-content-left-information a {
     border: 1px solid #ddd;
     padding: 4px;
+    font-size:17px;
+    margin-right:122px;
     color: #2a9dcc;
     border-radius: 5px;
 }
@@ -1334,7 +1333,6 @@ a {
 
 .payment-content-left-input-item {
     width: 92%;
-    
     padding-top:10px;
     padding-left: 6px;
     margin: 5px 5px;
@@ -1345,7 +1343,7 @@ a {
     }
 
     .payment-content-left-input-item input {
-        width: 100%;
+        width: 80%;
         border-radius: 5px;
         height: 32px;
         padding-left: 5px;
@@ -1362,7 +1360,7 @@ a {
 
 .payment-content-left-payment {
     padding: 12px 11px 0 11px;
-    width: 40%;
+    width: 61%;
 }
 
     .payment-content-left-payment h1 {
@@ -1413,7 +1411,7 @@ a {
 .container .box label {
     display: flex;
     height: 35px;
-    width: 93%;
+    width: 44%;
     align-items: center;
     border: 1px solid #ddd;
     border-radius: 30px;
@@ -1421,7 +1419,10 @@ a {
     padding-left: 10px;
     transition: all 0.3s ease;
 }
-
+    .container .box label:hover {
+        background: linear-gradient(90deg, #f4469d36 0%, #f3c3632e 100%);
+        border-color: #F4469D;
+    }
 #option-1:checked ~ .option-1,
 #option-2:checked ~ .option-2 {
     background: linear-gradient(90deg, #f4469d36 0%, #f3c3632e 100%);
@@ -1503,12 +1504,12 @@ a {
         cursor: pointer;
         background: linear-gradient(90deg, #F4469D 0%, #F3C363 100%);
         border: 2px solid #FFFEFE;
-        border-radius: 20px;
+        border-radius: 10px;
     }
-
         .payment-content-right-button button:hover {
             background: linear-gradient(180deg, #F4469D 0%, #F3C363 100%);
             border: 2px solid #ddd;
+            color:#000;
         }
 /*----------------------------------------success------------------------------------------*/
 .success {

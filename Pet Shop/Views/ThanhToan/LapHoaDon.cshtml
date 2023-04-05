@@ -27,16 +27,15 @@
                 <div class="payment-content-left row" style="padding-right:0!important">
                     @{Html.RenderAction("DsSPMua", "ThanhToan");}
                     <div class="payment-content-left-information">
-                        <div class="payment-content-left-title row">
+                        <div class="payment-content-left-title">
                             <h1>Thông tin mua hàng</h1>
                             @if (!Request.IsAuthenticated)
                             {
                                 <a class="fas fa-user" href="@Url.Action("Login", "Account", new { id = "loginLink", @class = "nav-link" })"> Đăng nhập</a>
                             }
                         </div>
-
                         <div class="payment-content-left-input">
-                            
+
                             @if (Request.IsAuthenticated)
                             {
                                 <div class="payment-content-left-input-item">
@@ -48,16 +47,16 @@
                             }
                             else
                             {
-                        <div class="payment-content-left-input-item">
-                            @*<input type="text" placeholder="Nhập họ và tên" name="text-name">*@
-                            <p> Tên người nhận :</p>
-                            @Html.EditorFor(model => model.TenNguoiNhan, new { placeholder = "Nhập họ và tên", name = "text-name", type = "text" })
-                            @Html.ValidationMessageFor(model => model.TenNguoiNhan, "", new { @class = "text-danger" })
-                        </div>
+                                <div class="payment-content-left-input-item">
+                                    @*<input type="text" placeholder="Nhập họ và tên" name="text-name">*@
+                                    <p> Tên người nhận :</p>
+                                    @Html.EditorFor(model => model.TenNguoiNhan, new { placeholder = "Nhập họ và tên", name = "text-name", type = "text" })
+                                    @Html.ValidationMessageFor(model => model.TenNguoiNhan, "", new { @class = "text-danger" })
+                                </div>
                             }
                             @*<div class="payment-content-left-input-item">
-            <p>Ngày Lập:</p>@Html.DisplayFor(model=>model.NgayLap)
-        </div>*@
+                        <p>Ngày Lập:</p>@Html.DisplayFor(model=>model.NgayLap)
+                    </div>*@
                             <div class="payment-content-left-input-item">
                                 @*<input type="email" placeholder="Nhập email" name="text-email">*@
                                 <p> Email :</p>
@@ -84,80 +83,35 @@
                             </div>
                         </div>
                     </div>
+                    <div class="payment-content-left-payment">
+                        <div class="container">
+                            <h1>Thanh toán</h1>
+                            <div class="box">
+                                <input type="radio" name="select" id="option-1">
+                                <input type="radio" name="select" id="option-2">
+                                <label for="option-1" class="option-1">
+                                    <div class="dot"></div>
+                                    <div class="text">Chuyển khoản qua ngân hàng</div>
+                                    <i style="color: forestgreen; padding-left: 5px;" class="far fa-money-bill-alt"></i>
+                                </label>
+                                <div class="payment-content-left-payment-bank">
+                                    <p>Chủ TK: TRẦN TRUNG BẢO KHA<br>STK: 0271001099238</p>
+                                </div>
+                                <label for="option-2" class="option-2">
+                                    <div class="dot"></div>
+                                    <div class="text">Thanh toán bằng tiền mặt</div>
+                                    <i style="color: forestgreen; padding-left: 35px;" class="far fa-money-bill-alt"></i>
+                                </label>
+                            </div>
+                            <div class="payment-content-right-button">
+                                <button type="submit" value="ĐẶT HÀNG">ĐẶT HÀNG</button>
+                                <button><a style="color:white" href="@Url.Action("ThemSPGioHang","ThanhToan",new { @id = User.Identity.GetUserId() })">THÊM TỪ GIỎ HÀNG</a></button>
 
-                    @*<div class="payment-content-left-payment">
-            <div class="container">
-                <h1>Thanh toán</h1>
-                <div class="box">
-                    <input type="radio" name="select" id="option-1">
-                    <input type="radio" name="select" id="option-2">
-                    <label for="option-1" class="option-1">
-                        <div class="dot"></div>
-                        <div class="text">Chuyển khoản qua ngân hàng</div>
-                        <i style="color: forestgreen; padding-left: 5px;" class="far fa-money-bill-alt"></i>
-                    </label>
-                    <div class="payment-content-left-payment-bank">
-                        <p>Chủ TK: TRẦN TRUNG BẢO KHA<br>STK: 0271001099238</p>
-                    </div>
-                    <label for="option-2" class="option-2">
-                        <div class="dot"></div>
-                        <div class="text">Thanh toán bằng tiền mặt</div>
-                        <i style="color: forestgreen; padding-left: 35px;" class="far fa-money-bill-alt"></i>
-                    </label>
-                </div>
-            </div>
-        </div>*@
-                </div>
-                <div class="payment-content-right">
-                    <table>
-                        <tr>
-                            <th>Tên sản phẩm</th>
-                            <th>Giảm giá</th>
-                            <th>Số lượng</th>
-                            <th>Thành tiền</th>
-                        </tr>
-                        <tr>
-                            <td>Pate</td>
-                            <td>-30%</td>
-                            <td>1</td>
-                            <td>20.000 <sup>đ</sup></td>
-                        </tr>
-                        <tr>
-                            <td>Vòng cổ</td>
-                            <td>-20%</td>
-                            <td>1</td>
-                            <td>25.000 <sup>đ</sup></td>
-                        </tr>
-                        <tr>
-                            <th colspan="2">TỔNG TIỀN</th>
-                        </tr>
-                        <tr>
-                            <td>TỔNG SẢN PHẨM</td>
-                            <td>@ViewBag.TongSL</td>
-                        </tr>
-                        <tr>
-                            <td>TỔNG TIỀN HÀNG</td>
-                            <td><p>@*@String.Format("{0:0,0}", @ViewBag.TongThanhTien)*@đ</p></td>
-                        </tr>
-                        <tr>
-                            <td>TẠM TÍNH</td>
-                            <td><p style="color:black;font-weight: bold;">@*@String.Format("{0:0,0}", @ViewBag.TongThanhTien)*@đ</p></td>
-                        </tr>
-                    </table>
-                    <div class="payment-content-right-button">
-                        <button type="button"><a href="@Url.Action("ThemSPGioHang","ThanhToan",new { @id = User.Identity.GetUserId() })">THANH TOÁN THÊM TỪ GIỎ HÀNG</a></button>
-                        <button type="submit" value="ĐẶT HÀNG">ĐẶT HÀNG</button>
-                        
+                            </div>
+                        </div>
                     </div>
                 </div>
-                @*<div class="payment-content-right-button">
-                        <a href="#"><button>Quay lại giỏ hàng</button></a>
-                        <a href="#"> <button>ĐẶT HÀNG</button></a>
-                    </div*@
-            </div>
-            @*<div>
-                @{Html.RenderAction("DsSPMua", "ThanhToan");}
-            </div>*@
+            </div>   
         </form>
     </div>
 </div>
