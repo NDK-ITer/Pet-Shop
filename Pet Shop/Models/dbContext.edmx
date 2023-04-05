@@ -13,6 +13,7 @@
           <Property Name="SoHD" Type="nvarchar" MaxLength="128" Nullable="false" />
           <Property Name="MaDT" Type="varchar" MaxLength="128" Nullable="false" />
           <Property Name="SoLuong" Type="int" />
+          <Property Name="ThanhTien" Type="money" />
         </EntityType>
         <EntityType Name="CT_PhieuDat">
           <Key>
@@ -96,10 +97,13 @@
           <Property Name="NgayLap" Type="nchar" MaxLength="10" />
           <Property Name="TongThanhTien" Type="money" />
           <Property Name="MaNS" Type="nvarchar" MaxLength="128" />
-          <Property Name="TenKH" Type="nvarchar" MaxLength="50" />
-          <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
-          <Property Name="IdNguoiDung" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="MaHT" Type="int" Nullable="false" />
+          <Property Name="TenNguoiNhan" Type="nvarchar" MaxLength="50" />
+          <Property Name="DiaChiGiao" Type="nvarchar" MaxLength="100" />
+          <Property Name="IdNguoiDung" Type="nvarchar" MaxLength="128" />
+          <Property Name="MaHT" Type="int" />
+          <Property Name="SDTNguoiNhan" Type="varchar" MaxLength="50" />
+          <Property Name="EmailNguoiNhan" Type="nvarchar" MaxLength="256" />
+          <Property Name="GhiChu" Type="ntext" />
         </EntityType>
         <EntityType Name="LoaiDD">
           <Key>
@@ -302,7 +306,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_HoaDon_HinhThucThanhToan">
-          <End Role="HinhThucThanhToan" Type="Self.HinhThucThanhToan" Multiplicity="1" />
+          <End Role="HinhThucThanhToan" Type="Self.HinhThucThanhToan" Multiplicity="0..1" />
           <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="HinhThucThanhToan">
@@ -444,6 +448,7 @@
           <Property Name="SoHD" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="MaDT" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="SoLuong" Type="Int32" />
+          <Property Name="ThanhTien" Type="Decimal" Precision="19" Scale="4" />
           <NavigationProperty Name="HoaDon" Relationship="Self.FK_CT_HoaDon_HoaDon" FromRole="CT_HoaDon" ToRole="HoaDon" />
           <NavigationProperty Name="DoiTuongKD" Relationship="Self.FK_CT_HoaDon_SPKD" FromRole="CT_HoaDon" ToRole="DoiTuongKD" />
         </EntityType>
@@ -548,10 +553,13 @@
           <Property Name="NgayLap" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="TongThanhTien" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="MaNS" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="TenKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="IdNguoiDung" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="MaHT" Type="Int32" Nullable="false" />
+          <Property Name="TenNguoiNhan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChiGiao" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IdNguoiDung" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="MaHT" Type="Int32" />
+          <Property Name="SDTNguoiNhan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmailNguoiNhan" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="CT_HoaDon" Relationship="Self.FK_CT_HoaDon_HoaDon" FromRole="HoaDon" ToRole="CT_HoaDon" />
           <NavigationProperty Name="HinhThucThanhToan" Relationship="Self.FK_HoaDon_HinhThucThanhToan" FromRole="HoaDon" ToRole="HinhThucThanhToan" />
           <NavigationProperty Name="NhanSU" Relationship="Self.FK_HoaDon_NhanSU" FromRole="HoaDon" ToRole="NhanSU" />
@@ -777,7 +785,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_HoaDon_HinhThucThanhToan">
-          <End Role="HinhThucThanhToan" Type="Self.HinhThucThanhToan" Multiplicity="1" />
+          <End Role="HinhThucThanhToan" Type="Self.HinhThucThanhToan" Multiplicity="0..1" />
           <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="HinhThucThanhToan">
@@ -906,6 +914,7 @@
                 <ScalarProperty Name="SoHD" ColumnName="SoHD" />
                 <ScalarProperty Name="MaDT" ColumnName="MaDT" />
                 <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -996,10 +1005,13 @@
                 <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
                 <ScalarProperty Name="TongThanhTien" ColumnName="TongThanhTien" />
                 <ScalarProperty Name="MaNS" ColumnName="MaNS" />
-                <ScalarProperty Name="TenKH" ColumnName="TenKH" />
-                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="TenNguoiNhan" ColumnName="TenNguoiNhan" />
+                <ScalarProperty Name="DiaChiGiao" ColumnName="DiaChiGiao" />
                 <ScalarProperty Name="IdNguoiDung" ColumnName="IdNguoiDung" />
                 <ScalarProperty Name="MaHT" ColumnName="MaHT" />
+                <ScalarProperty Name="SDTNguoiNhan" ColumnName="SDTNguoiNhan" />
+                <ScalarProperty Name="EmailNguoiNhan" ColumnName="EmailNguoiNhan" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

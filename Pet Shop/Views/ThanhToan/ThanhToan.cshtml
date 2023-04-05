@@ -1,0 +1,115 @@
+﻿@model PagedList.IPagedList<Pet_Shop.Models.CT_HoaDon>
+@{
+    ViewBag.Title = "ThanhToan";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="payment">
+    <div class="container">
+        <div class="payment-top-wrap">
+            <div class="payment-top">
+                <div class="payment-top-cart payment-top-item">
+                    <a href="cart.html" class="fas fa-shopping-cart"></a>
+                </div>
+                <div class="payment-top-payment payment-top-item">
+                    <a href="payment.html" class="fas fa-money-check-alt"></a>
+                </div>
+                <div class="payment-top-done payment-top-item">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <form action="@Url.Action("ThanhToan","ThanhToan")" method="post">
+            <div class="payment-content row">
+                <div class="payment-content-left row">
+                    <div class="payment-content-left-information">
+                        <div class="payment-content-left-title row">
+                            <h1>Thông tin mua hàng</h1>
+                            <a class="fas fa-user" href=""> Đăng nhập</a>
+                        </div>
+                        <div class="payment-content-left-input">
+                            <div class="payment-content-left-input-item">
+                                <input type="text" placeholder="Nhập họ và tên" name="text-name">
+                            </div>
+                            <div class="payment-content-left-input-item">
+                                <input type="email" placeholder="Nhập email" name="text-email">
+                            </div>
+                            <div class="payment-content-left-input-item">
+                                <input type="text" placeholder="Nhập số điện thoại" name="text-call">
+                            </div>
+                            <div class="payment-content-left-input-item">
+                                <input type="text" placeholder="Nhập địa chỉ" name="text-place">
+                            </div>
+                            <div class="payment-content-left-input-item">
+                                <textarea placeholder="Ghi chú cho đơn hàng" name="text-note" style="height: 83px;"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payment-content-left-payment">
+                        <div class="container">
+                            <h1>Thanh toán</h1>
+                            <div class="box">
+                                <input type="radio" name="select" id="option-1">
+                                <input type="radio" name="select" id="option-2">
+                                <label for="option-1" class="option-1">
+                                    <div class="dot"></div>
+                                    <div class="text">Chuyển khoản qua ngân hàng</div>
+                                    <i style="color: forestgreen; padding-left: 5px;" class="far fa-money-bill-alt"></i>
+                                </label>
+                                <div class="payment-content-left-payment-bank">
+                                    <p>Chủ TK: TRẦN TRUNG BẢO KHA<br>STK: 0271001099238</p>
+                                </div>
+                                <label for="option-2" class="option-2">
+                                    <div class="dot"></div>
+                                    <div class="text">Thanh toán bằng tiền mặt</div>
+                                    <i style="color: forestgreen; padding-left: 35px;" class="far fa-money-bill-alt"></i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="payment-content-right">
+                    <table>
+                        <tr>
+                            <th>Tên sản phẩm</th>
+                            <th>Giảm giá</th>
+                            <th>Số lượng</th>
+                            <th>Thành tiền</th>
+                        </tr>
+                        <tr>
+                            <td>Pate</td>
+                            <td>-30%</td>
+                            <td>1</td>
+                            <td>20.000 <sup>đ</sup></td>
+                        </tr>
+                        <tr>
+                            <td>Vòng cổ</td>
+                            <td>-20%</td>
+                            <td>1</td>
+                            <td>25.000 <sup>đ</sup></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold;" colspan="3">Tổng</td>
+                            <td style="font-weight: bold;">45.000 <sup>đ</sup></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold;" colspan="3">Phí vận chuyển</td>
+                            <td style="font-weight: bold;">15.000 <sup>đ</sup></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold;" colspan="3">Tổng tiền hàng</td>
+                            <td style="font-weight: bold;">60.000 <sup>đ</sup></td>
+                        </tr>
+                    </table>
+                    <div class="payment-content-right-button">
+                        <a href="cart.html"><button>Quay lại giỏ hàng</button></a>
+                        <a href="success.html"> <button>ĐẶT HÀNG</button></a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

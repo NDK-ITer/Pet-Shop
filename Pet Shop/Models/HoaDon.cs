@@ -24,10 +24,13 @@ namespace Pet_Shop.Models
         public string NgayLap { get; set; }
         public Nullable<decimal> TongThanhTien { get; set; }
         public string MaNS { get; set; }
-        public string TenKH { get; set; }
-        public string DiaChi { get; set; }
+        public string TenNguoiNhan { get; set; }
+        public string DiaChiGiao { get; set; }
         public string IdNguoiDung { get; set; }
-        public int MaHT { get; set; }
+        public Nullable<int> MaHT { get; set; }
+        public string SDTNguoiNhan { get; set; }
+        public string EmailNguoiNhan { get; set; }
+        public string GhiChu { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_HoaDon> CT_HoaDon { get; set; }

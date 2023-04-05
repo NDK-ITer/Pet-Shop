@@ -531,11 +531,11 @@
     <Content Include="Views\Shared\_PhanLoaiDDPartial.cshtml" />
     <Content Include="Views\Home\ChiTietThuCung.cshtml" />
     <Content Include="Views\Home\ThuCung.cshtml" />
+    <Content Include="Views\ThanhToan\ThanhToan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\ImagesProduct\" />
-    <Folder Include="Views\ThanhToan\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
