@@ -25,9 +25,9 @@
                                 <a href="@Url.Action("ThemSPVaoGioHang", "GioHang", new { @id = Model.MaTC, @strURL = Request.Url.ToString() })">Thêm vào giỏ hàng</a><!-- Thêm vào giỏ hàng nè -->
                             </button>
                         </a>
-                        <a href="https://zalo.me/0963450084" target="_blank">
+                        <a href="@Url.Action("MuaSP","ThanhToan",new { @id = Model.MaTC })" target="_blank">
                             <button>
-                                <p>Liên hệ cửa hàng</p>
+                                <p>Mua Ngay</p>
                             </button>
                         </a>
                     </div>

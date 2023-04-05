@@ -45,7 +45,7 @@
                             <a href="@Url.Action("ThemSPVaoGioHang", "GioHang", new { @id = Model.MaDD, @strURL = Request.Url.ToString() })">Thêm vào giỏ hàng</a>
                         </button>
                     </a>
-                    <a href="#">
+                    <a href="@Url.Action("MuaSP","ThanhToan",new { @id = Model.MaDD })">
                         <button>
                             <p>Mua ngay</p>
                         </button>

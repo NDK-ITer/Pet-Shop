@@ -22,13 +22,16 @@
         </div>
     </div>
     <div class="container">
-        <form action="@Url.Action("ThanhToan","ThanhToan")" method="post">
+        <form action="@Url.Action("LapHoaDon","ThanhToan")" method="post">
             <div class="payment-content row">
                 <div class="payment-content-left row">
                     <div class="payment-content-left-information">
                         <div class="payment-content-left-title row">
                             <h1>Thông tin mua hàng</h1>
-                            <a class="fas fa-user" href=""> Đăng nhập</a>
+                            @if (!Request.IsAuthenticated)
+                            {
+                                <a class="fas fa-user" href="@Url.Action("Login", "Account", new { id = "loginLink", @class = "nav-link" })"> Đăng nhập</a>
+                            }
                         </div>
 
                         <div class="payment-content-left-input">
@@ -36,7 +39,7 @@
                             {
                                 <div class="payment-content-left-input-item">
                                     @*<input type="text" placeholder="Nhập họ và tên" name="text-name">*@
-                                    @Html.EditorFor(model => model.TenNguoiNhan, new { placeholder = "Nhập họ và tên", name = "text-name", type = "text" ,value = User.Identity.GetUserName()})
+                                    @Html.EditorFor(model => model.TenNguoiNhan, new { placeholder = "Nhập họ và tên", name = "text-name", type = "text", value = User.Identity.GetUserName() })
                                     @Html.ValidationMessageFor(model => model.TenNguoiNhan, "", new { @class = "text-danger" })
                                 </div>
                             }
@@ -48,6 +51,9 @@
                                     @Html.ValidationMessageFor(model => model.TenNguoiNhan, "", new { @class = "text-danger" })
                                 </div>
                             }
+                            <div class="payment-content-left-input-item">
+                                <p>Ngày Lập:</p>@Html.DisplayFor(model=>model.NgayLap)
+                            </div>
                             <div class="payment-content-left-input-item">
                                 @*<input type="email" placeholder="Nhập email" name="text-email">*@
                                 @Html.EditorFor(model => model.EmailNguoiNhan, new { placeholder = "Nhập email người nhận", name = "text-name", type = "text" })
@@ -70,6 +76,7 @@
                             </div>
                         </div>
                     </div>
+                    @{Html.RenderAction("DsSPMua", "ThanhToan");}
                     @*<div class="payment-content-left-payment">
                             <div class="container">
                                 <h1>Thanh toán</h1>
@@ -93,44 +100,52 @@
                             </div>
                         </div>*@
                 </div>
-                @*<div class="payment-content-right">
-                        <table>
-                            <tr>
-                                <th>Tên sản phẩm</th>
-                                <th>Giảm giá</th>
-                                <th>Số lượng</th>
-                                <th>Thành tiền</th>
-                            </tr>
-                            <tr>
-                                <td>Pate</td>
-                                <td>-30%</td>
-                                <td>1</td>
-                                <td>20.000 <sup>đ</sup></td>
-                            </tr>
-                            <tr>
-                                <td>Vòng cổ</td>
-                                <td>-20%</td>
-                                <td>1</td>
-                                <td>25.000 <sup>đ</sup></td>
-                            </tr>
-                            <tr>
-                                <td style="font-weight: bold;" colspan="3">Tổng</td>
-                                <td style="font-weight: bold;">45.000 <sup>đ</sup></td>
-                            </tr>
-                            <tr>
-                                <td style="font-weight: bold;" colspan="3">Phí vận chuyển</td>
-                                <td style="font-weight: bold;">15.000 <sup>đ</sup></td>
-                            </tr>
-                            <tr>
-                                <td style="font-weight: bold;" colspan="3">Tổng tiền hàng</td>
-                                <td style="font-weight: bold;">60.000 <sup>đ</sup></td>
-                            </tr>
-                        </table>
-                        <div class="payment-content-right-button">
-                            <a href="cart.html"><button>Quay lại giỏ hàng</button></a>
-                            <a href="success.html"> <button>ĐẶT HÀNG</button></a>
-                        </div>
-                    </div>*@
+                <div class="payment-content-right">
+                    @*<table>
+                        <tr>
+                            <th>Tên sản phẩm</th>
+                            <th>Giảm giá</th>
+                            <th>Số lượng</th>
+                            <th>Thành tiền</th>
+                        </tr>
+                        <tr>
+                            <td>Pate</td>
+                            <td>-30%</td>
+                            <td>1</td>
+                            <td>20.000 <sup>đ</sup></td>
+                        </tr>
+                        <tr>
+                            <td>Vòng cổ</td>
+                            <td>-20%</td>
+                            <td>1</td>
+                            <td>25.000 <sup>đ</sup></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold;" colspan="3">Tổng</td>
+                            <td style="font-weight: bold;">45.000 <sup>đ</sup></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold;" colspan="3">Phí vận chuyển</td>
+                            <td style="font-weight: bold;">15.000 <sup>đ</sup></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold;" colspan="3">Tổng tiền hàng</td>
+                            <td style="font-weight: bold;">60.000 <sup>đ</sup></td>
+                        </tr>
+                    </table>*@
+                    <div class="payment-content-right-button">
+                        <button type="button"><a href="@Url.Action("ThemSPGioHang","ThanhToan",new { @id = User.Identity.GetUserId() })">THANH TOÁN THÊM TỪ GIỎ HÀNG</a></button>
+                        <button type="submit" value="ĐẶT HÀNG">ĐẶT HÀNG</button>
+                        
+                    </div>
+                </div>
+                @*<div class="payment-content-right-button">
+                        <a href="#"><button>Quay lại giỏ hàng</button></a>
+                        <a href="#"> <button>ĐẶT HÀNG</button></a>
+                    </div*@>
+            </div>
+            <div>
+                @{Html.RenderAction("DsSPMua", "ThanhToan");}
             </div>
         </form>
     </div>

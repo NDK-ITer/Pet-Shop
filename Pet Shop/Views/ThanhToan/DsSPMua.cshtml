@@ -1,0 +1,86 @@
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<Pet_Shop.Models.CT_HoaDon>
+@{
+    ViewBag.Title = "DsSPMua";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="cart">
+    <div class="container">
+        <div class="cart-content row">
+            <div class="cart-content-left">
+                <table>
+                    <tr>
+                        <th>Sản phẩm</th>
+                        <th>Tên sản phẩm</th>
+                        @*<th>size</th>*@
+                        <th>SL</th>
+                        <th>Thành tiền</th>
+                        <th></th>
+                    </tr>
+                    @if (ViewBag.TongSL == 0)
+                    {
+                        
+                    }
+                    else
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td><img src="@Url.Content(item.DoiTuongKD.AnhDaiDien)" alt=""></td>
+                                @if (item.DoiTuongKD.PhanLoaiDTKD.MaPLDTKD == "DD")
+                                {
+                                    <td><p>@Html.DisplayFor(modelItem => item.DoiTuongKD.DoDungTC.TenDD)</p></td>
+                                }
+                                else if (item.DoiTuongKD.PhanLoaiDTKD.MaPLDTKD == "TC")
+                                {
+                                    <td><p>@Html.DisplayFor(modelItem => item.DoiTuongKD.ThuCung.TenTC)</p></td>
+                                }
+                                <td>
+                                    <div id="buy-amount">
+                                        @*<button class="minus-btn" onclick="handleMinus()">
+                                                <p>-</p>
+                                            </button>*@
+
+                                        <input type="text" name="amount" id="amount" value="@Html.DisplayFor(modelItem => item.SoLuong)">
+
+                                        @*<button class="plus-btn" onclick="handlePlus()">
+                                                <p>+</p>
+                                            </button>*@
+                                    </div>
+                                </td>
+                                <td><p>@String.Format("{0:0,0}", item.DoiTuongKD.DonGia)đ</p></td>
+                                <td><a href="@Url.Action("XoaSP","ThanhToan",new { id = item.DoiTuongKD.MaDT })">X</a></td>
+                            </tr>
+                        }
+                    }
+                </table>
+                @Html.PagedListPager(Model, page => Url.Action("LapHoaDon", new { page, @class = "active" }))
+            </div>
+            @*<div class="cart-content-right">
+                <table>
+                    <tr>
+                        <th colspan="2">TỔNG TIỀN</th>
+                    </tr>
+                    <tr>
+                        <td>TỔNG SẢN PHẨM</td>
+                        <td>@ViewBag.TongSL</td>
+                    </tr>
+                    <tr>
+                        <td>TỔNG TIỀN HÀNG</td>
+                        <td><p>@String.Format("{0:0,0}", @ViewBag.TongThanhTien)đ</p></td>
+                    </tr>
+                    <tr>
+                        <td>TẠM TÍNH</td>
+                        <td><p style="color:black;font-weight: bold;">@String.Format("{0:0,0}", @ViewBag.TongThanhTien)đ</p></td>
+                    </tr>
+                </table>
+                <div class="cart-content-right-button">
+                    <button>@Html.ActionLink("TIẾP TỤC MUA SẮM", "DoDungTC", "Home")</button>
+                    <a href="@Url.Action("LapHoaDon","ThanhToan")"> <button>LẬP HÓA ĐƠN</button></a>
+                </div>
+            </div>*@
+        </div>
+    </div>
+</div>
+

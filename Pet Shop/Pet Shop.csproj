@@ -532,7 +532,8 @@
     <Content Include="Views\Shared\_PhanLoaiDDPartial.cshtml" />
     <Content Include="Views\Home\ChiTietThuCung.cshtml" />
     <Content Include="Views\Home\ThuCung.cshtml" />
-    <Content Include="Views\ThanhToan\ThanhToan.cshtml" />
+    <Content Include="Views\ThanhToan\LapHoaDon.cshtml" />
+    <Content Include="Views\ThanhToan\DsSPMua.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
