@@ -127,11 +127,11 @@ namespace Pet_Shop.Controllers
             sanPham.MaDT = id;
             sanPham.SoLuong = 1;
             sanPham.DoiTuongKD = doiTuongKD;
-            if (doiTuongKD.GiamGia != 0)
-            {
-                sanPham.ThanhTien = sanPham.SoLuong * (doiTuongKD.DonGia * doiTuongKD.GiamGia);
-            }
-            sanPham.ThanhTien = sanPham.SoLuong * (doiTuongKD.DonGia);
+            //if (doiTuongKD.GiamGia != 0)
+            //{
+            //    sanPham.ThanhTien = sanPham.SoLuong * (doiTuongKD.DonGia * doiTuongKD.GiamGia);
+            //}
+            sanPham.ThanhTien = sanPham.SoLuong * (doiTuongKD.DonGia-(doiTuongKD.DonGia * doiTuongKD.GiamGia));
             cT_HoaDons.Add(sanPham);
             return RedirectToAction("LapHoaDon");
         }
@@ -169,11 +169,11 @@ namespace Pet_Shop.Controllers
                     newItem.DoiTuongKD = item.DoiTuongKD;
                     newItem.MaDT = item.MaDT;
                     newItem.SoLuong = item.SoLuong;
-                    if (item.DoiTuongKD.GiamGia != 0)
-                    {
-                        newItem.ThanhTien = item.SoLuong * (item.DoiTuongKD.DonGia * item.DoiTuongKD.GiamGia);
-                    }
-                    newItem.ThanhTien = item.SoLuong * (item.DoiTuongKD.DonGia);
+                    //if (item.DoiTuongKD.GiamGia != 0)
+                    //{
+                    //    newItem.ThanhTien = item.SoLuong * (item.DoiTuongKD.DonGia * item.DoiTuongKD.GiamGia);
+                    //}
+                    newItem.ThanhTien = item.SoLuong * (item.DoiTuongKD.DonGia-(item.DoiTuongKD.DonGia * item.DoiTuongKD.GiamGia));
                     cT_HoaDons.Add(newItem);
                 }
                 return RedirectToAction("LapHoaDon");

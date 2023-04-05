@@ -113,12 +113,12 @@ namespace Pet_Shop.Controllers
             foreach (var item in gioHangs)
             {
                 DoiTuongKD doiTuongKD = dbContext.DoiTuongKDs.Find(item.MaDT);
-                if (doiTuongKD.GiamGia == 0)
-                {
-                    result = (double)((int)item.SoLuong * (doiTuongKD.DonGia)) + result;
-                    continue;
-                }
-                result = (double)((int)item.SoLuong * (doiTuongKD.DonGia * doiTuongKD.GiamGia)) + result;
+                //if (doiTuongKD.GiamGia == 0)
+                //{
+                //    result = (double)((int)item.SoLuong * (doiTuongKD.DonGia)) + result;
+                //    continue;
+                //}
+                result = (double)((int)item.SoLuong * (doiTuongKD.DonGia-(doiTuongKD.DonGia * doiTuongKD.GiamGia))) + result;
             }
             return result;
         }
