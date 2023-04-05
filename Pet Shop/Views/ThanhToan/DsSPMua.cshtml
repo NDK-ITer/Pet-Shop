@@ -58,8 +58,8 @@
                 </table>
                 @Html.PagedListPager(Model, page => Url.Action("LapHoaDon", new { page, @class = "active" }))
             </div>
-            @*<div class="cart-content-right">
-                <table>
+            <div class="cart-content-right" >
+                <table style="padding: 19px 10px!important">
                     <tr>
                         <th colspan="2">TỔNG TIỀN</th>
                     </tr>
@@ -71,16 +71,13 @@
                         <td>TỔNG TIỀN HÀNG</td>
                         <td><p>@String.Format("{0:0,0}", @ViewBag.TongThanhTien)đ</p></td>
                     </tr>
-                    <tr>
-                        <td>TẠM TÍNH</td>
-                        <td><p style="color:black;font-weight: bold;">@String.Format("{0:0,0}", @ViewBag.TongThanhTien)đ</p></td>
+                    <tr >
+                        <td style="color:red">TẠM TÍNH</td>
+                        <td style="color:red"><p style="font-weight: bold;">@String.Format("{0:0,0}", @ViewBag.TongThanhTien)đ</p></td>
                     </tr>
                 </table>
-                <div class="cart-content-right-button">
-                    <button>@Html.ActionLink("TIẾP TỤC MUA SẮM", "DoDungTC", "Home")</button>
-                    <a href="@Url.Action("LapHoaDon","ThanhToan")"> <button>LẬP HÓA ĐƠN</button></a>
-                </div>
-            </div>*@
+                
+            </div>
         </div>
     </div>
 </div>
