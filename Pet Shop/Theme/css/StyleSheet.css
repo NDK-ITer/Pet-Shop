@@ -1309,6 +1309,7 @@ a {
 
 .payment-content-left-information {
     width: 60%;
+    padding-bottom:20px;
 }
 
 .payment-content-left-title {
@@ -1333,7 +1334,8 @@ a {
 
 .payment-content-left-input-item {
     width: 92%;
-    height: 30px;
+    height: 40px;
+    padding-top:10px;
     padding-left: 6px;
     margin: 5px 5px;
 }

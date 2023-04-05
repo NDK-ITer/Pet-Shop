@@ -2,14 +2,15 @@
 @model PagedList.IPagedList<Pet_Shop.Models.CT_HoaDon>
 @{
     ViewBag.Title = "DsSPMua";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "";
 }
-
-<div class="cart">
+<link href="~/Theme/css/StyleSheet.css" rel="stylesheet" />
+<div class="cart" style="padding:0!important;width:100%">
     <div class="container">
         <div class="cart-content row">
             <div class="cart-content-left">
-                <table>
+                <table style="padding: 13px 0 0 0!important">
                     <tr>
                         <th>Sản phẩm</th>
                         <th>Tên sản phẩm</th>
@@ -55,7 +56,7 @@
                         }
                     }
                 </table>
-                @Html.PagedListPager(Model, page => Url.Action("LapHoaDon", new { page, @class = "active" }))
+                @*@Html.PagedListPager(Model, page => Url.Action("LapHoaDon", new { page, @class = "active" }))*@
             </div>
             @*<div class="cart-content-right">
                 <table>
