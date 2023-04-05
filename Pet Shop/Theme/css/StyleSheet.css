@@ -1334,16 +1334,20 @@ a {
 
 .payment-content-left-input-item {
     width: 92%;
-    height: 40px;
+    
     padding-top:10px;
     padding-left: 6px;
     margin: 5px 5px;
 }
+    .payment-content-left-input-item p {
+        font-weight: bold;
+        padding: 7px 2px;
+    }
 
     .payment-content-left-input-item input {
         width: 100%;
         border-radius: 5px;
-        height: 100%;
+        height: 32px;
         padding-left: 5px;
     }
 

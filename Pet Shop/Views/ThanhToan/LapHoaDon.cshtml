@@ -36,42 +36,48 @@
                         </div>
 
                         <div class="payment-content-left-input">
+                            
                             @if (Request.IsAuthenticated)
                             {
                                 <div class="payment-content-left-input-item">
                                     @*<input type="text" placeholder="nhập họ và tên" name="text-name">*@
-                                    
+                                    <p> Tên người nhận :</p>
                                     @Html.EditorFor(model => model.TenNguoiNhan, new { placeholder = "Nhập họ và tên", name = "text-name", type = "text", value = User.Identity.GetUserName() })
                                     @Html.ValidationMessageFor(model => model.TenNguoiNhan, "", new { @class = "text-danger" })
                                 </div>
                             }
                             else
                             {
-                                <div class="payment-content-left-input-item">
-                                    @*<input type="text" placeholder="Nhập họ và tên" name="text-name">*@
-                                    @Html.EditorFor(model => model.TenNguoiNhan, new { placeholder = "Nhập họ và tên", name = "text-name", type = "text" })
-                                    @Html.ValidationMessageFor(model => model.TenNguoiNhan, "", new { @class = "text-danger" })
-                                </div>
+                        <div class="payment-content-left-input-item">
+                            @*<input type="text" placeholder="Nhập họ và tên" name="text-name">*@
+                            <p> Tên người nhận :</p>
+                            @Html.EditorFor(model => model.TenNguoiNhan, new { placeholder = "Nhập họ và tên", name = "text-name", type = "text" })
+                            @Html.ValidationMessageFor(model => model.TenNguoiNhan, "", new { @class = "text-danger" })
+                        </div>
                             }
                             @*<div class="payment-content-left-input-item">
-                    <p>Ngày Lập:</p>@Html.DisplayFor(model=>model.NgayLap)
-                </div>*@
+            <p>Ngày Lập:</p>@Html.DisplayFor(model=>model.NgayLap)
+        </div>*@
                             <div class="payment-content-left-input-item">
                                 @*<input type="email" placeholder="Nhập email" name="text-email">*@
+                                <p> Email :</p>
                                 @Html.EditorFor(model => model.EmailNguoiNhan, new { placeholder = "Nhập email người nhận", name = "text-name", type = "text" })
                                 @Html.ValidationMessageFor(model => model.EmailNguoiNhan, "", new { @class = "text-danger" })
                             </div>
                             <div class="payment-content-left-input-item">
+                                <p> Số điện thoại :</p>
                                 @*<input type="text" placeholder="Nhập số điện thoại" name="text-call">*@
                                 @Html.EditorFor(model => model.SDTNguoiNhan, new { placeholder = "Nhập SDT người nhận", name = "text-name", type = "text" })
                                 @Html.ValidationMessageFor(model => model.SDTNguoiNhan, "", new { @class = "text-danger" })
                             </div>
                             <div class="payment-content-left-input-item">
+                                <p> Địa chỉ :</p>
                                 @*<input type="text" placeholder="Nhập địa chỉ" name="text-place">*@
                                 @Html.EditorFor(model => model.DiaChiGiao, new { placeholder = "Nhập địa chỉ giao", name = "text-name", type = "text" })
                                 @Html.ValidationMessageFor(model => model.DiaChiGiao, "", new { @class = "text-danger" })
                             </div>
                             <div class="payment-content-left-input-item">
+                                <p> Ghi chú :</p>
                                 @*<textarea placeholder="Ghi chú cho đơn hàng" name="text-note" style="height: 83px;"></textarea>*@
                                 @Html.EditorFor(model => model.GhiChu, new { placeholder = "Ghi chú đơn hàng", name = "text-name", type = "textarea" })
                                 @Html.ValidationMessageFor(model => model.GhiChu, "", new { @class = "text-danger" })
@@ -123,16 +129,19 @@
                             <td>25.000 <sup>đ</sup></td>
                         </tr>
                         <tr>
-                            <td style="font-weight: bold;" colspan="3">Tổng</td>
-                            <td style="font-weight: bold;">45.000 <sup>đ</sup></td>
+                            <th colspan="2">TỔNG TIỀN</th>
                         </tr>
                         <tr>
-                            <td style="font-weight: bold;" colspan="3">Phí vận chuyển</td>
-                            <td style="font-weight: bold;">15.000 <sup>đ</sup></td>
+                            <td>TỔNG SẢN PHẨM</td>
+                            <td>@ViewBag.TongSL</td>
                         </tr>
                         <tr>
-                            <td style="font-weight: bold;" colspan="3">Tổng tiền hàng</td>
-                            <td style="font-weight: bold;">60.000 <sup>đ</sup></td>
+                            <td>TỔNG TIỀN HÀNG</td>
+                            <td><p>@*@String.Format("{0:0,0}", @ViewBag.TongThanhTien)*@đ</p></td>
+                        </tr>
+                        <tr>
+                            <td>TẠM TÍNH</td>
+                            <td><p style="color:black;font-weight: bold;">@*@String.Format("{0:0,0}", @ViewBag.TongThanhTien)*@đ</p></td>
                         </tr>
                     </table>
                     <div class="payment-content-right-button">
