@@ -59,16 +59,16 @@ namespace Pet_Shop.Controllers
                     dbContext.SaveChanges();
                 }
             }
-            return RedirectToAction("ThanhToanThanhCong", hoaDon);
+            return RedirectToAction("ThanhToanThanhCong",hoaDon);
         }
 
         public ActionResult ThanhToanThanhCong(HoaDon hoaDonInput)
         {
-            if (hoaDonInput == null)
+            if (hoaDonInput != null)
             {
-                return View(hoaDon);
+                return View(hoaDonInput);
             }
-            return View(hoaDonInput);
+            return View(hoaDon);
         }
 
         public List<CT_HoaDon> LayDsSPMua()

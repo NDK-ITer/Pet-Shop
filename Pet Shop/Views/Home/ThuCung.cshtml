@@ -34,33 +34,19 @@
             <div class="ThuCung-right-content columm ">
                 @foreach (var item in Model)
                 {
-                    <div class="category-right-content-item" style="min-height: 309px!important; max-height: 309px!important;">
-                        <div class="category-right-content-item-top">
-                            <a href="@Url.Action("ChiTietThuCung", "Home", new { id = item.DoiTuongKD.MaDT })">
-                                <img style="height: 100%!important" src="@Url.Content(item.DoiTuongKD.AnhDaiDien)" alt="">
-                                @Html.DisplayFor(modelItem => item.TenTC)<br />
-                            </a>
+                    <div class="category-right-content-item">
+                        <a href="@Url.Action("ChiTietThuCung", "Home", new { id = item.DoiTuongKD.MaDT })">
+                            <img src="@Url.Content(item.DoiTuongKD.AnhDaiDien)" alt="">
+                            @Html.DisplayFor(modelItem => item.TenTC)<br />
+                        </a>
+                        <div class="category-right-content-item-bottom">
+                            @String.Format("{0:0,0}", item.DoiTuongKD.DonGia)đ
+                            <a class="fas fa-shopping-cart" href="@Url.Action("ThemSPVaoGioHang", "GioHang", new { @id = item.MaTC, @strURL = Request.Url.ToString() })"></a>
                         </div>
-                            
-                            <div class="category-right-content-item-bottom">
-                                @String.Format("{0:0,0}", item.DoiTuongKD.DonGia)đ
-                                <a class="fas fa-shopping-cart" href="@Url.Action("ThemSPVaoGioHang", "GioHang", new { @id = item.MaTC, @strURL = Request.Url.ToString() })"></a>
-                            </div>
-                        </div>
-                        }
-                        <!--<div class="ThuCung-right-content-item">-->
-                        <!-- vòng lặp thú cưng chổ này -->
-                        <!--<a href="product.html">-->
-                        <!-- action ctthú cưng -->
-                        <!--<img src="images/sp1.jpg" alt="">--> <!-- cái ảnh của nó -->
-                        <!--<h3>Pate cho mèo vị nước sốt cá ngừ WHISKAS Tuna Flavour Sauce</h3>--> <!-- Tên thú cưng -->
-                        <!--<p>25.000<sup>đ</sup></p>--> <!-- Đơn giá -->
-                        <!--</a>
-    </div>-->
-
                     </div>
-            
-                @Html.PagedListPager(Model, page => Url.Action("DoiTuongKD", new { page, @class = "active" }))
+                }
+            </div>
+                @Html.PagedListPager(Model, page => Url.Action("ThuCung", new { page, @class = "active" }))
             
         </div>
     </div>
