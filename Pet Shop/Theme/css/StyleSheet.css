@@ -721,7 +721,19 @@ a {
     background: linear-gradient(180deg, #F4439F 0%, #F3C960 100%);
     border-radius: 15px;
 }
-
+button.fas.fa-search {
+    padding: 8.5px;
+    background: #fff;
+    position: absolute;
+    right: 717px;
+    top: 156px;
+    border: none;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+}
+button.fas.fa-search:hover {
+    background:#ddd;
+}
     .category-right-content-item a {
         font-size: 13.5px;
         font-weight: bold;
