@@ -1,5 +1,5 @@
 ﻿@using PagedList.Mvc;
-
+@using Microsoft.AspNet.Identity;
 @model PagedList.IPagedList<Pet_Shop.Models.GioHang>
 @{
     ViewBag.Title = "Cart";
@@ -93,7 +93,7 @@
                 </table>
                 <div class="cart-content-right-button">
                     <button>@Html.ActionLink("TIẾP TỤC MUA SẮM", "DoDungTC", "Home")</button>
-                    <a href="payment.html"> <button>THANH TOÁN</button></a>
+                    <a href="@Url.Action("ThemSPGioHang","ThanhToan", new { @id = User.Identity.GetUserId()})"> <button>THANH TOÁN</button></a>
                 </div>
             </div>
         </div>
