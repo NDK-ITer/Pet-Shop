@@ -92,6 +92,9 @@ namespace Pet_Shop.Controllers
             }
             return View(listSearch.ToPagedList((int)page, (int)pageSize));
         }
+
+
+
         public async Task<ActionResult> ChiTietDoDung(string id)
         {
             if (id == null)

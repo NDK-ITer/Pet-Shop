@@ -16,15 +16,15 @@
     </div>
     <div class="row">
         <div class="category-left">
-            <a class="category-left-item row">
+            <a href="@Url.Action("DoiTuongKD",new {@searchKey = "Mèo"})" class="category-left-item row">
                 <img src="~/Theme/images/Meo2.png" alt="">
                 <p>Mèo</p>
             </a>
-            <a class="category-left-item row">
+            <a href="@Url.Action("DoiTuongKD",new {@searchKey = "Chó"})" class="category-left-item row">
                 <img src="~/Theme/images/gau2.png" alt="">
                 <p>Chó</p>
             </a>
-            <a class="category-left-item row">
+            <a href="@Url.Action("DoiTuongKD",new {@searchKey = "Thức ăn"})"  class="category-left-item row">
                 <img src="~/Theme/images/food.png" alt="">
                 <p>Thức ăn</p>
             </a>
@@ -39,15 +39,18 @@
                     @using (Html.BeginForm("DoiTuongKD", "Home",FormMethod.Get, new { @class = "form-inline" }))
                     {
                         <input placeholder="Bạn đang tìm gì ?" type="text" name="searchKey">
-                        <button type="submit" class="fas fa-search"><i ></i></button>
+                        <button type="submit" class="fas fa-search"><i></i></button>
                     }
                 </div>
                 <div class="category-right-top-item">
-                    <select name="" id="">
-                        <option value="">Sắp xếp</option>
-                        <option value="">Giá cao đến thấp</option>
-                        <option value="">Giá thấp đến cao</option>
-                    </select>
+                    @*<form action="/" method="post">
+                        <select name="" id="">
+                            <option value="">Sắp xếp</option>
+                            <option value="up">Giá giảm dần</option>
+                            <option value="down">Giá tăng dần</option>
+                        </select>
+                        <button>Lọc</button>
+                    </form>*@
                 </div>
             </div>
             <div class="category-right-content columm">

@@ -529,7 +529,6 @@
     <Content Include="Views\Home\DichVu.cshtml" />
     <Content Include="Views\Home\Introduce.cshtml" />
     <Content Include="Views\Home\ChiTietDichVu.cshtml" />
-    <Content Include="Views\Shared\_PhanLoaiDDPartial.cshtml" />
     <Content Include="Views\Home\ChiTietThuCung.cshtml" />
     <Content Include="Views\Home\ThuCung.cshtml" />
     <Content Include="Views\ThanhToan\LapHoaDon.cshtml" />
