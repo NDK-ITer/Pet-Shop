@@ -372,6 +372,7 @@
     <Content Include="ImagesProduct\DoDung\VongCo4.png" />
     <Content Include="ImagesProduct\icon.jpg" />
     <Content Include="ImagesProduct\petChose.png" />
+    <Content Include="ImagesProduct\success.png" />
     <Content Include="ImagesProduct\ThuCung\gau2.png" />
     <Content Include="ImagesProduct\ThuCung\gâu.png" />
     <Content Include="ImagesProduct\ThuCung\hamster-bear-2.jpg" />
