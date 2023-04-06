@@ -106,6 +106,31 @@ namespace Pet_Shop.Controllers
             return View(cT_HoaDons.ToPagedList((int)page, (int)pageSize));
         }
 
+        public ActionResult DsSPDaMua(int? page, int? pageSize, List<CT_HoaDon> cT_HoaDonsInPut)
+        {
+            if (cT_HoaDonsInPut != null)
+            {
+                if (page == null) { page = 1; }
+                if (pageSize == null) { pageSize = 2; }
+                ViewBag.TongSL = TongSL();
+                ViewBag.TongThanhTien = TongTien();
+                if (cT_HoaDonsInPut.Count == 0 || cT_HoaDonsInPut == null)
+                {
+                    return View(cT_HoaDonsInPut.ToPagedList((int)page, (int)pageSize));
+                }
+            }
+            List<CT_HoaDon> cT_HoaDons = LayDsSPMua();
+            if (page == null) { page = 1; }
+            if (pageSize == null) { pageSize = 2; }
+            ViewBag.TongSL = TongSL();
+            ViewBag.TongThanhTien = TongTien();
+            if (cT_HoaDons.Count == 0 || cT_HoaDons == null)
+            {
+                return View(cT_HoaDons.ToPagedList((int)page, (int)pageSize));
+            }
+            return View(cT_HoaDons.ToPagedList((int)page, (int)pageSize));
+        }
+
         public int TongSL()
         {
             List<CT_HoaDon> cT_HoaDons = LayDsSPMua();
