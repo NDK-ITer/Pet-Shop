@@ -13,9 +13,16 @@ namespace Pet_Shop.Controllers
     public class HomeController : Controller
     {
         private static QuanLyThuCungEntities dbContext = new QuanLyThuCungEntities();
-        List<DoiTuongKD> doiTuongKDs = dbContext.DoiTuongKDs.Where(n => n.MaPLDTKD != "DV").ToList();
+        List<DoiTuongKD> doiTuongKDs;
         List<DichVu> dichVus = dbContext.DichVus.ToList();
         List<ThuCung> thuCungs = dbContext.ThuCungs.ToList();
+
+        public HomeController() 
+        {
+            doiTuongKDs = dbContext.DoiTuongKDs.Where(n => n.MaPLDTKD != "DV").ToList();
+            //Session.Add("DTKD",doiTuongKDs);
+        }
+
         public ActionResult Index()
         {
             return View();
@@ -36,11 +43,24 @@ namespace Pet_Shop.Controllers
         {
             return View();
         }
-        [HttpGet]
-        public ActionResult TimKiem(string searchKey)
+        public ActionResult DoiTuongKD(int? page, int? pageSize)
         {
+            if (page == null) { page = 1; }
+            if (pageSize == null) { pageSize = 12; }
+            return View(doiTuongKDs.ToPagedList((int)page,(int)pageSize));
+        }
+        [HttpGet]
+        public ActionResult DoiTuongKD(int? page, int? pageSize, string searchKey)
+        {
+            if (page == null) { page = 1; }
+            if (pageSize == null) { pageSize = 12; }
+            if (string.IsNullOrEmpty(searchKey))
+            {
+                return View(doiTuongKDs.ToPagedList((int)page, (int)pageSize));
+            }
             List<DoiTuongKD> doDung = new List<DoiTuongKD>();
             List<DoiTuongKD> thuCung = new List<DoiTuongKD>();
+            List<DoiTuongKD> listSearch = new List<DoiTuongKD>();
             if (!string.IsNullOrEmpty(searchKey))
             {
                 searchKey = searchKey.ToLower();
@@ -54,7 +74,7 @@ namespace Pet_Shop.Controllers
                             continue;
                         }
                     }
-                    else if (item.MaPLDTKD == "TC")
+                    if (item.MaPLDTKD == "TC")
                     {
                         if ((item.ThuCung.TenTC.ToLower().Contains(searchKey)/*|| item.ThuCung.LoaiThuCung.TenLoai.ToLower().Contains(searchKey)*/))
                         {
@@ -67,20 +87,10 @@ namespace Pet_Shop.Controllers
                         continue;
                     }
                 }
-                doiTuongKDs.Clear();
-                doiTuongKDs = new List<DoiTuongKD>();
-                doiTuongKDs.AddRange(thuCung);
-                doiTuongKDs.AddRange(doDung);
+                listSearch.AddRange(doDung);
+                listSearch.AddRange(thuCung);
             }
-            return RedirectToAction("DoiTuongKD");
-        }
-
-        public ActionResult DoiTuongKD(int? page, int? pageSize)
-        {
-            if (page == null) { page = 1; }
-            if (pageSize == null) {  pageSize = 12; }
-            //doiTuongKDs = doiTuongKDs.Where(n=>n.MaPLDTKD != "DV").ToList();
-            return View(doiTuongKDs.ToPagedList((int)page,(int)pageSize));
+            return View(listSearch.ToPagedList((int)page, (int)pageSize));
         }
         public async Task<ActionResult> ChiTietDoDung(string id)
         {
