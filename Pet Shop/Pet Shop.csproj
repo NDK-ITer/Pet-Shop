@@ -187,6 +187,7 @@
     <Compile Include="Areas\Admin\Controllers\DoDungTCsAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\DoiTuongKDsManagerController.cs" />
     <Compile Include="Areas\Admin\Controllers\HangSXesAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HoaDonsController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoaiDDsAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoaiThuCungsManagerController.cs" />
@@ -435,6 +436,11 @@
     <Content Include="Models\dbContext.edmx.diagram">
       <DependentUpon>dbContext.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\Admin\Views\HoaDons\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\HoaDons\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\HoaDons\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\HoaDons\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\HoaDons\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

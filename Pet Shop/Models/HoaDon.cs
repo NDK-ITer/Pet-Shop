@@ -20,21 +20,31 @@ namespace Pet_Shop.Models
         {
             this.CT_HoaDon = new HashSet<CT_HoaDon>();
         }
-    
+        [Display(Name = "Số hóa đơn")]
         public string SoHD { get; set; }
+        [Display(Name = "Ngày lập")]
         public string NgayLap { get; set; }
+        [Display(Name = "Tổng thành tiền")]
         public Nullable<decimal> TongThanhTien { get; set; }
+        [Display(Name = "Mã nhân sự")]
         public string MaNS { get; set; }
+        [Display(Name = "Tên người nhận")]
         [Required(ErrorMessage ="Buộc phải nhập")]
         public string TenNguoiNhan { get; set; }
+        [Display(Name = "Địa chỉ giao")]
         [Required(ErrorMessage = "Buộc phải nhập")]
         public string DiaChiGiao { get; set; }
+        [Display(Name = "Id người dùng")]
         public string IdNguoiDung { get; set; }
+        [Display(Name = "Mã hình thức")]
         public Nullable<int> MaHT { get; set; }
+        [Display(Name = "Số điện thoại")]
         [Required(ErrorMessage = "Buộc phải nhập")]
         public string SDTNguoiNhan { get; set; }
         //[EmailAddress]
+        [Display(Name = "Email")]
         public string EmailNguoiNhan { get; set; }
+        [Display(Name = "Ghi chú")]
         public string GhiChu { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
