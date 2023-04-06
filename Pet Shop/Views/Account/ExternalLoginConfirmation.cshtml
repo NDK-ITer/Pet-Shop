@@ -2,37 +2,42 @@
 @{
     ViewBag.Title = "Register"; Layout = "";
 }
-<main aria-labelledby="title">
-    <h2 id="title">@ViewBag.Title.</h2>
-    <h3>Associate your @ViewBag.LoginProvider account.</h3>
+<link href="~/Theme/css/StyleSheetLogin.css" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+<main>
+    <div class="container right-panel-active" id="container">
+        <div class="form-container sign-up-container">
+                <main class="main-p" aria-labelledby="title" style="padding:75px 0">
 
-    @using (Html.BeginForm("ExternalLoginConfirmation", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
-    {
-        @Html.AntiForgeryToken()
-
-        <h4>Association Form</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-<p class="text-info">
-    Bạn đã xác thực thành công với <strong>@ViewBag.LoginProvider</strong>.
-    Vui lòng nhập tên người dùng cho trang web này bên dưới và nhấp vào nút Đăng ký để hoàn tất
-    đăng nhập.
-</p>
-        <div class="row">
-            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 col-form-label" })
-            <div class="col-md-10">
-                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                    @using (Html.BeginForm("ExternalLoginConfirmation", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary("", new { @class = "text-danger" })
+                        <h1>Tạo tài khoản</h1>
+                        @Html.TextBoxFor(m => m.Email, new { @placeholder = "Email" })
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                       
+                        <button style="padding:12px 22px!important" type="submit" value="Register">Đăng ký</button>
+                    }
+                </main>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <p style="font-size:17px!important">
+                        Bạn đã xác thực thành công với <strong>@ViewBag.LoginProvider</strong>.
+                        Vui lòng nhập tên người dùng cho trang web và nhấp vào nút Đăng ký để hoàn tất
+                        .
+                    </p>
+                </div>
+                
             </div>
         </div>
-        <div class="row">
-            <div class="offset-md-2 col-md-10">
-                <input type="submit" class="btn btn-outline-dark" value="Register" />
-            </div>
-        </div>
-    }
+    </div>
 </main>
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

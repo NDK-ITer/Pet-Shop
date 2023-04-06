@@ -74,7 +74,7 @@ a {
             font-weight: bold !important;
             display: block;
             padding-bottom: 3px;
-            padding-right: 50px;
+            padding-right: 39px;
             line-height: 20px;
         }
 
@@ -742,6 +742,7 @@ a {
     .category-right-content-item img {
         width: 100%;
         height: 70%;
+        max-height:242px;
         border-radius: 15px;
     }
 
@@ -2363,3 +2364,6 @@ ul.pagination {
             background-color: #ddd;
             border-radius: 5px;
         }
+.category-right-content-item-top {
+    height: 262px;
+}

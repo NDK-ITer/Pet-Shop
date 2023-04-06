@@ -307,3 +307,8 @@ footer {
     .FogotPass .bnt-fgpw:hover {
         border: 1px solid #000;
     }
+.main-p input {
+    margin: 11px 0;
+    border-radius: 10px;
+    border: 1px solid;
+}
