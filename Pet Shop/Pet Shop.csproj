@@ -533,6 +533,7 @@
     <Content Include="Views\Home\ThuCung.cshtml" />
     <Content Include="Views\ThanhToan\LapHoaDon.cshtml" />
     <Content Include="Views\ThanhToan\DsSPMua.cshtml" />
+    <Content Include="Views\ThanhToan\ThanhToanThanhCong.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

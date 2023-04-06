@@ -24,6 +24,7 @@ namespace Pet_Shop.Controllers
             return View(hoaDon);
         }
 
+
         [HttpPost]
         public ActionResult LapHoaDon(HoaDon thongTinHoaDon)
         {
@@ -44,14 +45,30 @@ namespace Pet_Shop.Controllers
                 hoaDon.GhiChu = thongTinHoaDon.GhiChu;
                 dbContext.HoaDons.Add(hoaDon);
                 dbContext.SaveChanges();
+
                 foreach (var item in cT_HoaDons)
                 {
+                    CT_HoaDon newItem = new CT_HoaDon();
+                    item.HoaDon = dbContext.HoaDons.Find(hoaDon.SoHD);
                     item.SoHD = hoaDon.SoHD;
-                    dbContext.CT_HoaDon.Add(item);
+                    newItem.SoHD = item.SoHD;
+                    newItem.MaDT = item.MaDT;
+                    newItem.SoLuong = item.SoLuong;
+                    newItem.ThanhTien = item.ThanhTien;
+                    dbContext.CT_HoaDon.Add(newItem);
                     dbContext.SaveChanges();
                 }
             }
-            return View();
+            return RedirectToAction("ThanhToanThanhCong", hoaDon);
+        }
+
+        public ActionResult ThanhToanThanhCong(HoaDon hoaDonInput)
+        {
+            if (hoaDonInput == null)
+            {
+                return View(hoaDon);
+            }
+            return View(hoaDonInput);
         }
 
         public List<CT_HoaDon> LayDsSPMua()
@@ -64,8 +81,19 @@ namespace Pet_Shop.Controllers
             }
             return cT_HoaDons;
         }
-        public ActionResult DsSPMua(int? page, int? pageSize)
+        public ActionResult DsSPMua(int? page, int? pageSize, List<CT_HoaDon> cT_HoaDonsInPut)
         {
+            if (cT_HoaDonsInPut != null)
+            {
+                if (page == null) { page = 1; }
+                if (pageSize == null) { pageSize = 2; }
+                ViewBag.TongSL = TongSL();
+                ViewBag.TongThanhTien = TongTien();
+                if (cT_HoaDonsInPut.Count == 0 || cT_HoaDonsInPut == null)
+                {
+                    return View(cT_HoaDonsInPut.ToPagedList((int)page, (int)pageSize));
+                }
+            }
             List<CT_HoaDon> cT_HoaDons = LayDsSPMua();
             if (page == null) { page = 1; }
             if (pageSize == null) { pageSize = 2; }

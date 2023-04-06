@@ -1,0 +1,33 @@
+﻿@model Pet_Shop.Models.HoaDon
+@{
+    ViewBag.Title = "ThanhToanThanhCong";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="success">
+    <div class="container">
+        <div class="success-content row">
+            <div class="success-content-left">
+                <img src="images/success.png" alt=""><h1>Đả đặt hàng thành công</h1>
+            </div>
+            <div class="success-content-right">
+                <h3>Đơn hàng: @Html.DisplayFor(model=>model.SoHD)</h3>
+                <h1>Thông tin mua hàng</h1>
+                <p>Họ và tên: @Html.DisplayFor(model => model.TenNguoiNhan)</p><br>
+                <p>Email: @Html.DisplayFor(model=>model.EmailNguoiNhan)</p><br>
+                <p>SĐT: @Html.DisplayFor(model=>model.SDTNguoiNhan)</p><br>
+                <p>Địa chỉ: @Html.DisplayFor(model=>model.DiaChiGiao)</p><br>
+                <p>Ghi chú đơn hàng: @Html.DisplayFor(model=>model.GhiChu)</p><br>
+                @*<p>Phương thức thanh toán: Thanh toán bằng tiền mặt</p><br>*@
+                <p>Tổng tiền: @String.Format("{0:0,0}", Model.TongThanhTien)đ</p>
+                <div class="success-content-right-button">
+                    <a href="@Url.Action("DoiTuongKD","Home")"><button>Tiếp tục mua sắm</button></a>
+                </div>
+            </div>
+        </div>
+        <div>
+            @{Html.RenderAction("DsSPMua", "ThanhToan");}
+        </div>
+    </div>
+</div>
+
